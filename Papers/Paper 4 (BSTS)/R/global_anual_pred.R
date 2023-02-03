@@ -1,4 +1,5 @@
 library(readxl)
+library(readr)
 library(tidyr)
 library(dplyr)
 library(ggplot2)
@@ -7,7 +8,7 @@ library(lubridate)
 library(CausalImpact)
 library(MMWRweek)
 
-mapfre_ts <- read.table("Data/MAPFRE_Weekly_data.csv", header=T, sep=",") # nolint
+mapfre_ts <- read_csv(unzip("Data/MAPFRE_Weekly_data.zip", "MAPFRE_Weekly_data.csv"))
 colnames(mapfre_ts) <- c("Year", "WeekNum", "Code_Real", "Code_Esp", "Code_Group", "Id", "Province", "Sex", "Age", "Acts")
 totals <- read_xlsx("Data/S67_IAL_CUBO_CARTERA_HISTORICA_SALUD_FAMILIAS.xlsx")
 colnames(totals) <- c("Date", "No.Fun", "Fun", "Dental", "Reimb", "Ind", "Total")
