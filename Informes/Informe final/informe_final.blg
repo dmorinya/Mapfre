@@ -1,0 +1,52 @@
+This is BibTeX, Version 0.99d (TeX Live 2022)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: informe_final.aux
+The style file: ieeetrsrt.bst
+Database file #1: report.bib
+Warning--empty journal in Cancer2020
+Warning--empty publisher in McKenzie2003
+Warning--empty journal in MinisteriodeSanidad2021
+Warning--empty journal in Pena2005
+Warning--empty journal in UNESPA2020
+You've used 25 entries,
+            2199 wiz_defined-function locations,
+            679 strings with 11290 characters,
+and the built_in function-call counts, 13119 in all, are:
+= -- 1314
+> -- 853
+< -- 0
++ -- 343
+- -- 314
+* -- 1099
+:= -- 2061
+add.period$ -- 28
+call.type$ -- 25
+change.case$ -- 231
+chr.to.int$ -- 0
+cite$ -- 30
+duplicate$ -- 457
+empty$ -- 733
+format.name$ -- 314
+if$ -- 2798
+int.to.chr$ -- 0
+int.to.str$ -- 25
+missing$ -- 25
+newline$ -- 82
+num.names$ -- 50
+pop$ -- 214
+preamble$ -- 1
+purify$ -- 207
+quote$ -- 0
+skip$ -- 468
+stack$ -- 0
+substring$ -- 750
+swap$ -- 224
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 98
+warning$ -- 5
+while$ -- 98
+width$ -- 27
+write$ -- 245
+(There were 5 warnings)

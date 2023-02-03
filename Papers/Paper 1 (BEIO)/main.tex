@@ -1,0 +1,51 @@
+\documentclass[journal,noindent,headline]{paper}
+
+
+%%% - WARNING - %%% - PLEASE, DO NOT MODIFY THE FILE
+% The 'main.tex' file should only be modified to include the additional packages (in the enabled area) and will only be used to compile and display the final layout.
+
+
+\usepackage[a4paper, total={6in, 8in}]{geometry}
+\usepackage[spanish]{babel}
+\usepackage{xcolor}
+\usepackage{lipsum}  
+\usepackage[colorlinks,citecolor=blue,linkcolor=blue!50!black]{hyperref}
+\usepackage{graphicx}
+\usepackage[style=authoryear, natbib=true,maxbibnames=10]{biblatex}
+\usepackage{fancyhdr}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{wasysym}
+\usepackage{booktabs}
+\usepackage{setspace}
+\usepackage{longtable}
+\usepackage{epsf}
+\usepackage{array}
+\usepackage{csquotes}
+\usepackage{subfiles}
+\usepackage{verbatim}
+\clubpenalty=10000
+\widowpenalty=10000
+ 
+
+%**********   Additional Packages   **********
+
+
+
+%**********   Additional Packages - end ******
+
+\addbibresource{references.bib} 
+
+\begin{document}
+%----------------------------------------------------------
+ 
+% Clase del artículo
+
+
+\journalpart[Clase del artículo]{} %Investigación Operativa
+\newrefsection
+\subfile{morina_BEIO}
+\clearpage
+
+
+\end{document}

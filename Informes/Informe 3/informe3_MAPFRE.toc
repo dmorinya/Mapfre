@@ -1,0 +1,10 @@
+\babel@toc {spanish}{}\relax 
+\contentsline {section}{\numberline {1}Introducción}{1}{}%
+\contentsline {section}{\numberline {2}Métodos}{2}{}%
+\contentsline {section}{\numberline {3}Resultados}{2}{}%
+\contentsline {subsection}{\numberline {3.1}Nueva metodología}{3}{}%
+\contentsline {subsection}{\numberline {3.2}Series temporales Bayesianas estructurales}{4}{}%
+\contentsline {subsubsection}{\numberline {3.2.1}Global}{4}{}%
+\contentsline {subsubsection}{\numberline {3.2.2}Madrid}{9}{}%
+\contentsline {subsubsection}{\numberline {3.2.3}Barcelona}{15}{}%
+\contentsline {subsubsection}{\numberline {3.2.4}Valencia}{21}{}%

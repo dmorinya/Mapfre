@@ -1,0 +1,152 @@
+\documentclass[main.tex]{subfiles}
+
+% Please fill out the template with your work according the following indications:
+    % - We also provide a 'template.tex' so that you can modify 'article.tex' and still have an original template. This should not be modified.
+    % - If you have any questions, please write to miguel.reula@uv.es and/or paula.saavedra@usc.es.
+
+  % ###  FIGURES ###
+    % All figures must be included in the 'figures' folder.
+    % The format for figure submission is jpeg, jpg or png. Other formats will not be accepted.
+    % All figures must be cited in sequence within the article.
+    % You are responsible for obtaining permission to publish any figures or illustrations.
+    
+  % ###  BIBLIOGRAPHY ###
+    % All references must be included in 'references.bib'. Other formats will not be accepted.
+    % You can find in 'references.bib' an example that can be used to include your bibliography.
+    
+  % ###  ABOUT THE AUTHORS (at the end of the file) ###
+    % Please, include a brief summary with the most relevant information about the authors.
+    % Please, include a photo of each author, if possible.
+    
+
+\begin{document}
+
+%   0   %%%%%%  AUTHORS  %%%%%%%
+\author{ {\tt David Mori\~na}\\
+{\tt Department of Econometrics, Statistics and Applied Economics}\\ {\tt Universitat de Barcelona}\\ \href{https://orcid.org/
+0000-0001-5949-7443}{ORCid: 0000-0001-5949-7443}\\
+\href{mailto:dmorina@ub.edu}{dmorina@ub.edu}
+}
+\shortauthor{D. Mori\~na}
+
+
+%   1   %%%%%%  TITLE  %%%%%%%
+\title{Impact of the Covid-19 pandemic in health services usage}
+\maketitle
+
+%   2   %%%%%%  ABSTRACT  %%%%%%%
+\section*{Abstract}
+The lockdown and other mobility restriction measures taken by many governments all over the world to minimise the impact of the ongoing Covid-19 pandemic led to a decline in the usage of public and private health insurance services by policyholders and a transformation of the interaction between patients and health workers with a greater preference for telephone consultation. There is a recent concern in order to determine whether, by the effect of postponing visits or by the sequelae of having suffered the virus (persistent Covid-19 or side effects), will there be an excess of usage in the upcoming months, especially in severe diagnostics like cancer and among vulnerable subpopulations like older people.
+\medskip
+
+\noindent\textbf{Keywords:} Covid-19, Health services, Time series, Misreported data.
+
+\noindent\textbf{MSC Subject classifications:} 62P10, 62P25, 62M10.
+
+\selectlanguage{english}
+
+%   3   %%%%%%  ARTICLE  %%%%%%%
+\section{Introduction}\label{sec:intro}
+There is an enormous global concern around 2019-novel coronavirus (SARS-CoV-2)
+infection in the last years, leading the World Health Organization (WHO) to declare
+public health emergency in early 2020. The consequences derived from the pandemic
+caused by this virus have had a profound effect on many areas of human activity. In
+addition to the direct consequences in relation to deaths caused by the Covid-19 disease
+and the saturation of health systems in many countries (including Spain and neighboring
+countries), in 2020 a decrease in use of health services has been detected, both those
+belonging to the Public Health System and services associated with private health
+insurances. Many people have missed out on much needed care, such as vaccination or life-extending interventions for cancer (\cite{baum_admissions_2020, mcdonald_early_2020, maringe_impact_2020}). According to a WHO survey, this problem regarding healthcare services is especially severe among lower income countries (\cite{noauthor_pulse_nodate}), and there are estimates that reduction of essential maternal and child health interventions may cause more than a million additional child deaths (\cite{roberton_early_2020}). 
+
+Investigating the impact of changes in healthcare utilisation on health outcomes and costs presents major methodological challenges. The actual burden of Covid-19, in the first place, cannot be easily estimated, taking into account that many cases run asymptomatically or with mild symptoms and are not registered in the official sources. Several methodological approaches have been proposed recently in the literature; for instance the actual incidence of Covid-19 in Spain has been estimated using different methods in \cite{fernandez-fontelo_estimating_2020, morina_cumulated_2021}, leading to the conclusion that approximately 25\% to 40\% of the actual cases were unreported.
+
+The first decrease in healthcare services utilisation due to the consequences of the Covid-19 pandemic was observed in China in February 2020, after several months of an increasing trend. By means of a time series analysis (2016-2020), in \cite{xiao_impact_2021} the authors quantify the decrease in February 2020 as much as a 63\% (95\% confidence interval: 61\%-65\%) in all-cause visits at hospitals in regions with high Human Development Index (HDI).
+
+A recently published systematic review based on 81 papers (\cite{moynihan_impact_2021}) from many countries with very different sociopolitical and economic circumstances reveals that although most of the health services experienced a decrease in their usage (95.1\% of the considered services), some services reported an increase (most of them related to telematic or telephone services). The percentage change ranged from a 49\% increase to an 87\% decrease with a median 37.2\% reduction (IQR -50.5\% to -19.8\%). This study also shows that the more significant changes were observed between mid-February and late May 2020, when the more restrictive non-pharmaceutical measures were conducted on the majority of countries.
+
+The impact of these changes on healthcare services utilisation on patients' mental health has also been studied, and are found to be especially significant among vulnerable populations. In this sense, in \cite{bastani_factors_2021} the authors identify mental health and digital health services as major issues influencing or contributing to older people’s health during the Covid-19 pandemic.
+
+In this work, we will focus on the consequences of Covid-19 mitigation measures on cancer diagnosis produced within the public health system of several countries (Sections~\ref{sec:diagnoses} and~\ref{sec:cancer}) and on the usage of the services associated to private health insurances (Section~\ref{sec:private}). 
+
+\section{Delayed diagnoses}\label{sec:diagnoses}
+A delay in getting a diagnosis can have important consequences in patient's health and in some cases, in survival odds. It is known, however, that the Covid-19 non-pharmaceutical measures led to a reduction in the number of diagnoses due to health services closure and mobility restrictions, which is likely to produce an unprecedented number of delayed diagnoses. According to \cite{moynihan_impact_2021}, without disaggregating by service or diagnosis, it can be seen that the percentage reduction ranged from 10\% to 85\%, with a median 31.4\% reduction (IQR -52.5\% to -23.8\%). Similar values were observed regarding the changes in therapeutic and preventive care (29.6\% median reduction with IQR -56.8\% to -19.2\%), although an increasing trend was already observed by late April 2020. When considering separately according to disease severity of the service user, a pattern of larger reductions among those with milder or less severe illness compared to those with more severe diseases was observed on almost half of the considered outcomes, while for the other half no differences were observed and none of the studies included in the review reported a smaller reduction among those with milder or less severe illness.
+
+The situation is especially concerning among older populations. For instance, a study conducted on the United States (\cite{baum_admissions_2020}) revealed that the number of patients admitted to veterans affairs inpatient facilities during weeks 5 through 10 compared to weeks 11 through 16 of 2020 was reduced by 43\% overall.
+
+\section{Cancer diagnosis and mortality during lockdown}\label{sec:cancer}
+Many countries got their cancer screening programs closed or severely underused due to non-pharmaceutical measures undertaken by governments to control the Covid-19 incidence and associated mortality, particularly the countries that were more affected by the pandemic. 
+
+In Italy almost all districts suspended the first-level colorectal cancer screening tests due to health restrictions related to Covid-19 (\cite{del_vecchio_blanco_impact_2020}), leading to colorectal cancers in a more advanced stage at diagnosis compared with what they could have been if the screening test was available. This, in turn, could affect the effectiveness of screening on colorectal mortality, estimated at a reduction of up to 20\%, affecting also the well established cost-effectiveness of colorectal cancer screening programs. In other regions and centers, however, the screening programs were preserved and no significant changes due to the pandemic were registered (for instance in San Eugenio Hospital, Lazio (\cite{dovidio_impact_2021})).
+
+Also in Italy, the impact of the restrictions to health services access due to Covid-19 was also assessed for melanoma, as its survival rate is highly dependent on tumor thickness and therefore early diagnosis is very important to ensure maximum surviving chances. Overall, a 20\% reduction in the number of detected melanoma cases was detected in 2020 compared to previous years (\cite{gualdi_effect_2021}). It is therefore reasonable thinking that this reduction will lead (or is already leading) to an increase in the upcoming months in the number of cases and also in their severity. This increase, in fact, has been already reported (\cite{ricci_delayed_2020}), resulting in increased thickness in primary melanomas seen after the Covid-19 lockdown.
+
+Something similar happened for other cancer types like breast cancer. In Croatia, health care system measures for controlling the spread of Covid-19 had a detrimental effect on the number of newly diagnosed breast cancer cases in Croatia during the first lockdown (\cite{vrdoljak_covid-19_2021}). In this study the authors found an average monthly percent reduction around 11\%, resulting in a 24\% reduction of the newly diagnosed breast cancer cases in Croatia during April, May, and June 2020 compared with the same period of 2019. Nevertheless, the authors claim that the Croatian oncology health care system has compensated for these effects by the end of 2020.
+
+A global review focused on planned cancer surgery including studies from 61 countries and 15 tumour locations (\cite{covidsurg_collaborative_effect_2021}) shows that, globally, 10\% of the eligible patients awaiting for cancer surgery did not receive surgery after a median follow-up of 23 weeks due to Covid-19 related reason. Light restrictions were associated with a 0.6\% non-operation rate, moderate lockdowns with a 5.5\% rate and full lockdowns with a 15.0\% rate.
+
+Additionally, changes in the cancer mortality due to delays in diagnosis as a consequence of the Covid-19 pandemic have also been reported in several countries. For instance in the United Kingdom, a modelling based study estimates an increase in the number of deaths due to breast cancer up to year 5 after diagnosis of 7.9–9.6\%, an increase in the number of deaths due to colorectal cancer up to year 5 after diagnosis of 15.3–16.6\%, an increase in the number of deaths due to lung cancer up to year 5 after diagnosis of 4.8–5.3\% and an increase in the number of deaths due to oesophageal cancer up to year 5 after diagnosis of 5.8–6.0\% (\cite{maringe_impact_2020}). For these four tumour types, the estimated increases correspond with 3291–3621 additional deaths within 5 years.
+
+The changes in healthcare services utilisation due to the Covid-19 pandemic and its consequences also had a relevant impact on cancer patients' mental health. An analysis of almost 2,500,000 tweets and 21,800 discussions with patients (\cite{moraliyage_cancer_2021}) shows that there is a great concern about delayed diagnosis, cancellations, missed treatments, and weakened immunity (especially among lung and breast cancer patients), that led to negative sentiments, with fear being the predominant emotion. 
+
+\section{Private health insurance associated services}\label{sec:private}
+Health insurance is one of the insurance branches with the greatest penetration in the
+Spanish market, with more than 12 million insured, more than 25\% of the population has
+this type of coverage and exceeds 35\% in some areas (\cite{unespa_informe_2020}) and the same is
+true in many of the developed countries. Its claim rate has suffered the impact of the
+Covid-19 pandemic in 2020 and 2021, especially with regard to medical consultations and
+acts that could be postponed. The mobility restrictions led to a decline in the use of
+insurance services by the insured and a transformation of the interaction between patients and health workers with a greater use of the telephone consultation. The question is to know if, either due to the effect of
+postponing visits or due to the consequences of having suffered the virus (persistent Covid
+or secondary effects), there will be an excess of claims in 2022 and the following years. However, it is difficult to determine if the highest frequency of claims that will be observed will be equal to or greater than the infra-loss rate that was observed during the pandemic period. In this sense, there is a lack of research on the implications for private health insurance similary to what has been described at the public system level. 
+
+Above all, it is to be expected that, to monitor the effects of the
+pandemic in the coming years, this type of approximation should be used, since population
+groups with different sociodemographic characteristics, or impacts on the use of health
+services, cannot be directly compared. Among the implications, one could also speak of
+an adjustment in the way of approximating pricing in this branch, anticipating rebounds in
+claims that are not yet being observed and quantifying the impact of the
+pandemic on health insurance, and how to evaluate it, estimating the degree of underuse
+that occurred mainly in 2020 and using advanced data science techniques recently developed, as well as new and innovative developments on overuse, in order to create a
+system for monitoring claims that detects the change in the dynamics of usage of medical
+insurance in particular and of any other branch, in general. 
+
+In Spain, it is estimated that in 2020 the total benefits provided by health insurance have totaled
+6,300 million euros, of which 6,200 million correspond to the provision of medical services.
+In 2019, it is estimated that the total benefits provided by this type of insurance have
+totaled 6,600 million euros, of which 6,500 million correspond to the provision of medical
+services.
+
+However, to the date, only a United Kingdom based review tackling this problem has been published (\cite{howarth_trends_2021}). This work shows that healthcare utilisation during the first wave of Covid-19 decreased by as much as 70\% immediately after lockdown measures were implemented. After 2 months, the trend reversed and claims steadily began to increase, but did not reach rates seen from previous years by the end of August 2020. The only services that showed a different trend were mental health related services, which observed an increase of 20\% during the first wave of Covid-19, compared to the pre-Covid period (January 2018 - December 2019).
+
+With the purpose of analysing this issue focused in Spain, a project using the statistical methodology of the
+under-representation of cases described in \cite{fernandez-fontelo_applying_2017} and \cite{fernandezfontelo_untangling_2019} as a starting point is currently being developed, with a planned extension in order to handle over-representation as well. The approach is to determine how it is possible to see if the rebound effect (i) occurs uniformly or only for certain health insurance coverage, (ii) it occurs homogeneously or
+depending on the characteristics of the insured or (iii) in what moment of time the initial
+benefit level is recovered. It is reasonable to think that the results and conclusions can be
+generalizable to other branches and to assess possible inequalities between countries or
+regions.
+
+% #######  ACKNOWLEDGMENTS ######
+\subsection*{Acknowledgments}
+This research is funded by Fundaci\'on MAPFRE (Becas Ignacio H. de Larramendi 2021).
+
+%Grants or general acknowledgments should be placed here.
+
+% #######  ABOUT THE AUTHORS ######
+\subsection*{About the authors}
+\noindent\textbf{David Mori\~na }holds a PhD in Mathematics. His area of interest is focused on statistical modeling applied to Health Sciences, especially in the treatment and analysis of longitudinal data. He is currently visiting professor at the Department of Econometrics, Statistics and Applied Economics of the Universitat de Barcelona and combines his research activity with teaching several undergraduate and postgraduate subjects related to Statistics and modeling.
+
+%\vspace{0.5cm}
+
+%\noindent\textbf{Amanda Fern\'andez-Fontelo }Information on author 2
+
+\vspace{0.5cm}
+
+
+
+
+
+\printbibliography[title={References}]
+% #######  BIBLIOGRAPHY ######
+%All references must be included in 'references.bib'. Other formats will not be accepted.
+%You can find there an example that can be used to include your bibliography
+
+\end{document}

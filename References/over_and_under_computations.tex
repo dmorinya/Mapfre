@@ -1,0 +1,260 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{makeidx}
+\usepackage{graphicx}
+\usepackage{lmodern}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+
+\title{}
+\author{Amanda Fern\'andez Fontelo}
+
+
+\begin{document}
+\maketitle
+
+\section{Outline paper fattering-thinning operator}
+
+\begin{enumerate}
+\item Introduction.
+\item The model for misreporting counts:
+\begin{enumerate}
+\item Introduction to the fattering-thinning operator.
+\item Introduction to the misreporting model accounting for two different latent process structures: a. the classical INAR(1) with Poisson($\lambda$)-innovations, and b. an INAR(1) model with 2nd-Hermite($a_1$,$a_2$)-innovations. The latter means that the latent process $X_n$ can be slight overdispersed. Also, considering both independence and dependence between the misreporting states. \\ Could also be interesting to briefly describe, in some way how, is an INAR(1) model with the fattering-thinning operator (marginal distributions, ways of parameter estimation, etc). 
+\end{enumerate}
+\item Simulation study.
+\item Applications based on ADHD and autism cases in children. 
+\item Discussion. 
+\end{enumerate}
+
+\section{The fattering-thinning operator}
+
+\noindent Let $X_n$ be a latent process following an INAR(1) structure such that: $X_n=\alpha\circ X_{n-1}+Z_n$, where $\textrm{E}(X_n)=\mu_X$ and $\textrm{Var}(X_n)=\sigma_X^2$ are the expectation and variance of $X_n$, respectively. Assume, for now, that $Z_n \sim \textrm{Poisson}(\lambda)$. However, other more appropriate structures for the underlying process can be considered depending on the application (e.g., overdispersion in the underlying process through second-order Hermite distributed innovations, or temporally uncorrelated processes through the Poisson or second-order Hermite models). Let $Y_n$ be an observed and potentially over- or under-reporting process such that: 
+\begin{align}\label{eq0:modelfatthin}
+ Y_n=\begin{cases} 
+X_n &  1-\omega \\
+\theta \Diamond X_n & \omega, \\
+   \end{cases}
+\end{align}
+
+\noindent where $\theta \Diamond X_n$ is the fattering-thinning operator in the sense that:
+\begin{align}\label{eq1:fatteringthinning}
+\theta \Diamond X_n|X_n=x_n=\sum_{j=1}^{x_n}W_j,
+\end{align}
+
+\noindent where $W_j$ is an i.i.d random variable defining by the following probability mass function (pmf):
+
+\begin{align}\label{eq2:pmfW}
+\textrm{P}(W_j=k)=\begin{cases} 
+0 &  1-\phi_1-\phi_2 \\
+1& \phi_1 \\
+2& \phi_2, \\
+\end{cases}
+\end{align}
+
+\noindent where $\theta=(\phi_1,\phi_2)$. Notice that when $\phi_2=1$, the process is not over-reported neither under-reported. That is, the observed process is the actual process. Notice also that a more restricted version of (\ref{eq1:fatteringthinning}) results when $W_j \sim \textrm{Bernoulli}(2,\phi)$. Although the distribution in (\ref{eq2:pmfW}) is the most straightforward choice to allow for over-reporting, other distributions with not compact support can be considered, such as Poisson, Geometric, etc. \\
+The operator in (\ref{eq1:fatteringthinning}) follows a 2nd-Hermite distribution with parameters $\mu_X\phi_1$ and $\mu_X\phi_2$. This can be easily demonstrated by taking its probability generating function (pgf). That is:
+\begin{align}
+G_X(s)&=\textrm{e}^{\mu_X(s-1)}, \label{eq3:pgfpox}\\
+G_W(s)&=(1-\phi_1-\phi_2)+\phi_1s+\phi_2s^2, \label{eq3:pgfw}\\
+G_X\left(G_W(s)\right)&=\textrm{e}^{\mu_X\left((1-\phi_1-\phi_2)+\phi_1s+\phi_2s^2-1\right)}=\textrm{e}^{\mu_X\left(\phi_1(s-1)+\phi_2(s^2-1)\right)} \label{eq3:pgffath} ,
+\end{align}
+which is the pgf of a second-order Hermite with parameters $\mu_X\phi_1$ and $\mu_X\phi_2$. The expectation and variance of this operator are: $\textrm{E}=\left(\theta \Diamond X_n\right)=\mu_X\left(\phi_1+2\phi_2\right)$ and $\textrm{Var}=\left(\theta \Diamond X_n\right)=\mu_X\left(\phi_1+4\phi_2\right)$.
+
+\subsection{Models properties}
+
+\medskip
+
+\noindent The marginal distribution of the observed process $Y_n$ is the following mixture of a Poisson and a Hermite distributions:
+\begin{align}\label{eq:mix}
+Y_n=\begin{cases} 
+\textrm{Poisson}(\mu_X) &  1-\omega, \\
+\textrm{Hermite}\left(\mu_X\phi_1,\mu_X\phi_2\right) &  \omega. \\
+\end{cases}
+\end{align}
+However, in the case that the innovations of the INAR(1)-latent process are second-order Hermite, then the distribution in (\ref{eq:mix}) is a mixture of two second-order Hermite components. More straightforward marginal distributions of $Y_n$ result when the latent process $X_n$ follows a classical Poisson model, or even a second-order Hermite model.\\ 
+The expectation and variance of this observed process $Y_n$ are:
+\begin{align*}
+\textrm{E}(Y_n)&=(1-\omega)\mu_X+\omega\mu_X\left(\phi_2+2(1-\phi_1-\phi_2)\right)=\mu_X(1-\omega\left(1-(2(1-\phi_1)-\phi_2\right))).\\
+\textrm{E}(Y_n^2)&=(1-\omega)(\sigma_X^2+\mu_X^2)+\omega \left(\mu_X(4(1-\phi_1)-3\phi_2)+\mu_X^2(2(1-\phi_1)-\phi_2)^2\right)\\&=\mu_X\left(1-\omega\left(1-\left(4(1-\phi_1)-\phi_2\right)\right)\right)+\mu_X^2\left(1-\omega\left(1-(2(1-\phi_1)-\phi_2)^2\right)\right),
+\end{align*}
+since $\mu_X=\sigma_X^2$, and 
+\begin{align*}
+\textrm{Var}(Y_n)&=\mu_X\left(1-\omega\left(1-\left(4\left(1-\phi_1\right)-\phi_2\right)\right)\right)+\mu_X^2\left(1-\omega\left(1-\left(2\left(1-\phi_1\right)-\phi_2\right)^2\right)\right)\\ &-\mu_X^2\left(1-\omega\left(1-\left(2\left(1-\phi_1\right)-\phi_2\right)\right)\right)^2\\&=\mu_X\left(1-\omega\left(1-\left(4\left(1-\phi_1\right)-\phi_2\right)\right)\right)+\mu_X^2\omega(1-\omega)\left(1-\left(2\left(1-\phi_1\right)-\phi_2\right)\right)^2. 
+\end{align*}
+
+\noindent Let ${\bf 1}_n$ be an indicator of the state of misreporting (over- or under-reporting) in the sense that ${\bf 1}_n \sim \textrm{Bernoulli}(\omega)$. Assume that the misreporting states are independent over time. 
+
+\medskip
+
+\noindent The auto-covariance function (ACV) of $Y_n$ can be computed as follows:
+\begin{align}\label{cov}
+\textrm{Cov}\left(Y_n,Y_{n+k}\right)=\textrm{E}\left(Y_n,Y_{n+k}\right)-\textrm{E}(Y_n)\textrm{E}(Y_{n+1}). 
+\end{align}
+
+\noindent Assume that $\textbf{1}_n \sim \textrm{Bernoulli}(\omega)$ independent of $X_n$. Additionally, assume independence betwen the misreporting states. Hence:
+\begin{align}\label{exp}
+\textrm{E}\left(Y_n,Y_{n+k}\right)&=\textrm{E}\left(X_n(1-\textbf{1}_n),X_{n+k}(1-\textbf{1}_{n+k})\right)+\textrm{E}\left(X_n(1-\textbf{1}_n),\theta \Diamond X_{n+k}\textbf{1}_{n+k}\right) \nonumber \\ &+\textrm{E}\left(\theta \Diamond X_n\textbf{1}_n,X_{n+k}(1-\textbf{1}_{n+k})\right)+\textrm{E}\left(\theta \Diamond X_n\textbf{1}_n,\theta \Diamond X_{n+k}\textbf{1}_{n+k}\right),
+\end{align}
+where
+\begin{align*}
+&\textrm{E}\left(X_n(1-\textbf{1}_n),X_{n+k}(1-\textbf{1}_{n+k})\right)=(1-\omega)^2\textrm{E}(X_n,X_{n+k}), \\
+&\textrm{E}\left(X_n(1-\textbf{1}_n),\theta \Diamond X_{n+k}\textbf{1}_{n+k}\right)=(1-\omega)\omega(2(1-\phi_1)-\phi_2)\textrm{E}(X_n,X_{n+k}), \\
+&\textrm{E}\left(\theta \Diamond X_n\textbf{1}_n,\theta \Diamond X_{n+k}\textbf{1}_{n+k}\right)=\omega^2(2(1-\phi_1)-\phi_2)^2\textrm{E}(X_n,X_{n+k}).
+\end{align*}
+Accordingly, 
+\begin{align*}
+\textrm{E}\left(Y_n,Y_{n+k}\right)&=(1-\omega)^2\textrm{E}(X_n,X_{n+k})+2(1-\omega)\omega(2(1-\phi_1)-\phi_2)\textrm{E}(X_n,X_{n+k})\\&+\omega^2(2(1-\phi_1)-\phi_2)^2\textrm{E}(X_n,X_{n+k})\\&=\textrm{E}(X_n,X_{n+k})\left((1-\omega)^2+2(1-\omega)\omega(2(1-\phi_1)-\phi_2)+\omega^2(2(1-\phi_1)-\phi_2)^2\right)\\&=\textrm{E}(X_n,X_{n+k})\left((1-\omega)+\omega(2(1-\phi_1)-\phi_2)\right)^2\\&=\textrm{E}(X_n,X_{n+k})(1-\omega(1-\left(2(1-\phi_1)-\phi_2\right)))^2.
+\end{align*}
+Finally, 
+\begin{align*}
+\textrm{Cov}\left(Y_n,Y_{n+k}\right)&=(\sigma_X^2\alpha^k+\mu_X^2)(1-\omega(1-\left(2(1-\phi_1)-\phi_2\right)))^2-\mu_X^2(1-\omega\left(1-\left(2(1-\phi_1)-\phi_2\right)\right))^2\\&=\mu_X\alpha^k(1-\omega(1-\left(2(1-\phi_1)-\phi_2\right)))^2
+\end{align*}
+where $\textrm{E}(X_n)=\mu_X=\sigma_X^2=\textrm{Var}(X_n)=$ and $\textrm{E}(X_n,X_{n+k})=(\sigma_X^2\alpha^k+\mu_X^2)$.
+
+\medskip
+
+\noindent The auto-correlation function (ACF) of the observed process takes then the following expression:
+\begin{align*}
+\textrm{Cor}\left(Y_n,Y_{n+k}\right)&=\frac{\alpha^k(1-\omega(1-\left(2(1-\phi_1)-\phi_2\right)))^2}{\left(1-\omega\left(1-\left(4\left(1-\phi_1\right)-\phi_2\right)\right)\right)+\mu_X\omega(1-\omega)\left(1-\left(2\left(1-\phi_1\right)-\phi_2\right)\right)^2}=\alpha^k \textrm{c}(\alpha,\lambda,\omega,\phi_1,\phi_2).
+\end{align*}
+
+\medskip
+
+\noindent The above computations can be extended to the case where the misreporting states are correlated through a two-state Markov chain. Suppose this new model, which assumes misreporting and a dependence structure between these misreporting states, is $R_n$. \\ As a result, the expectation and variance of this new process, that is, $\textrm{E}(R_n)$ and $\textrm{Var}(R_n)$ remain equal to those presented above. The latter is because the marginal distribution of $R_n$ is the same than of $Y_n$, that is, the mixture of a Poisson distribution and 2nd-Hermite distribution (\ref{eq:mix}). 
+
+\medskip
+
+\noindent However, this is not true for the auto-covariance and auto-correlation function of $R_n$, which should be more complex. In this sense, the covariance of the process $R_n$ can be computed as follows. 
+
+\medskip
+
+\noindent Recall that ${\bf 1}_n$ is an indicator of the state of misreporting (over- or under-reporting) in the sense that ${\bf 1}_n \sim \textrm{Bernoulli}(\omega)$. Suppose now that there is a dependence structure among these states through a binary Markov chain. From Fern\'andez {\it et al.} (submitted), the transition probability ${\bf P}$ is: 
+ \[
+   {\bf P}=
+  \left[ {\begin{array}{cc}
+   1-p_{01} & p_{01} \\
+   p_{01}\frac{1-\omega}{\omega} & 1-p_{01}\frac{1-\omega}{\omega} \\
+  \end{array} } \right]. 
+\]
+As proved in Fern\'andez {\it et al.} (submitted), the ${\bf P}^k$ transition matrix can be written in terms of $p_{01}^k$. It is also worthy to consider that the parameter $p_{01}$ can be written in terms of the second eigenvalue of {\bf P}, that is, $p_{01}=\omega(1-\lambda_2)$, where $\lambda_2$ is the second value of {\bf P}. 
+
+Assume that processes ${\bf 1}_n$ and $R_n$ are mutually independent. Similarly to expression (\ref{cov}) and (\ref{exp}), then:
+{\small \begin{align*}
+\textrm{E}\left(X_n(1-{\bf 1}_n),X_{n+k}({1-\bf 1}_n)\right)&=\textrm{E}\left(X_n,X_{n+k}\right)\textrm{P}({\bf 1}_n=0,{\bf 1}_{n+k}=0)=\textrm{E}\left(X_n,X_{n+k}\right)(1-\omega)(1-\omega(1-\lambda_2^k)),\\
+\textrm{E}\left(X_n(1-{\bf 1}_n),\theta \Diamond X_{n+k}{\bf 1}_n\right)&=\textrm{E}\left(X_n,X_{n+k}\right)(2(1-\phi_1)-\phi_2)\textrm{P}({\bf 1}_n=0,{\bf 1}_{n+k}=1)\\&=\textrm{E}\left(X_n,X_{n+k}\right)(2(1-\phi_1)-\phi_2)\omega(1-\omega)(1-\lambda_2^k),\\
+\textrm{E}\left(\theta \Diamond X_n{\bf 1}_n,\theta \Diamond X_{n+k}{\bf 1}_n\right)&=\textrm{E}\left(X_n,X_{n+k}\right)(2(1-\phi_1)-\phi_2)^2\textrm{P}(X_n=1, X_{n+k}=1)\\ &=\textrm{E}\left(X_n,X_{n+k}\right)(2(1-\phi_1)-\phi_2)^2\omega(1-(1-\omega)(1-\lambda_2^k)).
+\end{align*}}
+
+\noindent From the computations above:
+\begin{align*}
+&\textrm{E}(R_n,R_{n+k})=\textrm{E}(X_n,X_{n+k})\left(\left(1-\omega\left(1-(2(1-\phi_1)-\phi_2)^2\right)\right)-\omega(1-\omega)(1-(2(1-\phi_1)-\phi_2))^2(1-\lambda_2^k)\right)=\\&=(\alpha^k\sigma_X^2+\mu_X^2)\left(\left(1-\omega\left(1-(2(1-\phi_1)-\phi_2)^2\right)\right)-\omega(1-\omega)(1-(2(1-\phi_1)-\phi_2))^2(1-\lambda_2^k)\right)^2,
+\end{align*}
+and the ACV function takes the following expression:
+\begin{align*}
+&\textrm{Cov}(R_n,R_{n+k})=\textrm{E}(R_n,R_{n+k})-\textrm{E}(R_n)\textrm{E}(R_{n+k})=\\&=(\alpha^k\sigma_X^2+\mu_X^2)\left(\left(1-\omega\left(1-(2(1-\phi_1)-\phi_2)^2\right)\right)-\omega(1-\omega)(1-(2(1-\phi_1)-\phi_2))^2(1-\lambda_2^k)\right)\\ &- \mu_X^2\left(1-\omega\left(1-\left(2(1-\phi_1)-\phi_2\right)\right)\right)^2=\\&=(\alpha^k\sigma_X^2+\mu_X^2)\left(1-\omega\left(1-\left(2(1-\phi_1)-\phi_2\right)\right)\right)^2+(\alpha^k\sigma_X^2+\mu_X^2)\left(\lambda_2^k\omega(1-\omega)(1-\left(2(1-\phi_1)-\phi_2\right))^2\right)\\&-\mu_X^2\left(1-\omega\left(1-\left(2(1-\phi_1)-\phi_2\right)\right)\right)^2=\\&=\alpha^k\sigma_X^2\left(1-\omega\left(1-\left(2(1-\phi_1)-\phi_2\right)\right)\right)^2+\mu_X^2\lambda_2^k\omega(1-\omega)(1-\left(2(1-\phi_1)-\phi_2\right))^2+\\&+\sigma_X^2(\alpha\lambda)^k\omega(1-\omega)(1-\left(2(1-\phi_1)-\phi_2\right))^2. 
+\end{align*}
+
+\noindent Finally, the ACF can be written as follows: 
+{\scriptsize
+\begin{align}
+\textrm{Cor}(R_n,R_{n+k})=\frac{\alpha^k\left(1-\omega\left(1-\left(2(1-\phi_1)-\phi_2\right)\right)\right)^2+\mu_X\lambda_2^k\omega(1-\omega)(1-\left(2(1-\phi_1)-\phi_2\right))^2+(\alpha\lambda)^k\omega(1-\omega)(1-\left(2(1-\phi_1)-\phi_2\right))^2}{\left(1-\omega\left(1-\left(4\left(1-\phi_1\right)-\phi_2\right)\right)\right)+\mu_X\omega(1-\omega)\left(1-\left(2\left(1-\phi_1\right)-\phi_2\right)\right)^2}
+\end{align}}
+
+\subsection{Parameters estimation}
+\subsubsection{Moment-based method}
+\subsubsection{Likelihood-based method}
+
+\noindent The parameters of the model can be estimated through the likelihood function. To do so, the forward algorithm can be used since the direct computation of the likelihood is not tractable. More details on the computations of the expression of the likelihood function of model based on the forward algorithm can be found in Fern\'andez-Fontelo {\it et al.} (2016, 2019). In the scenario considered in this work, the forward probabilities can be computed following the expression:
+
+\begin{align}
+&\gamma_n\left(\boldsymbol{y}_{1:n},x_n\right)=& \sum_{x_{n-1}}\textrm{P}\left(Y_n=y_n|X_n=x_n\right)\textrm{P}\left(X_n=x_n|X_{n-1}=x_{n-1}\right) \gamma_{n-1}\left(\boldsymbol{y}_{1:n-1},x_{n-1}\right)
+\end{align}
+
+\noindent where the emission probabilities take the following expression:
+ \begin{align}
+\textrm{P}(Y_n=y_n|X_n=x_n)=\begin{cases} 
+0 &  \textrm{if} \quad y_n<x_n<\frac{y_n}{2} , \\
+(1-\omega)+\omega \frac{x_n!}{n_0!n_1!n_2!}(1-\phi_1-\phi_2)^{n_0}\phi_1^{n_1}\phi_2^{n_2} &  \textrm{if} \quad y_n=x_n , \\
+\omega \frac{x_n!}{n_0!n_1!n_2!}(1-\phi_1-\phi_2)^{n_0}\phi_1^{n_1}\phi_2^{n_2} &  \textrm{if} \quad  \frac{y_n}{2}\leq x_n <y_n, \\
+1 & \textrm{if} \quad  y_n=0,
+\end{cases}
+\end{align}
+
+\noindent being $n_0$, $n_1$ and $n_2$ the number of 0, 1 and 2, respectively, in a sequence of length $x_n$ (e.g., $\{W_1=w_1, W_2=w_2, \dots W_{x_n}=w_{x_n}\}$) restricted to $\sum_{i=1}^{x_n}w_i=y_n$. Given the observed value of $y_n$ and a potential value of $x_n$, the number of possible sequences of 0, 1 and 2 keeping the above mentioned conditions is likely greater than one. In that case, the sum of probabilities of each possible sequence will be the emission probability of $Y_n=y_n|X_n=x_n$. Notice that in the case that $W_i \sim \textrm{Binomial}(2,\phi)$, the emission probabilities are as follows:
+ \begin{align}
+\textrm{P}(Y_n=y_n|X_n=x_n)=\begin{cases} 
+0 &  \textrm{if} \quad y_n<x_n<\frac{y_n}{2} , \\
+(1-\omega)+\omega \binom{2x_n}{y_n}\phi^{y_n}(1-\phi)^{2x_n-y_n}&  \textrm{if} \quad y_n=x_n , \\
+\omega \binom{2x_n}{y_n}\phi^{y_n}(1-\phi)^{2x_n-y_n} &  \textrm{if} \quad  \frac{y_n}{2}\leq x_n <y_n, \\
+1 & \textrm{if} \quad  y_n=0.
+\end{cases}
+\end{align}
+
+\noindent The transition probabilities remain the same to those proposed in the under-reporting scenarios since the underlying process still follows the same model. However, other interesting structures for the latent process can be considered such as an INAR(1) process with second-order Hermite distributed innovations or even a temporally uncorrelated model (e.g., Poisson or second-order Hermite models, etc). 
+
+\noindent Finally, the likelihood function of the process $\{Y_n\}$ can be computed recursively through:
+\begin{align}
+\label{for:LF}
+\textrm{P}(\boldsymbol{Y}_{1:N}=\boldsymbol{y}_{1:N})=\textrm{P}\left(Y_1=y_1,Y_2=y_2,\dots,Y_N=y_N\right)=\sum_{x_N=\frac{y_N}{2}}^{y_N}\gamma_N\left(\boldsymbol{y}_{1:N},x_N\right),
+\end{align}
+
+\noindent taking $\textrm{P}(X_1=x_1)=\textrm{Poisson}(\frac{\lambda}{1-\alpha})$, or $\textrm{Hermite}()$ in case the innovations of the INAR(1) process are second-order Hermite distributed. 
+
+\medskip
+
+\noindent The results above can be extended to the case of dependence between the states of misreporting. \\ (TO DO)
+
+\section{Simulation study}
+\section{Application}
+\section{Discussion}
+
+\section*{Appendix}
+\appendix
+\subsection*{INAR(1) model based on the fattering-thinning operator}
+
+Suppose a version of the INAR(1) model with the following structure: 
+\begin{align}\label{eq:newINAR}
+X_n=\theta \Diamond X_{n-1}+Z_n
+\end{align}
+where $X_n \sim \textrm{Poisson}(\lambda)$, and $\theta \Diamond X_{n-1}$ the fattering-thinning operator (\ref{eq1:fatteringthinning}) and (\ref{eq2:pmfW}). Taking the pgf of $X_n$ (\ref{eq3:pgfpox}) and $\theta \Diamond X_{n-1}$ (\ref{eq3:pgffath}), the pgf function of $Z_n$ takes the following expression:
+\begin{align}\label{eq:pgf1}
+\textrm{G}_Z(s)=\frac{\textrm{e}^{\lambda(s-1)}}{\textrm{e}^{\lambda\left(\phi_2(s-1)+(1-\phi_1-\phi_2)(s^2-1)\right)}}=\textrm{e}^{\lambda\left((1-\phi_2)(s-1)+(\phi_1+\phi_2-1)(s^2-1)\right)}.
+\end{align}
+Expression (\ref{eq:pgf1}) reminds the pgf of a 2nd-Hermite distribution. However, according to Kemp and Kemp (1965), both parameters of the 2nd-Hermite should be positive. In this case, $\phi_1+\phi_2-1<0$ and, hence, the expression (\ref{eq:pgf1}) is not a pgf. The latter means that the marginal distribution of the process (\ref{eq:newINAR}) cannot be Poisson. 
+
+\medskip
+
+\noindent On the other hand, suppose now that $X_n \sim \textrm{Hermite}(a_1,a_2)$, then 
+\begin{align*}
+\textrm{G}_X(\textrm{G}_W(s))&=\textrm{e}^{a_1\left(\phi_1+\phi_2s+(1-\phi_1-\phi_2)s^2-1\right)+a_2\left(\left(\phi_1+\phi_2s+(1-\phi_1-\phi_2)s^2\right)^2-1\right)}\\&=\textrm{e}^{\left(a_1(\phi_1^2-1)+a_2(\phi_1^2-1)\right)+\left(a_1\phi_2+2\phi_1\phi_2\right)s+\left(a_1(1-\phi_1-\phi_2)+a_2(2\phi_1(1-\phi_1-\phi_2)+\phi_2^2)\right)s^2}\\ &\textrm{e}^{2a_2\phi_2(1-\phi_1-\phi_2)s^3+a_2(1-(\phi_1+\phi_2))^2s^4},
+\end{align*}
+which is the pgf of a 4th-Hermite with parameters $b_1=a_1\phi_2+2\phi_1\phi_2$, $b_2=a_1(1-\phi_1-\phi_2)+a_2(2\phi_1(1-\phi_1-\phi_2)+\phi_2^2)$, $b_3=2a_2\phi_2(1-\phi_1-\phi_2)$ and $b_4=a_2(1-(\phi_1+\phi_2))^2$. Recalling that $\textrm{G}_Z(s)=\textrm{G}_X(s)/\textrm{G}_X(\textrm{G}_W(s))$, the marginal distribution of $X_n$ cannot neither be a 2nd-Hermite since the parameter of $s^4$ is $-a_2(1-(\phi_1+\phi_2))^2<0$, but it should be positive to be the pgf of a 4th-Hermite distribution. 
+
+\medskip
+
+\noindent Other count distributions for $X_n$ have considered such as the Binomial, Negative Binomial and Geometric. However, none of them leads to a proper known probability generating function and, hence, a known distribution for the innovations of the process in (\ref{eq:newINAR}). 
+
+\medskip
+
+\noindent From another point of view, let $Z_n \sim \textrm{Poisson}(\lambda)$, then the distribution of $X_n$ can be determined by:
+\begin{align}
+\frac{G_X(s)}{G_X(\phi_1+\phi_2s+(1-\phi_1-\phi_2)s^2)}=\textrm{e}^{\lambda(s-1)}.
+\end{align}
+However, any known probability generating function solves this equality. The latter means that, when innovations are Poisson, the marginal distribution of the model (\ref{eq:newINAR}) is unknown. \\ In the same way, when $Z_n \sim \textrm{Hermite}(a_1,a_2)$, the marginal distribution of $X_n$ is unknown since there is not a (known) probability generating function solving the following equality:
+\begin{align}
+\frac{G_X(s)}{G_X(\phi_1+\phi_2s+(1-\phi_1-\phi_2)s^2)}=\textrm{e}^{a_1(s-1)+a_2(s^2-1)}.
+\end{align}
+
+
+\section*{References}
+
+\begin{enumerate}
+\item Fern\'andez-Fontelo, A., Caba\~na, A., Joe, H., Puig, P. and Mori\~na, D. Untangling serially dependent under-reported count data from gender-based violence. Under review. 
+\item Fern\'andez-Fontelo, A., Caba\~na, A., Puig, P. and Mori\~na, D. (2016). Under-reported data analysis with INAR-hidden Markov chains. Statistics in Medicine, 35: 4875-4890.
+\item Kemp, C.D. and Kemp, A.W. (1965). Some properties of the ``Hermite" distribution. Biometrika, 52: 381–394.
+\end{enumerate}
+
+\end{document}
+

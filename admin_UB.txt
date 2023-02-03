@@ -1,0 +1,14 @@
+Centre gestor:
+2655EC02010000
+
+Posició pressupostària:
+D/689000700/C2022A/G00
+
+Fons:
+ELRN002254
+
+ElementPEP:
+RN002254
+
+Prog.pres.
+RN002254

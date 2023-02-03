@@ -1,0 +1,366 @@
+[1] "Andalucía"
+
+Summary of theta:
+      phi[0]              alpha[1]            intercept           gamma[1]            omega               sigma             
+[1,]  Min.   :380.3       Min.   :0.4354      Min.   :0.009236    Min.   :0.002526    Min.   :0.005483    Min.   :238.4     
+[2,]  1st Qu.:380.9       1st Qu.:0.7512      1st Qu.:0.286048    1st Qu.:0.359798    1st Qu.:0.886153    1st Qu.:239.5     
+[3,]  Median :381.3       Median :0.7939      Median :0.555004    Median :1.001276    Median :0.957977    Median :240.0     
+[4,]  Mean   :381.6       Mean   :0.7901      Mean   :0.651789    Mean   :0.978193    Mean   :0.851759    Mean   :239.9     
+[5,]  3rd Qu.:382.3       3rd Qu.:0.8294      3rd Qu.:0.904691    3rd Qu.:1.587532    3rd Qu.:0.982975    3rd Qu.:240.3     
+[6,]  Max.   :384.1       Max.   :0.9991      Max.   :2.006540    Max.   :1.999859    Max.   :0.999996    Max.   :241.1     
+      q                   m                   beta[0]             beta[1]             beta[2]           
+[1,]  Min.   :0.006807    Min.   :3.669       Min.   :-3.0947     Min.   :0.2759      Min.   :-2.2861   
+[2,]  1st Qu.:0.409662    1st Qu.:4.816       1st Qu.:-1.7735     1st Qu.:1.4701      1st Qu.:-1.6755   
+[3,]  Median :0.452245    Median :5.479       Median :-0.9926     Median :1.8641      Median :-0.5695   
+[4,]  Mean   :0.477369    Mean   :5.497       Mean   :-1.0083     Mean   :1.8844      Mean   :-0.8831   
+[5,]  3rd Qu.:0.512053    3rd Qu.:6.078       3rd Qu.:-0.2000     3rd Qu.:2.3522      3rd Qu.:-0.3154   
+[6,]  Max.   :0.998519    Max.   :7.400       Max.   : 1.0294     Max.   :3.1344      Max.   : 0.2918   
+
+
+[1] "Aragón"
+
+Summary of theta:
+      phi[0]             alpha[1]           intercept          gamma[1]           omega              sigma            
+[1,]  Min.   :1704       Min.   :0.2409     Min.   :0.04269    Min.   :0.01898    Min.   :0.7765     Min.   :1016     
+[2,]  1st Qu.:1705       1st Qu.:0.4694     1st Qu.:0.59279    1st Qu.:0.28261    1st Qu.:0.9712     1st Qu.:1016     
+[3,]  Median :1705       Median :0.4907     Median :0.79562    Median :0.38588    Median :0.9736     Median :1016     
+[4,]  Mean   :1705       Mean   :0.5904     Mean   :0.68752    Mean   :0.40163    Mean   :0.9709     Mean   :1016     
+[5,]  3rd Qu.:1706       3rd Qu.:0.8000     3rd Qu.:0.82209    3rd Qu.:0.42490    3rd Qu.:0.9763     3rd Qu.:1017     
+[6,]  Max.   :1706       Max.   :0.9319     Max.   :1.53473    Max.   :1.08627    Max.   :0.9994     Max.   :1017     
+      q                  m                  beta[0]            beta[1]            beta[2]          
+[1,]  Min.   :0.02602    Min.   :6.868      Min.   :-0.4797    Min.   :0.300      Min.   :-1.6154  
+[2,]  1st Qu.:0.04853    1st Qu.:6.898      1st Qu.: 0.4142    1st Qu.:1.189      1st Qu.:-0.7924  
+[3,]  Median :0.04974    Median :7.111      Median : 0.8065    Median :1.294      Median : 0.2047  
+[4,]  Mean   :0.14341    Mean   :7.362      Mean   : 0.6053    Mean   :1.371      Mean   :-0.2177  
+[5,]  3rd Qu.:0.28760    3rd Qu.:7.755      3rd Qu.: 0.8127    3rd Qu.:1.317      3rd Qu.: 0.2774  
+[6,]  Max.   :0.90000    Max.   :9.096      Max.   : 1.3259    Max.   :2.956      Max.   : 0.4222  
+
+
+[1] "Canarias"
+
+Summary of theta:
+      phi[0]               alpha[1]             intercept            gamma[1]             omega              
+[1,]  Min.   :537.5        Min.   :0.3535       Min.   :0.1498       Min.   :0.0009734    Min.   :0.5243     
+[2,]  1st Qu.:538.4        1st Qu.:0.7764       1st Qu.:0.7793       1st Qu.:0.1176144    1st Qu.:0.9570     
+[3,]  Median :538.8        Median :0.8184       Median :1.0124       Median :0.5066606    Median :0.9760     
+[4,]  Mean   :538.9        Mean   :0.8158       Mean   :1.0069       Mean   :0.6751828    Mean   :0.9652     
+[5,]  3rd Qu.:539.2        3rd Qu.:0.8603       3rd Qu.:1.2353       3rd Qu.:1.1044446    3rd Qu.:0.9875     
+[6,]  Max.   :540.5        Max.   :0.9777       Max.   :1.8740       Max.   :1.9604175    Max.   :0.9998     
+      sigma                q                    m                    beta[0]              beta[1]            
+[1,]  Min.   :464.0        Min.   :0.1904       Min.   :2.193        Min.   :-0.5758      Min.   :-0.837680  
+[2,]  1st Qu.:464.6        1st Qu.:0.2889       1st Qu.:3.648        1st Qu.: 0.4208      1st Qu.:-0.008069  
+[3,]  Median :464.9        Median :0.3242       Median :4.210        Median : 1.6574      Median : 0.288366  
+[4,]  Mean   :465.0        Mean   :0.3306       Mean   :4.492        Mean   : 1.4191      Mean   : 0.266703  
+[5,]  3rd Qu.:465.5        3rd Qu.:0.3583       3rd Qu.:5.091        3rd Qu.: 1.9638      3rd Qu.: 0.473048  
+[6,]  Max.   :466.3        Max.   :0.7583       Max.   :7.500        Max.   : 3.7923      Max.   : 1.442635  
+      beta[2]            
+[1,]  Min.   :-1.8519    
+[2,]  1st Qu.:-0.7836    
+[3,]  Median :-0.4759    
+[4,]  Mean   :-0.5243    
+[5,]  3rd Qu.:-0.1809    
+[6,]  Max.   : 0.5345    
+
+
+[1] "Cantabria"
+
+Summary of theta:
+      phi[0]             alpha[1]           intercept          gamma[1]           omega              sigma            
+[1,]  Min.   :1376       Min.   :0.7276     Min.   :0.3001     Min.   :0.03974    Min.   :0.2753     Min.   :684.9    
+[2,]  1st Qu.:1376       1st Qu.:0.8269     1st Qu.:1.8615     1st Qu.:0.42551    1st Qu.:0.9497     1st Qu.:685.8    
+[3,]  Median :1377       Median :0.8552     Median :2.8161     Median :0.65934    Median :0.9710     Median :686.3    
+[4,]  Mean   :1377       Mean   :0.8634     Mean   :2.8828     Mean   :0.64003    Mean   :0.9344     Mean   :686.2    
+[5,]  3rd Qu.:1377       3rd Qu.:0.8952     3rd Qu.:4.1778     3rd Qu.:0.83855    3rd Qu.:0.9868     3rd Qu.:686.6    
+[6,]  Max.   :1378       Max.   :0.9970     Max.   :4.7197     Max.   :1.37065    Max.   :0.9993     Max.   :687.8    
+      q                  m                  beta[0]            beta[1]            beta[2]          
+[1,]  Min.   :0.02754    Min.   :4.016      Min.   :-1.0353    Min.   :-1.8139    Min.   :-2.7912  
+[2,]  1st Qu.:0.28372    1st Qu.:5.408      1st Qu.:-0.3614    1st Qu.:-1.1809    1st Qu.:-2.1891  
+[3,]  Median :0.31497    Median :6.480      Median : 0.1982    Median :-0.6539    Median :-1.2286  
+[4,]  Mean   :0.32018    Mean   :6.143      Mean   : 0.1010    Mean   :-0.7270    Mean   :-1.2917  
+[5,]  3rd Qu.:0.35156    3rd Qu.:7.041      3rd Qu.: 0.5097    3rd Qu.:-0.3629    3rd Qu.:-0.4200  
+[6,]  Max.   :0.90000    Max.   :7.655      Max.   : 1.0849    Max.   : 0.4412    Max.   : 0.3628  
+
+
+[1] "Castilla - La Mancha"
+
+Summary of theta:
+      phi[0]              alpha[1]            intercept           gamma[1]            omega               sigma             
+[1,]  Min.   :975.2       Min.   :0.6363      Min.   :0.1146      Min.   :0.005029    Min.   :0.007661    Min.   :561.2     
+[2,]  1st Qu.:975.9       1st Qu.:0.7882      1st Qu.:0.7326      1st Qu.:0.269124    1st Qu.:0.925619    1st Qu.:562.7     
+[3,]  Median :976.9       Median :0.8175      Median :0.9977      Median :0.865757    Median :0.963280    Median :563.8     
+[4,]  Mean   :976.7       Mean   :0.8171      Mean   :1.1406      Mean   :0.959777    Mean   :0.877227    Mean   :563.7     
+[5,]  3rd Qu.:977.3       3rd Qu.:0.8450      3rd Qu.:1.5158      3rd Qu.:1.652263    3rd Qu.:0.986247    3rd Qu.:564.7     
+[6,]  Max.   :978.6       Max.   :0.9987      Max.   :2.6490      Max.   :1.996872    Max.   :0.999681    Max.   :565.4     
+      q                   m                   beta[0]             beta[1]             beta[2]           
+[1,]  Min.   :0.003815    Min.   :5.059       Min.   :-0.05529    Min.   :-1.5331     Min.   :-1.5262   
+[2,]  1st Qu.:0.303839    1st Qu.:5.677       1st Qu.: 0.51967    1st Qu.: 0.4884     1st Qu.:-0.7170   
+[3,]  Median :0.357228    Median :5.987       Median : 0.86210    Median : 0.7795     Median :-0.4120   
+[4,]  Mean   :0.353744    Mean   :6.189       Mean   : 0.88542    Mean   : 0.6913     Mean   :-0.4753   
+[5,]  3rd Qu.:0.389796    3rd Qu.:6.675       3rd Qu.: 1.15609    3rd Qu.: 1.1188     3rd Qu.:-0.2063   
+[6,]  Max.   :0.900000    Max.   :7.698       Max.   : 2.69791    Max.   : 2.4313     Max.   : 0.3000   
+
+
+[1] "Castilla y León"
+
+Summary of theta:
+      phi[0]              alpha[1]            intercept           gamma[1]            omega               sigma             
+[1,]  Min.   :735.4       Min.   :0.3996      Min.   :0.000493    Min.   :0.004567    Min.   :0.6743      Min.   :633.4     
+[2,]  1st Qu.:736.5       1st Qu.:0.7462      1st Qu.:0.393712    1st Qu.:0.309475    1st Qu.:0.9615      1st Qu.:633.9     
+[3,]  Median :737.0       Median :0.7842      Median :1.597572    Median :0.529971    Median :0.9789      Median :635.0     
+[4,]  Mean   :736.9       Mean   :0.7835      Mean   :1.613939    Mean   :0.514333    Mean   :0.9714      Mean   :634.8     
+[5,]  3rd Qu.:737.3       3rd Qu.:0.8264      3rd Qu.:2.603655    3rd Qu.:0.699918    3rd Qu.:0.9899      3rd Qu.:635.4     
+[6,]  Max.   :737.9       Max.   :0.9743      Max.   :3.506988    Max.   :1.164806    Max.   :0.9997      Max.   :636.4     
+      q                   m                   beta[0]             beta[1]             beta[2]           
+[1,]  Min.   :0.1558      Min.   :5.853       Min.   :0.07802     Min.   :-0.82256    Min.   :-1.3689   
+[2,]  1st Qu.:0.3396      1st Qu.:6.292       1st Qu.:0.68079     1st Qu.:-0.18069    1st Qu.:-0.6320   
+[3,]  Median :0.3770      Median :6.473       Median :0.84559     Median : 0.04215    Median :-0.4096   
+[4,]  Mean   :0.3734      Mean   :6.593       Mean   :0.86724     Mean   : 0.12421    Mean   :-0.4621   
+[5,]  3rd Qu.:0.3999      3rd Qu.:6.852       3rd Qu.:1.02750     3rd Qu.: 0.33706    3rd Qu.:-0.2239   
+[6,]  Max.   :0.9311      Max.   :7.703       Max.   :1.73933     Max.   : 1.10180    Max.   : 0.3000   
+
+
+[1] "Cataluña"
+
+Summary of theta:
+      phi[0]               alpha[1]             intercept            gamma[1]             omega                sigma              
+[1,]  Min.   :879.4        Min.   :0.4289       Min.   :0.1998       Min.   :0.0001547    Min.   :0.2454       Min.   :858.7      
+[2,]  1st Qu.:880.6        1st Qu.:0.7452       1st Qu.:0.6613       1st Qu.:0.2834376    1st Qu.:0.9624       1st Qu.:859.1      
+[3,]  Median :880.9        Median :0.7950       Median :0.9429       Median :0.7132152    Median :0.9820       Median :859.5      
+[4,]  Mean   :880.9        Mean   :0.7841       Mean   :0.9435       Mean   :0.6846924    Mean   :0.9521       Mean   :859.7      
+[5,]  3rd Qu.:881.3        3rd Qu.:0.8230       3rd Qu.:1.2452       3rd Qu.:0.8782314    3rd Qu.:0.9932       3rd Qu.:860.2      
+[6,]  Max.   :882.5        Max.   :0.9832       Max.   :1.7683       Max.   :1.9892880    Max.   :0.9998       Max.   :861.1      
+      q                    m                    beta[0]              beta[1]              beta[2]            
+[1,]  Min.   :0.1764       Min.   :1.322        Min.   :-0.04662     Min.   :-0.9669      Min.   :-1.4047    
+[2,]  1st Qu.:0.3290       1st Qu.:3.353        1st Qu.: 0.37511     1st Qu.:-0.1387      1st Qu.:-0.8566    
+[3,]  Median :0.3545       Median :3.613        Median : 0.95307     Median : 0.3672      Median :-0.6886    
+[4,]  Mean   :0.3769       Mean   :4.193        Mean   : 0.85576     Mean   : 0.2777      Mean   :-0.5549    
+[5,]  3rd Qu.:0.3857       3rd Qu.:5.554        3rd Qu.: 1.15299     3rd Qu.: 0.7136      3rd Qu.:-0.1510    
+[6,]  Max.   :0.9795       Max.   :7.414        Max.   : 2.02243     Max.   : 1.4298      Max.   : 0.5850    
+
+
+[1] "Ceuta"
+
+Summary of theta:
+      phi[0]               alpha[1]             intercept            gamma[1]             omega                sigma              
+[1,]  Min.   :1103         Min.   :0.4403       Min.   :0.0007472    Min.   :0.009409     Min.   :0.02227      Min.   :969.4      
+[2,]  1st Qu.:1104         1st Qu.:0.7361       1st Qu.:0.4687160    1st Qu.:0.555615     1st Qu.:0.94415      1st Qu.:972.3      
+[3,]  Median :1105         Median :0.7852       Median :0.8109248    Median :0.917882     Median :0.97088      Median :972.9      
+[4,]  Mean   :1105         Mean   :0.7770       Mean   :0.8327009    Mean   :1.031129     Mean   :0.92731      Mean   :972.6      
+[5,]  3rd Qu.:1106         3rd Qu.:0.8229       3rd Qu.:1.1179723    3rd Qu.:1.601067     3rd Qu.:0.98799      3rd Qu.:973.2      
+[6,]  Max.   :1106         Max.   :0.9562       Max.   :2.4471510    Max.   :1.999687     Max.   :0.99983      Max.   :974.0      
+      q                    m                    beta[0]              beta[1]              beta[2]            
+[1,]  Min.   :0.09546      Min.   : 6.157       Min.   :0.2906       Min.   :-0.99892     Min.   :-2.7915    
+[2,]  1st Qu.:0.26764      1st Qu.: 8.336       1st Qu.:1.5144       1st Qu.:-0.41032     1st Qu.:-1.4547    
+[3,]  Median :0.30232      Median :10.162       Median :1.8872       Median :-0.03763     Median :-0.8455    
+[4,]  Mean   :0.33071      Mean   : 9.393       Mean   :1.8121       Mean   : 0.08913     Mean   :-0.9451    
+[5,]  3rd Qu.:0.34831      3rd Qu.:10.607       3rd Qu.:2.1293       3rd Qu.: 0.58503     3rd Qu.:-0.2365    
+[6,]  Max.   :0.99067      Max.   :11.592       Max.   :2.8296       Max.   : 1.38469     Max.   : 0.8358    
+
+
+[1] "Comunidad Foral de Navarra"
+
+Summary of theta:
+      phi[0]              alpha[1]            intercept           gamma[1]            omega               sigma             
+[1,]  Min.   :1252        Min.   :0.5525      Min.   :0.004957    Min.   :0.008117    Min.   :0.5873      Min.   :1102      
+[2,]  1st Qu.:1253        1st Qu.:0.7890      1st Qu.:0.426952    1st Qu.:0.318525    1st Qu.:0.9713      1st Qu.:1103      
+[3,]  Median :1253        Median :0.8234      Median :0.779788    Median :0.491078    Median :0.9836      Median :1104      
+[4,]  Mean   :1253        Mean   :0.8209      Mean   :0.813225    Mean   :0.646541    Mean   :0.9792      Mean   :1104      
+[5,]  3rd Qu.:1253        3rd Qu.:0.8645      3rd Qu.:1.052814    3rd Qu.:0.967443    3rd Qu.:0.9926      3rd Qu.:1104      
+[6,]  Max.   :1254        Max.   :0.9697      Max.   :1.805028    Max.   :1.960060    Max.   :0.9987      Max.   :1105      
+      q                   m                   beta[0]             beta[1]             beta[2]           
+[1,]  Min.   :0.1860      Min.   :5.840       Min.   :-1.0567     Min.   :-0.7313     Min.   :-1.5688   
+[2,]  1st Qu.:0.2887      1st Qu.:6.365       1st Qu.:-0.6816     1st Qu.: 0.8203     1st Qu.:-0.7351   
+[3,]  Median :0.3118      Median :6.838       Median :-0.2582     Median : 1.8491     Median :-0.5276   
+[4,]  Mean   :0.3158      Mean   :6.758       Mean   :-0.1163     Mean   : 1.4252     Mean   :-0.4754   
+[5,]  3rd Qu.:0.3381      3rd Qu.:7.109       3rd Qu.: 0.6198     3rd Qu.: 2.1434     3rd Qu.:-0.1679   
+[6,]  Max.   :0.9000      Max.   :7.666       Max.   : 1.0445     Max.   : 2.5364     Max.   : 0.3000   
+
+
+[1] "Comunidad Valenciana"
+
+Summary of theta:
+      phi[0]               alpha[1]             intercept            gamma[1]             omega                sigma              
+[1,]  Min.   :578.7        Min.   :0.6238       Min.   :0.0001367    Min.   :0.0001357    Min.   :0.3829       Min.   :665.7      
+[2,]  1st Qu.:579.2        1st Qu.:0.7514       1st Qu.:0.1461167    1st Qu.:0.2339807    1st Qu.:0.9666       1st Qu.:667.1      
+[3,]  Median :580.0        Median :0.7824       Median :0.4319454    Median :0.5094338    Median :0.9860       Median :667.6      
+[4,]  Mean   :579.9        Mean   :0.7810       Mean   :0.5112071    Mean   :0.4927506    Mean   :0.9738       Mean   :667.4      
+[5,]  3rd Qu.:580.5        3rd Qu.:0.8124       3rd Qu.:0.8002777    3rd Qu.:0.7402628    3rd Qu.:0.9963       3rd Qu.:667.8      
+[6,]  Max.   :581.2        Max.   :0.9594       Max.   :1.5051922    Max.   :1.3249454    Max.   :0.9995       Max.   :668.4      
+      q                    m                    beta[0]              beta[1]              beta[2]            
+[1,]  Min.   :0.2023       Min.   :3.198        Min.   :-0.4299      Min.   :0.2405       Min.   :-1.4252    
+[2,]  1st Qu.:0.3671       1st Qu.:4.253        1st Qu.: 0.2289      1st Qu.:1.3890       1st Qu.:-0.5293    
+[3,]  Median :0.3843       Median :4.826        Median : 0.6421      Median :1.7216       Median :-0.2094    
+[4,]  Mean   :0.3880       Mean   :5.163        Mean   : 0.7349      Mean   :1.6513       Mean   :-0.3408    
+[5,]  3rd Qu.:0.4059       3rd Qu.:6.140        3rd Qu.: 1.2745      3rd Qu.:1.9153       3rd Qu.:-0.1418    
+[6,]  Max.   :0.7351       Max.   :7.446        Max.   : 1.9145      Max.   :2.4122       Max.   : 0.3575    
+
+
+[1] "Extremadura"
+
+Summary of theta:
+      phi[0]              alpha[1]            intercept           gamma[1]            omega               sigma             
+[1,]  Min.   :541.8       Min.   :0.3758      Min.   :0.01053     Min.   :0.05472     Min.   :0.001749    Min.   :522.5     
+[2,]  1st Qu.:543.3       1st Qu.:0.7729      1st Qu.:0.66164     1st Qu.:1.34553     1st Qu.:0.486913    1st Qu.:523.3     
+[3,]  Median :544.0       Median :0.8178      Median :1.24166     Median :1.65257     Median :0.896262    Median :523.8     
+[4,]  Mean   :543.9       Mean   :0.8123      Mean   :1.80748     Mean   :1.50270     Mean   :0.702190    Mean   :523.9     
+[5,]  3rd Qu.:544.8       3rd Qu.:0.8589      3rd Qu.:3.04282     3rd Qu.:1.77532     3rd Qu.:0.968272    3rd Qu.:524.5     
+[6,]  Max.   :545.5       Max.   :0.9622      Max.   :4.67649     Max.   :1.98922     Max.   :0.999998    Max.   :525.5     
+      q                   m                   beta[0]             beta[1]             beta[2]           
+[1,]  Min.   :0.007783    Min.   :1.640       Min.   :-0.2574     Min.   :-1.4825     Min.   :-3.1199   
+[2,]  1st Qu.:0.393121    1st Qu.:2.790       1st Qu.: 1.9677     1st Qu.:-0.2968     1st Qu.:-1.5603   
+[3,]  Median :0.502994    Median :4.329       Median : 4.4586     Median : 1.2141     Median :-0.6862   
+[4,]  Mean   :0.547606    Mean   :4.392       Mean   : 3.5738     Mean   : 0.8968     Mean   :-0.9069   
+[5,]  3rd Qu.:0.699111    3rd Qu.:5.796       3rd Qu.: 5.0023     3rd Qu.: 1.8294     3rd Qu.:-0.3594   
+[6,]  Max.   :0.999111    Max.   :7.117       Max.   : 6.0076     Max.   : 3.6223     Max.   : 0.9652   
+
+
+[1] "Galicia"
+
+Summary of theta:
+      phi[0]             alpha[1]           intercept          gamma[1]           omega              sigma            
+[1,]  Min.   :613.0      Min.   :0.3997     Min.   :0.1135     Min.   :0.0156     Min.   :0.4901     Min.   :556.2    
+[2,]  1st Qu.:613.8      1st Qu.:0.8062     1st Qu.:0.4054     1st Qu.:0.1938     1st Qu.:0.9719     1st Qu.:556.8    
+[3,]  Median :614.1      Median :0.8419     Median :0.8837     Median :0.3694     Median :0.9847     Median :557.3    
+[4,]  Mean   :614.3      Mean   :0.8341     Mean   :1.0104     Mean   :0.3902     Mean   :0.9792     Mean   :557.3    
+[5,]  3rd Qu.:614.7      3rd Qu.:0.8674     3rd Qu.:1.5927     3rd Qu.:0.5060     3rd Qu.:0.9926     3rd Qu.:557.7    
+[6,]  Max.   :616.5      Max.   :0.9717     Max.   :2.4052     Max.   :0.9874     Max.   :0.9999     Max.   :558.3    
+      q                  m                  beta[0]            beta[1]            beta[2]          
+[1,]  Min.   :0.2200     Min.   :5.452      Min.   :-0.8369    Min.   :-2.9467    Min.   :-1.4073  
+[2,]  1st Qu.:0.2959     1st Qu.:6.368      1st Qu.:-0.2160    1st Qu.:-2.4042    1st Qu.:-0.7260  
+[3,]  Median :0.3296     Median :7.334      Median : 0.4099    Median :-1.3331    Median :-0.3009  
+[4,]  Mean   :0.3257     Mean   :6.921      Mean   : 0.8084    Mean   :-1.3980    Mean   :-0.4261  
+[5,]  3rd Qu.:0.3475     3rd Qu.:7.461      3rd Qu.: 2.0509    3rd Qu.:-0.5479    3rd Qu.:-0.1268  
+[6,]  Max.   :0.9156     Max.   :7.764      Max.   : 3.0514    Max.   : 0.3392    Max.   : 0.3000  
+
+
+[1] "Islas Baleares"
+
+Summary of theta:
+      phi[0]              alpha[1]            intercept           gamma[1]            omega               sigma             
+[1,]  Min.   :668.7       Min.   :0.4114      Min.   :0.02822     Min.   :0.009495    Min.   :0.1475      Min.   :591.2     
+[2,]  1st Qu.:669.5       1st Qu.:0.7840      1st Qu.:0.31961     1st Qu.:0.579750    1st Qu.:0.8762      1st Qu.:592.6     
+[3,]  Median :670.0       Median :0.8201      Median :0.99480     Median :1.481739    Median :0.9641      Median :593.5     
+[4,]  Mean   :670.1       Mean   :0.8171      Mean   :0.99840     Mean   :1.199985    Mean   :0.8741      Mean   :593.3     
+[5,]  3rd Qu.:670.5       3rd Qu.:0.8559      3rd Qu.:1.37132     3rd Qu.:1.710867    3rd Qu.:0.9841      3rd Qu.:594.1     
+[6,]  Max.   :672.3       Max.   :0.9963      Max.   :2.87874     Max.   :1.999648    Max.   :0.9996      Max.   :594.7     
+      q                   m                   beta[0]             beta[1]             beta[2]           
+[1,]  Min.   :0.1625      Min.   :5.900       Min.   :-1.2230     Min.   :-2.15394    Min.   :-2.6960   
+[2,]  1st Qu.:0.3461      1st Qu.:6.845       1st Qu.:-0.5615     1st Qu.:-1.35179    1st Qu.:-1.6693   
+[3,]  Median :0.3899      Median :7.461       Median :-0.2070     Median : 0.13614    Median :-1.3468   
+[4,]  Mean   :0.4746      Mean   :7.538       Mean   :-0.1125     Mean   : 0.09346    Mean   :-1.3624   
+[5,]  3rd Qu.:0.6078      3rd Qu.:8.152       3rd Qu.: 0.3243     3rd Qu.: 1.20665    3rd Qu.:-1.1041   
+[6,]  Max.   :0.9954      Max.   :9.532       Max.   : 1.1214     Max.   : 2.49737    Max.   : 0.3882   
+
+
+[1] "La Rioja"
+
+Summary of theta:
+      phi[0]             alpha[1]           intercept          gamma[1]           omega              sigma            
+[1,]  Min.   :1209       Min.   :0.5540     Min.   :0.00137    Min.   :0.0110     Min.   :0.7539     Min.   :842.2    
+[2,]  1st Qu.:1210       1st Qu.:0.7650     1st Qu.:0.37180    1st Qu.:0.5395     1st Qu.:0.9588     1st Qu.:843.5    
+[3,]  Median :1211       Median :0.7981     Median :0.57837    Median :0.7585     Median :0.9774     Median :844.6    
+[4,]  Mean   :1211       Mean   :0.7987     Mean   :0.64162    Mean   :0.7440     Mean   :0.9691     Mean   :844.3    
+[5,]  3rd Qu.:1211       3rd Qu.:0.8342     3rd Qu.:0.95029    3rd Qu.:0.9199     3rd Qu.:0.9880     3rd Qu.:845.2    
+[6,]  Max.   :1211       Max.   :0.9344     Max.   :1.63803    Max.   :1.4609     Max.   :0.9996     Max.   :845.8    
+      q                  m                  beta[0]            beta[1]            beta[2]          
+[1,]  Min.   :0.1438     Min.   :5.019      Min.   :-5.2854    Min.   :0.2924     Min.   :-2.7865  
+[2,]  1st Qu.:0.2904     1st Qu.:5.504      1st Qu.:-2.7108    1st Qu.:2.0940     1st Qu.:-2.2103  
+[3,]  Median :0.3236     Median :5.797      Median :-1.4335    Median :2.7838     Median :-1.1136  
+[4,]  Mean   :0.3227     Mean   :5.911      Mean   :-1.7912    Mean   :2.5959     Mean   :-1.1826  
+[5,]  3rd Qu.:0.3487     3rd Qu.:6.162      3rd Qu.:-1.0246    3rd Qu.:3.2424     3rd Qu.:-0.2898  
+[6,]  Max.   :0.9117     Max.   :7.805      Max.   : 0.6582    Max.   :4.2272     Max.   : 0.3020  
+
+
+[1] "Madrid"
+
+Summary of theta:
+      phi[0]               alpha[1]             intercept            gamma[1]             omega                sigma              
+[1,]  Min.   :613.3        Min.   :0.4927       Min.   :0.001939     Min.   :0.03349      Min.   :0.3156       Min.   :450.9      
+[2,]  1st Qu.:614.9        1st Qu.:0.7422       1st Qu.:0.253303     1st Qu.:0.70586      1st Qu.:0.9562       1st Qu.:451.4      
+[3,]  Median :615.1        Median :0.7961       Median :0.447549     Median :1.11447      Median :0.9752       Median :451.8      
+[4,]  Mean   :615.2        Mean   :0.7878       Mean   :0.633937     Mean   :1.01549      Mean   :0.9531       Mean   :451.9      
+[5,]  3rd Qu.:615.5        3rd Qu.:0.8400       3rd Qu.:1.041077     3rd Qu.:1.43971      3rd Qu.:0.9888       3rd Qu.:452.2      
+[6,]  Max.   :616.5        Max.   :0.9496       Max.   :2.312325     Max.   :1.98143      Max.   :0.9999       Max.   :453.5      
+      q                    m                    beta[0]              beta[1]              beta[2]            
+[1,]  Min.   :0.2541       Min.   :5.334        Min.   :-1.756987    Min.   :-0.6479      Min.   :-3.1075    
+[2,]  1st Qu.:0.3641       1st Qu.:6.665        1st Qu.:-0.408016    1st Qu.: 0.1320      1st Qu.:-1.8509    
+[3,]  Median :0.3971       Median :7.501        Median :-0.008336    Median : 0.4606      Median :-1.3748    
+[4,]  Mean   :0.3991       Mean   :7.376        Mean   :-0.051158    Mean   : 0.4916      Mean   :-1.4949    
+[5,]  3rd Qu.:0.4214       3rd Qu.:8.049        3rd Qu.: 0.427689    3rd Qu.: 0.8447      3rd Qu.:-1.1412    
+[6,]  Max.   :0.8306       Max.   :9.104        Max.   : 1.068821    Max.   : 1.6968      Max.   : 0.5315    
+
+
+[1] "Melilla"
+
+Summary of theta:
+      phi[0]              alpha[1]            intercept           gamma[1]            omega               sigma             
+[1,]  Min.   :831.6       Min.   :0.5446      Min.   :0.001831    Min.   :0.01069     Min.   :0.1576      Min.   :611.7     
+[2,]  1st Qu.:832.0       1st Qu.:0.7418      1st Qu.:0.182842    1st Qu.:0.31748     1st Qu.:0.9464      1st Qu.:612.5     
+[3,]  Median :832.6       Median :0.7835      Median :0.642341    Median :0.93966     Median :0.9728      Median :613.0     
+[4,]  Mean   :832.5       Mean   :0.7796      Mean   :0.686532    Mean   :0.89508     Mean   :0.9376      Mean   :613.0     
+[5,]  3rd Qu.:832.9       3rd Qu.:0.8164      3rd Qu.:0.992956    3rd Qu.:1.28901     3rd Qu.:0.9878      3rd Qu.:613.4     
+[6,]  Max.   :833.7       Max.   :0.9329      Max.   :2.274334    Max.   :1.99165     Max.   :0.9998      Max.   :614.6     
+      q                   m                   beta[0]             beta[1]             beta[2]           
+[1,]  Min.   :0.1464      Min.   :2.910       Min.   :-2.1100     Min.   :-0.1332     Min.   :-3.6039   
+[2,]  1st Qu.:0.3161      1st Qu.:4.519       1st Qu.:-1.1468     1st Qu.: 0.4611     1st Qu.:-2.1623   
+[3,]  Median :0.3466      Median :4.878       Median :-0.5401     Median : 1.0322     Median :-1.7633   
+[4,]  Mean   :0.3682      Mean   :4.871       Mean   :-0.5619     Mean   : 1.2429     Mean   :-1.7360   
+[5,]  3rd Qu.:0.3839      3rd Qu.:5.197       3rd Qu.:-0.0114     3rd Qu.: 1.5371     3rd Qu.:-1.4451   
+[6,]  Max.   :0.9332      Max.   :7.063       Max.   : 1.0852     Max.   : 3.8041     Max.   : 0.5532   
+
+
+[1] "País Vasco"
+
+Summary of theta:
+      phi[0]              alpha[1]            intercept           gamma[1]            omega               sigma             
+[1,]  Min.   :1612        Min.   :0.6956      Min.   :0.2703      Min.   :0.01814     Min.   :0.002073    Min.   :1048      
+[2,]  1st Qu.:1613        1st Qu.:0.7995      1st Qu.:1.2342      1st Qu.:0.82485     1st Qu.:0.956565    1st Qu.:1049      
+[3,]  Median :1613        Median :0.8521      Median :1.4943      Median :1.14218     Median :0.983033    Median :1050      
+[4,]  Mean   :1613        Mean   :0.8470      Mean   :1.6569      Mean   :1.21680     Mean   :0.920073    Mean   :1050      
+[5,]  3rd Qu.:1614        3rd Qu.:0.8877      3rd Qu.:2.3387      3rd Qu.:1.70966     3rd Qu.:0.994732    3rd Qu.:1050      
+[6,]  Max.   :1615        Max.   :0.9885      Max.   :2.9899      Max.   :1.99230     Max.   :0.999956    Max.   :1051      
+      q                   m                   beta[0]             beta[1]             beta[2]           
+[1,]  Min.   :0.04911     Min.   :6.771       Min.   :-1.17189    Min.   :-0.08896    Min.   :-2.1494   
+[2,]  1st Qu.:0.27695     1st Qu.:7.138       1st Qu.:-0.15585    1st Qu.: 0.46575    1st Qu.:-1.4630   
+[3,]  Median :0.29616     Median :7.704       Median : 0.12696    Median : 1.13907    Median :-0.8600   
+[4,]  Mean   :0.33689     Mean   :7.723       Mean   : 0.01586    Mean   : 1.12734    Mean   :-0.9159   
+[5,]  3rd Qu.:0.34768     3rd Qu.:8.180       3rd Qu.: 0.30065    3rd Qu.: 1.53217    3rd Qu.:-0.4234   
+[6,]  Max.   :0.99872     Max.   :8.910       Max.   : 0.84062    Max.   : 2.74294    Max.   : 0.3863   
+
+
+[1] "Principado de Asturias"
+
+Summary of theta:
+      phi[0]              alpha[1]            intercept           gamma[1]            omega               sigma             
+[1,]  Min.   :529.2       Min.   :0.5787      Min.   :0.3174      Min.   :0.1437      Min.   :0.4888      Min.   :529.2     
+[2,]  1st Qu.:529.6       1st Qu.:0.7814      1st Qu.:1.9245      1st Qu.:0.5264      1st Qu.:0.9675      1st Qu.:529.6     
+[3,]  Median :530.0       Median :0.8042      Median :2.5354      Median :0.6519      Median :0.9830      Median :530.8     
+[4,]  Mean   :530.1       Mean   :0.8091      Mean   :2.2775      Mean   :0.6890      Mean   :0.9754      Mean   :530.7     
+[5,]  3rd Qu.:530.5       3rd Qu.:0.8468      3rd Qu.:2.7410      3rd Qu.:0.8808      3rd Qu.:0.9921      3rd Qu.:531.6     
+[6,]  Max.   :530.9       Max.   :0.9963      Max.   :3.6308      Max.   :1.2851      Max.   :0.9999      Max.   :532.5     
+      q                   m                   beta[0]             beta[1]             beta[2]           
+[1,]  Min.   :0.2138      Min.   :3.331       Min.   :-0.98304    Min.   :-1.4443     Min.   :-2.9138   
+[2,]  1st Qu.:0.3261      1st Qu.:4.567       1st Qu.:-0.42673    1st Qu.:-0.8935     1st Qu.:-2.3156   
+[3,]  Median :0.3454      Median :5.091       Median :-0.29950    Median :-0.5922     Median :-2.0801   
+[4,]  Mean   :0.3518      Mean   :4.964       Mean   :-0.09787    Mean   :-0.6336     Mean   :-1.6146   
+[5,]  3rd Qu.:0.3730      3rd Qu.:5.401       3rd Qu.: 0.44997    3rd Qu.:-0.2584     3rd Qu.:-0.5870   
+[6,]  Max.   :0.9000      Max.   :7.209       Max.   : 1.26561    Max.   : 0.4618     Max.   : 0.4537   
+
+
+[1] "Región de Murcia"
+
+Summary of theta:
+      phi[0]              alpha[1]            intercept           gamma[1]            omega               sigma             
+[1,]  Min.   :537.2       Min.   :0.5547      Min.   :0.004254    Min.   :0.01483     Min.   :0.01261     Min.   :657.9     
+[2,]  1st Qu.:539.1       1st Qu.:0.7505      1st Qu.:0.539335    1st Qu.:0.50705     1st Qu.:0.92164     1st Qu.:658.9     
+[3,]  Median :541.8       Median :0.7969      Median :0.944414    Median :0.88726     Median :0.96680     Median :659.4     
+[4,]  Mean   :541.2       Mean   :0.7957      Mean   :1.101673    Mean   :0.97358     Mean   :0.87850     Mean   :659.3     
+[5,]  3rd Qu.:542.8       3rd Qu.:0.8406      3rd Qu.:1.605903    3rd Qu.:1.59090     3rd Qu.:0.98772     3rd Qu.:659.9     
+[6,]  Max.   :543.8       Max.   :0.9944      Max.   :2.896071    Max.   :1.98325     Max.   :0.99996     Max.   :660.5     
+      q                   m                   beta[0]             beta[1]             beta[2]           
+[1,]  Min.   :0.09973     Min.   :4.720       Min.   :-2.3373     Min.   :-2.4064     Min.   :-2.2025   
+[2,]  1st Qu.:0.38288     1st Qu.:5.765       1st Qu.:-1.1058     1st Qu.:-1.5122     1st Qu.:-1.4168   
+[3,]  Median :0.42987     Median :6.390       Median :-0.3940     Median :-0.8852     Median :-1.0858   
+[4,]  Mean   :0.45913     Mean   :6.327       Mean   :-0.4006     Mean   :-0.6434     Mean   :-1.0604   
+[5,]  3rd Qu.:0.48460     3rd Qu.:6.660       3rd Qu.: 0.1790     3rd Qu.: 0.6554     3rd Qu.:-0.7049   
+[6,]  Max.   :0.97918     Max.   :8.709       Max.   : 1.6614     Max.   : 1.2416     Max.   : 0.3000   

@@ -1,0 +1,51 @@
+This is BibTeX, Version 0.99d (TeX Live 2022)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: informe3_MAPFRE.aux
+The style file: ieeetrsrt.bst
+Database file #1: report.bib
+Warning--empty journal in brodersen_inferring_2015
+Warning--empty year in brodersen_inferring_2015
+Warning--empty journal in scott_predicting_nodate
+Warning--empty year in scott_predicting_nodate
+You've used 3 entries,
+            2199 wiz_defined-function locations,
+            540 strings with 4412 characters,
+and the built_in function-call counts, 809 in all, are:
+= -- 71
+> -- 48
+< -- 0
++ -- 19
+- -- 16
+* -- 63
+:= -- 144
+add.period$ -- 2
+call.type$ -- 3
+change.case$ -- 17
+chr.to.int$ -- 0
+cite$ -- 7
+duplicate$ -- 28
+empty$ -- 62
+format.name$ -- 16
+if$ -- 162
+int.to.chr$ -- 0
+int.to.str$ -- 3
+missing$ -- 2
+newline$ -- 13
+num.names$ -- 6
+pop$ -- 31
+preamble$ -- 1
+purify$ -- 14
+quote$ -- 0
+skip$ -- 16
+stack$ -- 0
+substring$ -- 15
+swap$ -- 0
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 12
+warning$ -- 4
+while$ -- 6
+width$ -- 4
+write$ -- 24
+(There were 4 warnings)

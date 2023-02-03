@@ -1,0 +1,28 @@
+### Scenario 1 underreporting: w=0.7 and moderate underreporting (phi1=0.2; phi2=0.3) 
+> colSums(coverage)/500*100
+ alpha lambda  omega   phi1   phi2 
+  99.8   99.6   92.6   89.6   94.0
+
+### Scenario 2 underreporting: w=0.3 and moderate underreporting (phi1=0.2; phi2=0.3)
+> colSums(coverage)/500*100
+ alpha lambda  omega   phi1   phi2 
+  99.6   99.8   88.8   85.6   92.0
+
+### Scenario 3 underreporting: w=0.7 and severe underreporting (phi1=0.1; phi2=0.1) 
+> colSums(coverage)/500*100
+ alpha lambda  omega   phi1   phi2 
+  96.2   96.8   90.8   93.0   97.2
+
+### Scenario 4 underreporting: w=0.3 and severe underreporting (phi1=0.1; phi2=0.1)
+> colSums(coverage)/500*100
+ alpha lambda  omega   phi1   phi2 
+  97.0   97.0   95.6   93.2   95.4
+
+### Scenario 1 overreporting: w=0.7 and moderate overreporting (phi1=0.2; phi2=0.7) 
+
+### Scenario 2 overreporting: w=0.3 and moderate overreporting (phi1=0.2; phi2=0.7) 
+
+### Scenario 3 overreporting: w=0.7 and severe overreporting (phi1=0.3; phi2=0.5) 
+
+### Scenario 4 overreporting: w=0.3 and severe overreporting (phi1=0.3; phi2=0.5) 
+

@@ -1,0 +1,97 @@
+% As the Metropolis theme this theme is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License. This means that if you change the theme and re-distribute it, you must retain the copyright notice header and license it under the same CC-BY-SA license. This does not affect the presentation that you create with the theme.
+\usetheme{metropolis}
+\usepackage{xargs}
+
+\definecolor{bimosred}{HTML}{A60000}
+\definecolor{bimosyellow}{HTML}{FFFFFF}  % TU light gray
+\definecolor{bimosblack}{HTML}{23373B}  % Very dark version of TU gray-blue.
+
+\setbeamercolor{normal text}{fg=bimosblack!95!bimosyellow, bg=bimosyellow}
+
+% {bimosred!75!normal text.fg} is the average color of the BIMoS logo in the footer.
+\setbeamercolor{frametitle}{fg=bimosred!75!normal text.fg, bg=normal text.bg}
+\setbeamercolor{footline}{fg=bimosred!75!normal text.fg}
+\setbeamercolor{alerted text}{fg=bimosred!95!bimosyellow}
+\setbeamercolor{example text}{fg=bimosblack!75!bimosyellow}
+\setbeamercolor{block title alerted}{fg=bimosred!95!bimosyellow}
+
+\newcommand{\bimos}{\textbf{BIMoS}\xspace}
+% \newcommandx{\foo}[3][1=1, 3=n]{...}
+\newcommandx{\bimostitle}[3][2=0pt, 3=0pt]{\par\vspace{#2}\hspace{-4ex}\textcolor{frametitle.fg}{\large \textbf{#1}}\par\vspace{#3}}
+
+
+\metroset{block=fill}
+
+\makeatletter % Override @ meaning
+\define@key{beamerframe}{standout}[true]{%
+  \booltrue{metropolis@standout}
+  \begingroup
+    \setkeys{beamerframe}{c}
+    \setkeys{beamerframe}{noframenumbering}
+    \setbeamercolor{background canvas}{
+        use=normal text,
+        bg=normal text.fg
+    }
+    \setbeamertemplate{footline}{}
+    \setbeamercolor{local structure}{
+      use=normal text,
+      fg=normal text.bg
+    }
+    \usebeamercolor[bg]{normal text}
+}
+  \pretocmd{\beamer@reseteecodes}{%
+    \ifbool{metropolis@standout}{
+      \endgroup
+      \boolfalse{metropolis@standout}
+    }{}
+  }{}{}
+  \AtBeginEnvironment{beamer@frameslide}{
+    \ifbool{metropolis@standout}{
+      \centering
+      \usebeamerfont{standout}
+    }{}
+  }
+
+% \setbeamertemplate{frame footer}{\insertshortauthor\hfill\textbf{BIMoS}}
+% \setbeamertemplate{footline}[plain]
+\defbeamertemplate{footline}{bimos}{
+  \begin{beamercolorbox}[wd=\textwidth, sep=2ex]{footline}%
+    \usebeamerfont{page number in head/foot}%
+    \parbox[b]{0.43\textwidth}{\hspace*{1ex}\insertshortauthor}
+    %\parbox[b]{0.10\textwidth}{\centering\vspace{0.2ex}\includegraphics[height=0.775em]{bimos-logo2.png}\vspace{-0.2ex}} % \textbf{BIMoS}}
+    \parbox[b]{0.53\textwidth}{\hfill
+    \usebeamertemplate*{frame numbering}}
+  \end{beamercolorbox}%
+}
+\makeatother % End override
+\setbeamertemplate{footline}[bimos]
+\setbeamertemplate{title graphic}{
+    \inserttitlegraphic
+    \vspace{3mm}
+}
+\setbeamertemplate{title page}{
+  \begin{minipage}[b][\paperheight]{\textwidth}
+    \vfill
+    \ifx\inserttitle\@empty\else\usebeamertemplate*{title}\fi
+    \ifx\insertsubtitle\@empty\else\usebeamertemplate*{subtitle}\fi
+    \usebeamertemplate*{title separator}
+    \ifx\beamer@shortauthor\@empty\else\usebeamertemplate*{author}\fi
+    \ifx\insertdate\@empty\else\usebeamertemplate*{date}\fi
+    \ifx\insertinstitute\@empty\else\usebeamertemplate*{institute}\fi
+    \vfill
+    \ifx\inserttitlegraphic\@empty\else\usebeamertemplate*{title graphic}\fi
+    \vspace*{1mm}
+  \end{minipage}
+}
+
+% Fonts and Encoding
+\usepackage[T1]{fontenc}                % Sets font encoding to use 8 bit encoding
+\usepackage{lmodern}                    % Latin modern font
+\usepackage{sfmath}                     % Sans-serif math font
+\usepackage{exscale}                    % Correct font scaling in formulas
+
+% Typography
+\usepackage[protrusion=true, expansion=true]{microtype}  % Said to improve word and letter spacing
+\usepackage[format=plain, labelfont=bf]{caption}         % nicer caption
+
+\titlegraphic{\hfill\includegraphics[height=1.5cm]{ub-logo.png}}

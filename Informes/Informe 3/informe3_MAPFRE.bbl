@@ -1,0 +1,16 @@
+\begin{thebibliography}{1}
+
+\bibitem{brodersen_inferring_2015}
+K.~H. Brodersen, F.~Gallusser, J.~Koehler, N.~Remy, and S.~L. Scott,
+  ``Inferring causal impact using bayesian structural time-series models,''
+  vol.~9, no.~1.
+
+\bibitem{r_core_team_r_2019}
+{R Core Team}, ``R: A language and environment for statistical computing.''
+\newblock Place: Vienna, Austria.
+
+\bibitem{scott_predicting_nodate}
+S.~L. Scott and H.~R. Varian, ``Predicting the present with bayesian structural
+  time series,''
+
+\end{thebibliography}

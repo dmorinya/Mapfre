@@ -1,0 +1,293 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2022.1.12)  27 JAN 2022 11:23
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**"/home/dmorina/Insync/dmorina@ub.edu/OneDrive Biz/Seminaris/2022/0012022. IWSM/Abstract/morinaIWSM2022.tex"
+(/home/dmorina/Insync/dmorina@ub.edu/OneDrive Biz/Seminaris/2022/0012022. IWSM/Abstract/morinaIWSM2022.tex
+LaTeX2e <2021-11-15> patch level 1
+L3 programming layer <2021-11-22> (/home/dmorina/.TinyTeX/texmf-dist/tex/latex/base/report.cls
+Document Class: report 2021/10/04 v1.4n Standard LaTeX document class
+(/home/dmorina/.TinyTeX/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count183
+\c@chapter=\count184
+\c@section=\count185
+\c@subsection=\count186
+\c@subsubsection=\count187
+\c@paragraph=\count188
+\c@subparagraph=\count189
+\c@figure=\count190
+\c@table=\count191
+\abovecaptionskip=\skip47
+\belowcaptionskip=\skip48
+\bibindent=\dimen138
+) (./iwsm.sty
+Sub-style 'IWSM'
+\@stablebox=\box50
+\stabularwidth=\dimen139
+\title=\toks16
+\titlerunning=\toks17
+\toctitle=\toks18
+\author=\toks19
+\authorrunning=\toks20
+\tocauthor=\toks21
+\abstract=\toks22
+\institute=\toks23
+\email=\toks24
+\keywords=\toks25
+\c@afcount=\count192
+) (/home/dmorina/.TinyTeX/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+(/home/dmorina/.TinyTeX/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks26
+) (/home/dmorina/.TinyTeX/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2021/03/04 v1.4d Standard LaTeX Graphics (DPC,SPQR)
+(/home/dmorina/.TinyTeX/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
+) (/home/dmorina/.TinyTeX/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 107.
+(/home/dmorina/.TinyTeX/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen140
+\Gin@req@width=\dimen141
+) (/home/dmorina/.TinyTeX/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2021/10/15 v2.17l AMS math features
+\@mathmargin=\skip49
+For additional information on amsmath, use the `?' option.
+(/home/dmorina/.TinyTeX/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2021/08/26 v2.01 AMS text
+(/home/dmorina/.TinyTeX/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks27
+\ex@=\dimen142
+)) (/home/dmorina/.TinyTeX/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen143
+) (/home/dmorina/.TinyTeX/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2021/08/26 v2.02 operator names
+)
+\inf@bad=\count193
+LaTeX Info: Redefining \frac on input line 234.
+\uproot@=\count194
+\leftroot@=\count195
+LaTeX Info: Redefining \overline on input line 399.
+\classnum@=\count196
+\DOTSCASE@=\count197
+LaTeX Info: Redefining \ldots on input line 496.
+LaTeX Info: Redefining \dots on input line 499.
+LaTeX Info: Redefining \cdots on input line 620.
+\Mathstrutbox@=\box51
+\strutbox@=\box52
+\big@size=\dimen144
+LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
+\macc@depth=\count198
+\c@MaxMatrixCols=\count199
+\dotsspace@=\muskip16
+\c@parentequation=\count266
+\dspbrk@lvl=\count267
+\tag@help=\toks28
+\row@=\count268
+\column@=\count269
+\maxfields@=\count270
+\andhelp@=\toks29
+\eqnshift@=\dimen145
+\alignsep@=\dimen146
+\tagshift@=\dimen147
+\tagwidth@=\dimen148
+\totwidth@=\dimen149
+\lineht@=\dimen150
+\@envbody=\toks30
+\multlinegap=\skip50
+\multlinetaggap=\skip51
+\mathdisplay@stack=\toks31
+LaTeX Info: Redefining \[ on input line 2938.
+LaTeX Info: Redefining \] on input line 2939.
+) (/home/dmorina/.TinyTeX/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+(/home/dmorina/.TinyTeX/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)) (/home/dmorina/.TinyTeX/texmf-dist/tex/latex/booktabs/booktabs.sty
+Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
+\heavyrulewidth=\dimen151
+\lightrulewidth=\dimen152
+\cmidrulewidth=\dimen153
+\belowrulesep=\dimen154
+\belowbottomsep=\dimen155
+\aboverulesep=\dimen156
+\abovetopsep=\dimen157
+\cmidrulesep=\dimen158
+\cmidrulekern=\dimen159
+\defaultaddspace=\dimen160
+\@cmidla=\count271
+\@cmidlb=\count272
+\@aboverulesep=\dimen161
+\@belowrulesep=\dimen162
+\@thisruleclass=\count273
+\@lastruleclass=\count274
+\@thisrulewidth=\dimen163
+) (/home/dmorina/.TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2021-12-14 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count275
+\l__pdf_internal_box=\box53
+) (./morinaIWSM2022.aux)
+\openout1 = `morinaIWSM2022.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+(/home/dmorina/.TinyTeX/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
+(/home/dmorina/.TinyTeX/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
+))
+ 1.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 99.
+(/home/dmorina/.TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 99.
+(/home/dmorina/.TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+
+LaTeX Warning: Citation `Sohrabi2020' on page 1 undefined on input line 106.
+
+
+LaTeX Warning: Citation `Bernard2014' on page 1 undefined on input line 106.
+
+
+LaTeX Warning: Citation `Arendt2013' on page 1 undefined on input line 106.
+
+
+LaTeX Warning: Citation `Rosenman2006' on page 1 undefined on input line 106.
+
+
+LaTeX Warning: Citation `Alfonso2015' on page 1 undefined on input line 106.
+
+
+LaTeX Warning: Citation `Winkelmann1996' on page 1 undefined on input line 106.
+
+
+LaTeX Warning: Citation `Gibbons2014' on page 1 undefined on input line 106.
+
+
+LaTeX Warning: Citation `Stocks2018' on page 1 undefined on input line 106.
+
+
+LaTeX Warning: Citation `Azmon2014' on page 1 undefined on input line 106.
+
+
+LaTeX Warning: Citation `Magal2018' on page 1 undefined on input line 106.
+
+
+LaTeX Warning: Citation `Stoner2019' on page 1 undefined on input line 106.
+
+
+LaTeX Warning: Citation `RCoreTeam2019' on page 1 undefined on input line 106.
+
+
+LaTeX Warning: Citation `JohannesBracher2019' on page 1 undefined on input line 106.
+
+
+LaTeX Warning: Citation `Oran2020' on page 1 undefined on input line 106.
+
+
+LaTeX Warning: Citation `Fernandez-Fontelo2016' on page 1 undefined on input line 106.
+
+
+LaTeX Warning: Citation `FernandezFontelo2019' on page 1 undefined on input line 106.
+
+
+LaTeX Warning: Citation `Fernandez-Fontelo2020' on page 1 undefined on input line 106.
+
+
+LaTeX Warning: Citation `Morina2021' on page 1 undefined on input line 106.
+
+
+LaTeX Warning: Citation `Morina2020' on page 1 undefined on input line 106.
+
+
+Overfull \vbox (1.00003pt too high) has occurred while \output is active []
+
+[1
+
+{/home/dmorina/.TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+
+LaTeX Warning: Citation `Wood2010' on page 2 undefined on input line 108.
+
+
+LaTeX Warning: Citation `Price2018' on page 2 undefined on input line 108.
+
+
+LaTeX Warning: Reference `methods' on page 2 undefined on input line 110.
+
+
+LaTeX Warning: Reference `results' on page 2 undefined on input line 110.
+
+[2]
+
+LaTeX Warning: Citation `BSLManual' on page 3 undefined on input line 131.
+
+
+LaTeX Warning: Citation `An2019' on page 3 undefined on input line 131.
+
+
+LaTeX Warning: Citation `RCoreTeam2019' on page 3 undefined on input line 131.
+
+
+LaTeX Warning: Reference `smith:fig1' on page 3 undefined on input line 224.
+
+[3]
+Overfull \hbox (13.4104pt too wide) in paragraph at lines 242--245
+[]\OT1/cmr/m/n/10 (1994). \OT1/cmr/m/it/10 Non-para-met-ric Re-gres-sion and Gen-
+ []
+
+
+Overfull \hbox (11.66145pt too wide) in paragraph at lines 249--253
+[]\OT1/cmr/m/n/10 (1996). Hi-er-ar-chi-cal gen-er-al-ized lin-ear mod-els. \OT1/cmr/m/it/10 Jour-
+ []
+
+[4] (./morinaIWSM2022.aux)
+
+LaTeX Warning: There were undefined references.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 2422 strings out of 480313
+ 35835 string characters out of 5897047
+ 332300 words of memory out of 5000000
+ 20283 multiletter control sequences out of 15000+600000
+ 413528 words of font info for 67 fonts, out of 8000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 55i,9n,62p,2121b,256s stack positions out of 5000i,500n,10000p,200000b,80000s
+</home/dmorina/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></home/dmorina/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></home/dmorina/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></home/dmorina/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></home/dmorina/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></home/dmorina/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></home/dmorina/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></home/dmorina/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></home/dmorina/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></home/dmorina/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></home/dmorina/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></home/dmorina/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></home/dmorina/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></home/dmorina/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></home/dmorina/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></home/dmorina/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></home/dmorina/.TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
+Output written on morinaIWSM2022.pdf (4 pages, 212889 bytes).
+PDF statistics:
+ 102 PDF objects out of 1000 (max. 8388607)
+ 61 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+

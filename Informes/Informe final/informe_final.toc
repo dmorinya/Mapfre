@@ -1,0 +1,28 @@
+\babel@toc {spanish}{}\relax 
+\contentsline {section}{\numberline {1}Introducción}{1}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Retraso en los diagnósticos}{3}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Diagnósticos de cancer y mortalidad durante el confinamiento}{4}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Seguros de salud privados y servicios asociados}{5}{subsection.1.3}%
+\contentsline {section}{\numberline {2}Métodos}{5}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Series temporales clásicas}{5}{subsection.2.1}%
+\contentsline {subsubsection}{\numberline {2.1.1}Procesos autoregresivos}{6}{subsubsection.2.1.1}%
+\contentsline {subsubsection}{\numberline {2.1.2}Procesos de media móvil}{7}{subsubsection.2.1.2}%
+\contentsline {subsubsection}{\numberline {2.1.3}Procesos ARMA (AutoRegressive Moving Average)}{7}{subsubsection.2.1.3}%
+\contentsline {subsection}{\numberline {2.2}Series temporales discretas}{7}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Nuevo modelo propuesto}{8}{subsection.2.3}%
+\contentsline {subsubsection}{\numberline {2.3.1}Propiedades del modelo}{9}{subsubsection.2.3.1}%
+\contentsline {subsubsection}{\numberline {2.3.2}Estimación de parámetros}{12}{subsubsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.4}Series temporales con el operador \textit {fattering-thinning}}{13}{subsection.2.4}%
+\contentsline {section}{\numberline {3}Resultados}{14}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Nueva metodología}{15}{subsection.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}Estudio de simulación}{16}{subsubsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.2}Series temporales Bayesianas estructurales}{17}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}Global}{17}{subsubsection.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.2}Madrid}{22}{subsubsection.3.2.2}%
+\contentsline {subsubsection}{\numberline {3.2.3}Barcelona}{28}{subsubsection.3.2.3}%
+\contentsline {subsubsection}{\numberline {3.2.4}Valencia}{34}{subsubsection.3.2.4}%
+\contentsline {section}{\numberline {4}Discusión}{40}{section.4}%
+\contentsline {section}{\numberline {5}Actividades realizadas en el marco del Proyecto}{40}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Contribuciones en congresos nacionales e internacionales}{40}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Articulos científicos}{41}{subsection.5.2}%
+\contentsline {section}{\numberline {6}Memoria económica}{41}{section.6}%

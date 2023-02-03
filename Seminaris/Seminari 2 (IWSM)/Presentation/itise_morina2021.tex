@@ -1,0 +1,391 @@
+\documentclass[
+    10pt,
+    aspectratio=169,
+    usenames,
+    dvipsnames
+]{beamer}
+\input{bimos-template.tex}
+\usepackage{amsfonts}
+\usepackage{bbold}
+\usepackage{amsmath}
+\usepackage{appendixnumberbeamer}
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage[scale=2]{ccicons}
+\usepackage{graphicx}
+\usepackage{pgfplots}
+\usepgfplotslibrary{dateplot}
+
+\usepackage{xspace}
+\newcommand{\themename}{\textbf{\textsc{metropolis}}\xspace}
+
+\title[BSL Estimation for Underreported Time Series]{Bayesian Synthetic Likelihood Estimation for Underreported Time Series: Covid-19 Incidence in Spain}
+\subtitle{International conference on TIme SEries and Forecasting, Gran Canaria}
+\date{20th July 2021}
+\author[]{David Moriña\inst{1,2}, Amanda Fernández-Fontelo\inst{3}, Alejandra Cabaña\inst{4}, Argimiro Arratia\inst{5}, Pedro Puig\inst{2,4}}
+\institute[]{\inst{1} Department of Econometrics, Statistics and Applied Economics, Universitat de Barcelona, Riskcenter-IREA, \inst{2} Centre de Recerca Matemàtica, \inst{3} Chair of Statistics, Humboldt-Universität zu Berlin, Berlin, Germany, \inst{4} Departament de Matemàtiques, Universitat Autònoma de Barcelona, \inst{5} Department of Computer Science, Universitat Politècnica de Catalunya}
+
+
+\begin{document}
+
+\maketitle
+
+\begin{frame}{Table of contents}
+  \setbeamertemplate{section in toc}[sections numbered]
+  \tableofcontents%[hideallsubsections]
+\end{frame}
+
+\section[Introduction]{Introduction}
+
+\begin{frame}[fragile]{Introduction}
+\begin{itemize}
+ \item The Covid-19 pandemic that is hitting the world since late 2019 has made evident that having quality data is essential in the decision making chain, especially in epidemiology but also in many other fields. There is an enormous global concern around this disease, leading the World Health Organization (WHO) to declare public health emergency
+ \item As a large proportion of the cases run asymptomatically and mild symptoms could have been easily confused with those of similar diseases at the beginning of the pandemic, its reasonable to expect that Covid-19 incidence has been notably underreported
+ \item Synthetic likelihood is a recent and very powerful alternative for parameter estimation in a simulation based schema when the likelihood is intractable and, conversely, the generation of new observations given the values of the parameters is feasible
+ \item The method takes a vector summary statistic informative about the parameters and assumes it is multivariate normal, estimating the unknown mean and covariance matrix by simulation to obtain an approximate likelihood function of the multivariate normal
+\end{itemize}
+\end{frame}
+
+\section[Methods]{Methods}
+
+\begin{frame}{Model}
+ Consider an unobservable process $X_t$ following an AutoRegressive-Moving Average ($ARMA(p, r)$) structure, defined by
+
+\begin{equation}\label{eq:ARMA}
+  X_t = \phi_0 + \alpha_1 X_{t-1} + \ldots + \alpha_p X_{t-p} + \theta_1 \epsilon_{t-1} + \ldots + \theta_r \epsilon_{t-r} + \epsilon_t,
+\end{equation}
+where $\epsilon_t$ is a Gaussian white noise process with $\epsilon_t \sim N(\mu_{\epsilon}, \sigma_{\epsilon}^2)$.
+
+In our setting, this process $X_t$ cannot be directly observed, and all we can see is a part of it, expressed as
+
+\begin{equation}\label{eq:model}
+    Y_t=\left\{
+                \begin{array}{ll}
+                  X_t \text{ with probability } 1-\omega \\
+                  q \cdot X_t \text{ with probability } \omega
+                \end{array}
+              \right.
+\end{equation}
+\end{frame}
+
+\begin{frame}{Model}
+The expectation of the innovations $\epsilon_t$ in Eq.~(\ref{eq:ARMA}) is linked to a simplified version of the well-known compartimental Susceptible-Infected-Recovered (SIR) model. At any time $t \in \mathbb{R}$ there are three kinds of individuals: Healthy individuals susceptible to be infected ($S(t)$), infected individuals who are transmitting the disease at a certain speed ($I(t)$) and individuals who have suffered the disease, recovered and cannot be infected again ($R(t)$). The number of affected individuals at time $t$, $A(t) = I(t) + R(t)$ can be approximated by
+
+\begin{equation}\label{eq:SIR}
+ A(t) = \frac{M^{*} A_0 e^{kt}}{M^{*}+A_0(e^{kt}-1)},
+\end{equation}
+where $k = \beta - \gamma$ and $M^{*} = \frac{N(\beta - \gamma)}{\beta - \frac{\gamma}{2}}$, $\beta$ is the infection rate, $\gamma$ the recovery rate and $N$ the size of the susceptible population. At any time $t$ the condition $S(t) + I(t) + R(t) = N$ is fulfilled. The expression~\ref{eq:SIR} allow us to incorporate the behaviour of the epidemics in a realistic way, defining $\mu_{\epsilon}(t) = A(t) - A(t-1)$, the new affected cases produced at time $t$.
+\end{frame}
+
+\begin{frame}{BSL}
+\begin{itemize}
+ \item Synthetic likelihood is a recent and very powerful alternative for parameter estimation in a simulation based schema when the likelihood is intractable but the generation of new observations given the values of the parameters is feasible
+ \item Introduced by Simon Wood in 2010, Bayesian framework by Leah F. Price in 2018
+ \item The method takes a vector summary statistic informative about the parameters and assumes it is multivariate normal, estimating the unknown mean and covariance matrix by simulation to obtain an approximate likelihood function of the multivariate normal
+\end{itemize}
+\end{frame}
+
+\section{Results}
+\begin{frame}{Results}
+\begin{itemize}
+ \item The performance of the model is evaluated through a comprehensive simulation study in different situations
+ \item Its usage is illustrated by means of a real dataset on Covid-19 incidence in Spain
+\end{itemize}
+\end{frame}
+
+\subsection{Simulation study}
+
+\begin{frame}{Simulation study (I)}
+A thorough simulation study has been conducted to ensure that the model behaves as expected, including $AR(1)$, $MA(1)$ and $ARMA(1, 1)$ structures for the hidden process $X_t$ defined as
+
+\begin{equation}\begin{array}{c}
+X_t = \alpha \cdot X_{t-1} + \epsilon_t \text{ (AR(1))} \\
+X_t = \theta \cdot \epsilon_{t-1} + \epsilon_t \text{ (MA(1))} \\
+X_t = \alpha \cdot X_{t-1} + \theta \cdot \epsilon_{t-1} + \epsilon_t \text{ (ARMA(1, 1))}
+\end{array}\end{equation}
+where $\epsilon_t \sim N(\mu_{\epsilon}, \sigma_{\epsilon}^2)$.
+
+\end{frame}
+\begin{frame}{Simulation study (II)}
+\begin{itemize}
+\item The values for the parameters $\alpha$, $\theta$, $q$ and $\omega$ ranged from 0.1 to 0.9 for each parameter. 
+\item Average absolute bias, average interval length (AIL) and average 95\% credibility interval coverage were evaluated. 
+\item To summarise model robustness, these values are averaged over all combinations of parameters, considering their prior distribution is a Dirac's delta with all probability concentrated in the corresponding parameter value. 
+\item For each autocorrelation structure and parameters combination, a random sample of size $n = 1000$ has been generated using the R function \textit{arima.sim}, and the parameters $m=log(M^*)$ and $\beta$ have been fixed to $5$ and $0.4$ respectively. Several values for these parameters were considered but no substantial differences in the model performance were observed related to the value of these parameters or sample size, besides a poorer coverage for lower sample sizes, as expected.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Simulation study (III)}
+  \begin{table}
+    \caption{Model performance measures (average absolute bias, average interval length and average coverage) summary based on a simulation study.}
+    \begin{tabular}{ccccc}
+\toprule
+\textbf{Structure} & \textbf{Parameter} & \textbf{Bias} & \textbf{AIL} & \textbf{Coverage (\%)}\\
+\midrule
+\multirow{7}{*}{$AR(1)$}      & $\hat{\phi_0}$            &-0.983 & 5.189 & 70.10\% \\
+                              & $\hat{\alpha}$            & 0.043 & 0.814 & 92.46\% \\
+                              & $\hat{\omega}$            &-0.003 & 0.111 & 94.10\% \\
+                              & $\hat{q}$                 &-0.001 & 0.014 & 89.03\% \\
+                              & $\hat{m}$                 & 0.001 & 0.190 & 75.17\% \\
+                              & $\hat{\beta}$             & 0.007 & 0.192 & 74.49\% \\
+                              & $\hat{\sigma_{\epsilon}}$ &-1.689 & 4.718 & 81.07\% \\
+\bottomrule
+\end{tabular}
+  \end{table}
+\end{frame}
+
+\begin{frame}{Simulation study (IV)}
+  \begin{table}
+    \caption{Model performance measures (average absolute bias, average interval length and average coverage) summary based on a simulation study.}
+    \begin{tabular}{ccccc}
+\toprule
+\textbf{Structure} & \textbf{Parameter} & \textbf{Bias} & \textbf{AIL} & \textbf{Coverage (\%)}\\
+\midrule
+\multirow{7}{*}{$MA(1)$}      & $\hat{\phi_0}$            &-1.241 & 5.171 & 68.31\% \\
+                              & $\hat{\theta}$            & 0.051 & 0.818 & 90.40\% \\
+                              & $\hat{\omega}$            &-0.005 & 0.108 & 95.06\% \\
+                              & $\hat{q}$                 &-0.001 & 0.014 & 87.24\% \\
+                              & $\hat{m}$                 &-0.002 & 0.187 & 76.95\% \\
+                              & $\hat{\beta}$             & 0.004 & 0.190 & 80.38\% \\
+                              & $\hat{\sigma_{\epsilon}}$ &-1.619 & 4.679 & 83.95\% \\
+\bottomrule
+\end{tabular}
+  \end{table}
+\end{frame}
+
+\begin{frame}{Simulation study (V)}
+  \begin{table}
+    \caption{Model performance measures (average absolute bias, average interval length and average coverage) summary based on a simulation study.}
+    \begin{tabular}{ccccc}
+\toprule
+\textbf{Structure} & \textbf{Parameter} & \textbf{Bias} & \textbf{AIL} & \textbf{Coverage (\%)}\\
+\midrule
+\multirow{8}{*}{$ARMA(1, 1)$} & $\hat{\phi_0}$            & -1.834 & 5.107 & 61.01\% \\
+                              & $\hat{\alpha}$            & 0.062  & 0.799 & 89.39\% \\
+                              & $\hat{\theta}$            & 0.011  & 0.873 & 96.86\% \\
+                              & $\hat{\omega}$            & -0.001 & 0.014 & 88.32\% \\
+                              & $\hat{q}$                 & -0.005 & 0.109 & 94.97\% \\
+                              & $\hat{m}$                 & 0.002  & 0.184 & 78.49\% \\
+                              & $\hat{\beta}$             & 0.004  & 0.183 & 78.01\% \\
+                              & $\hat{\sigma_{\epsilon}}$ & -1.828 & 4.631 & 74.74\% \\
+\bottomrule
+\end{tabular}
+  \end{table}
+\end{frame}
+
+\subsection{Covid-19 incidence in Spain}
+\begin{frame}{Covid-19 in Spain}
+The betacoronavirus SARS-CoV-2 has been identified as the causative agent of an unprecedented world-wide outbreak of pneumonia starting in December 2019 in the city of Wuhan (China), named as Covid-19. Considering that many cases run without developing symptoms or just with very mild symptoms, it is reasonable to assume that the incidence of this disease has been underregistered. This work focuses on the weekly Covid-19 incidence registered in Spain in the period (2020/02/19-2020/12/15) excluding the two autonomous cities Ceuta and Melilla, with very low incidences during all considered time period.
+\end{frame}
+
+\begin{frame}[fragile]{Covid-19 in Spain}
+
+\centering
+\includegraphics[scale=0.2]{Covid19Spain.jpeg}
+
+\end{frame}
+
+\begin{frame}[fragile]{Covid-19 in Spain}
+
+\centering
+\includegraphics[scale=0.2]{Covid19CCAAs.jpeg}
+
+\end{frame}
+
+\begin{frame}{Covid-19 in Spain}
+In the considered period, the official sources reported 1,819,982 Covid-19 cases in Spain (excluding Ceuta and Melilla), while the model estimates a total of 3,055,550 cases (only 59.56\% of actual cases were reported). These work also shows that while the frequency of underreporting is extremely high for all regions (values close to 1) except Pais Vasco, the intensity of this underreporting is not uniform across the considered regions. It can be seen that Andaluc\'ia is the CCAA with highest underreporting intensity ($\hat{q}=0.42$) while La Rioja is the region where the estimated values are closest to the number of reported cases ($\hat{q}=0.58$).
+\end{frame}
+
+\begin{frame}{Covid-19 in Spain}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+        \begin{table}\tiny
+    \caption{Estimated underreported frequency and intensity for each Spanish CCAA.}
+\begin{tabular}{ccc}
+\toprule
+CCAA & Parameter & Estimate (95\% CI)\\
+\midrule
+\multirow{2}{*}{Andaluc\'ia}  & $\hat{\omega}$  & 0.98 (0.95 - 0.99) \\
+                              & $\hat{q}$       & 0.42 (0.36 - 0.49) \\
+\midrule
+\multirow{2}{*}{Arag\'on}    & $\hat{\omega}$  & 0.97 (0.93 - 0.99) \\
+                             & $\hat{q}$       & 0.48 (0.43 - 0.55) \\
+\midrule
+\multirow{2}{*}{Principado de Asturias}    & $\hat{\omega}$  & 0.97 (0.95 - 0.99) \\
+                                           & $\hat{q}$       & 0.45 (0.39 - 0.51) \\
+\midrule
+\multirow{2}{*}{Cantabria}    & $\hat{\omega}$  & 0.95 (0.87 - 0.98) \\
+                              & $\hat{q}$       & 0.54 (0.47 - 0.62) \\
+\midrule
+\multirow{2}{*}{Castilla y Le\'on}    & $\hat{\omega}$  & 0.97 (0.90 - 0.99) \\
+                                      & $\hat{q}$       & 0.45 (0.40 - 0.52) \\
+\midrule
+\multirow{2}{*}{Castilla - La Mancha}    & $\hat{\omega}$  & 0.98 (0.95 - 0.99) \\
+                                         & $\hat{q}$       & 0.43 (0.38 - 0.49) \\
+\midrule
+\multirow{2}{*}{Canarias}    & $\hat{\omega}$  & 0.97 (0.95 - 0.99) \\
+                             & $\hat{q}$       & 0.50 (0.44 - 0.57) \\
+\midrule
+\multirow{2}{*}{Catalu\~na}    & $\hat{\omega}$  & 0.97 (0.92 - 0.99) \\
+                               & $\hat{q}$       & 0.50 (0.44 - 0.57) \\
+\bottomrule
+\end{tabular}
+\end{table}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+    \vspace{-1cm}
+          \begin{table}\tiny
+    \caption{Estimated underreported frequency and intensity for each Spanish CCAA.}
+\begin{tabular}{ccc}
+\toprule
+CCAA & Parameter & Estimate (95\% CI)\\
+\midrule
+\multirow{2}{*}{Extremadura}    & $\hat{\omega}$  & 0.98 (0.95 - 0.99) \\
+                                & $\hat{q}$       & 0.44 (0.37 - 0.51) \\
+\midrule
+\multirow{2}{*}{Galicia}     & $\hat{\omega}$  & 0.97 (0.93 - 0.99) \\
+                             & $\hat{q}$       & 0.47 (0.43 - 0.52) \\
+\midrule
+\multirow{2}{*}{Islas Baleares}    & $\hat{\omega}$  & 0.93 (0.87 - 0.97) \\
+                                   & $\hat{q}$       & 0.57 (0.51 - 0.67) \\
+\midrule
+\multirow{2}{*}{Regi\'on de Murcia}    & $\hat{\omega}$  & 0.96 (0.80 - 0.99) \\
+                                       & $\hat{q}$       & 0.46 (0.39 - 0.60) \\
+\midrule
+\multirow{2}{*}{Madrid}      & $\hat{\omega}$  & 0.94 (0.88 - 0.98) \\
+                             & $\hat{q}$       & 0.52 (0.44 - 0.62) \\
+\midrule
+\multirow{2}{*}{Comunidad Foral de Navarra}    & $\hat{\omega}$  & 0.97 (0.93 - 0.99) \\
+                                               & $\hat{q}$       & 0.44 (0.38 - 0.51) \\
+\midrule
+\multirow{2}{*}{Pais Vasco}    & $\hat{\omega}$  & 0.26 (0.11 - 0.50) \\
+                               & $\hat{q}$       & 0.53 (0.36 - 0.75) \\
+\midrule
+\multirow{2}{*}{La Rioja}    & $\hat{\omega}$  & 0.92 (0.50 - 0.98) \\
+                             & $\hat{q}$       & 0.58 (0.47 - 0.72) \\
+\midrule
+\multirow{2}{*}{Comunidad Valenciana}    & $\hat{\omega}$  & 0.97 (0.94 - 0.99) \\
+                                         & $\hat{q}$       & 0.45 (0.40 - 0.51) \\
+\bottomrule
+\end{tabular}
+\end{table}
+\end{column}
+\end{columns}
+\end{frame}
+
+\section{Conclusions}
+
+\begin{frame}{Conclusions}
+Although it is very common in biomedical and epidemiological research to get data from disease registries, there is a concern about their reliability, and there have been some recent efforts to standardize the protocols in order to improve the accuracy of health information registries. However, as the Covid-19 pandemic situation has made evident, it is not always possible to implement these recommendations in a proper way.  
+
+The analysis of the Spanish Covid-19 data shows that in average only about 60\% of the cases in the period 2020/02/19-2020/12/15 were reported. Having accurate data is key in order to provide public health decision-makers with reliable information, which can also be used to improve the accuracy of dynamic models aimed to estimate the spread of the disease and to predict its behavior. 
+\end{frame}
+
+\begin{frame}{Conclusions}
+The proposed methodology can deal with misreported (over- or under-reported) data in a very natural and straightforward way, and is able to reconstruct the most likely hidden process, providing public health decision-makers with a valuable tool in order to predict the evolution of the disease under different scenarios. 
+
+The simulation study shows that the proposed methodology behaves as expected and that the parameters used in the simulations, under different autocorrelation structures, can be recovered, even with severely underreported data.
+\end{frame}
+
+\begin{frame}[fragile]{Special Issue}
+\centering
+\includegraphics[scale=0.5]{Banner.png}
+\end{frame}
+
+\begin{frame}[plain]
+\centering
+\includegraphics[width=0.7\textwidth ]{thanks.pdf}
+\end{frame}
+
+\end{document}
+% \begin{frame}{Blocks}
+%   Three different block environments are pre-defined and may be styled with an
+%   optional background color.
+% 
+%   \begin{columns}[T,onlytextwidth]
+%     \column{0.5\textwidth}
+%       \begin{block}{Default}
+%         Block content.
+%       \end{block}
+% 
+%       \begin{alertblock}{Alert}
+%         Block content.
+%       \end{alertblock}
+% 
+%       \begin{exampleblock}{Example}
+%         Block content.
+%       \end{exampleblock}
+% 
+%     \column{0.5\textwidth}
+% 
+%       \metroset{block=fill}
+% 
+%       \begin{block}{Default}
+%         Block content.
+%       \end{block}
+% 
+%       \begin{alertblock}{Alert}
+%         Block content.
+%       \end{alertblock}
+% 
+%       \begin{exampleblock}{Example}
+%         Block content.
+%       \end{exampleblock}
+% 
+%   \end{columns}
+% \end{frame}
+% \begin{frame}{Math}
+%   \begin{equation*}
+%     e = \lim_{n\to \infty} \left(1 + \frac{1}{n}\right)^n
+%   \end{equation*}
+% \end{frame}
+% \begin{frame}{Line plots}
+%   \begin{figure}
+%     \begin{tikzpicture}
+%       \begin{axis}[
+%         mlineplot,
+%         width=0.9\textwidth,
+%         height=6cm,
+%       ]
+% 
+%         \addplot {sin(deg(x))};
+%         \addplot+[samples=100] {sin(deg(2*x))};
+% 
+%       \end{axis}
+%     \end{tikzpicture}
+%   \end{figure}
+% \end{frame}
+% \begin{frame}{Bar charts}
+%   \begin{figure}
+%     \begin{tikzpicture}
+%       \begin{axis}[
+%         mbarplot,
+%         xlabel={Foo},
+%         ylabel={Bar},
+%         width=0.9\textwidth,
+%         height=6cm,
+%       ]
+% 
+%       \addplot plot coordinates {(1, 20) (2, 25) (3, 22.4) (4, 12.4)};
+%       \addplot plot coordinates {(1, 18) (2, 24) (3, 23.5) (4, 13.2)};
+%       \addplot plot coordinates {(1, 10) (2, 19) (3, 25) (4, 15.2)};
+% 
+%       \legend{lorem, ipsum, dolor}
+% 
+%       \end{axis}
+%     \end{tikzpicture}
+%   \end{figure}
+% \end{frame}
+% \begin{frame}{Quotes}
+%   \begin{quote}
+%     Veni, Vidi, Vici
+%   \end{quote}
+% \end{frame}
+% 
+% {%
+% \setbeamertemplate{frame footer}{My custom footer}
+% \begin{frame}[fragile]{Frame footer}
+%     \themename defines a custom beamer template to add a text to the footer. It can be set via
+%     \begin{verbatim}\setbeamertemplate{frame footer}{My custom footer}\end{verbatim}
+% \end{frame}
+% }
