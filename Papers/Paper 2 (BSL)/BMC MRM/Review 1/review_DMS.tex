@@ -56,6 +56,8 @@
 % Let's start point-by-point with Reviewer 1
 \reviewersection
 
+We thank the reviewer for their critical reading of our work and their comments and suggestions, responded below.
+
 % Point one description 
 \begin{point}
 Title, abstract, keywords weren't fitted together. The main approach ARCH wasn't interested within abstract in methods paragraph, while in title and keywords appear as main proposed approach.
@@ -63,7 +65,11 @@ Title, abstract, keywords weren't fitted together. The main approach ARCH wasn't
 \end{point}
 
 \begin{reply}
-XXXXXXXXXXXXXXXXXXXXXX
+We agree with the reviewer. The \textit{Methods} paragraph in the abstract has been updated to:
+
+\textcolor{blue}{``\textit{\textbf{Methods:}} In this work, we explore the performance of Bayesian Synthetic Likelihood to estimate the parameters of a model based on AutoRegressive Conditional Heteroskedastic time series capable of dealing with misreported information and to reconstruct the most likely evolution of the phenomenon. The performance of the proposed methodology is evaluated through a comprehensive simulation study and illustrated by reconstructing the weekly Covid-19 incidence in each Spanish Autonomous Community.''}
+
+The \textit{keywords} have also been updated, replacing GARCH to ARCH, which is the main proposed approach as pointed out by the reviewer.
 \end{reply}
 
 \begin{point}
@@ -137,7 +143,10 @@ The simulation study carried out by the authors is not motivated enough, in my o
 \end{point}
 
 \begin{reply}
-XXXXXXXXXXXXX
+The method used to estimate the parameters of the model (Bayesian synthetic likelihood) is known and well-tested, but to the best of our knowledge it has never been used in the context of AutoRegressive Conditional Heteroskedasticity (ARCH) underreported models, and this is why its performance is assessed through the simulation study. To clarify, the following paragraph has been added to the manuscript (page XXX):
+
+\textcolor{blue}{``''}
+
 \end{reply}
 
 \begin{point}
@@ -146,7 +155,10 @@ In Figures 1 and 2 I feel that something is wrong with the plot. For instance, i
 \end{point}
 
 \begin{reply}
-XXXXXXXXXXXXX
+As the reviewer points out, there is something curious about the values around 2022-01. The interpretation is that in all simulations this particular value is detected as not being underreported ($Y_{2022-01} = X_{2022-01}$). This is why the estimated and registered values and the 95\% credible interval for this value are all equal, as represented in Figure 1 and Figure 2. To clarify, the following sentences has been added to the manuscript (page XXX):
+
+\textcolor{blue}{``''}
+
 \end{reply}
 
 \begin{point}
@@ -155,7 +167,7 @@ I also feel that there might be some inconsistency between the results highlight
 \end{point}
 
 \begin{reply}
-XXXXXXXXXXXXX
+We thank the reviewer for noticing these inconsistencies between the estimates provided in the text and in Table 2. Those provided in Table 2 were correct, the values discussed in the text have been corrected accordingly.
 \end{reply}
 
 \begin{point}
