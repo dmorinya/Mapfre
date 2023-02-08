@@ -1,0 +1,236 @@
+% LaTeX rebuttal letter example. 
+% 
+% Copyright 2019 Friedemann Zenke, fzenke.net
+%
+% Based on examples by Dirk Eddelbuettel, Fran and others from 
+% https://tex.stackexchange.com/questions/2317/latex-style-or-macro-for-detailed-response-to-referee-report
+% 
+% Licensed under cc by-sa 3.0 with attribution required.
+
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{lipsum} % to generate some filler text
+\usepackage{fullpage}
+\usepackage{xcolor}
+\usepackage{url}
+\usepackage{multirow}
+% import Eq and Section references from the main manuscript where needed
+% \usepackage{xr}
+% \externaldocument{manuscript}
+
+% package needed for optional arguments
+\usepackage{xifthen}
+% define counters for reviewers and their points
+\newcounter{reviewer}
+\setcounter{reviewer}{0}
+\newcounter{point}[reviewer]
+\setcounter{point}{0}
+
+% This refines the format of how the reviewer/point reference will appear.
+\renewcommand{\thepoint}{C\,\arabic{point}} 
+
+% command declarations for reviewer points and our responses
+\newcommand{\reviewersection}{\stepcounter{reviewer} \bigskip \hrule
+                  \section*{Reviewer \thereviewer}}
+
+\newenvironment{point}
+   {\refstepcounter{point} \bigskip \noindent {\textbf{Reviewer~Comment~\thepoint} } ---\ }
+   {\par }
+
+\newcommand{\shortpoint}[1]{\refstepcounter{point}  \bigskip \noindent 
+	{\textbf{Reviewer~Comment~\thepoint} } ---~#1\par }
+
+\newenvironment{reply}
+   {\medskip \noindent \begin{sf}\textbf{Reply}:\  }
+   {\medskip \end{sf}}
+
+\newcommand{\shortreply}[2][]{\medskip \noindent \begin{sf}\textbf{Reply}:\  #2
+	\ifthenelse{\equal{#1}{}}{}{ \hfill \footnotesize (#1)}%
+	\medskip \end{sf}}
+
+\begin{document}
+
+\section*{Review of ``Analysis of zero inflated dichotomous variables from a Bayesian perspective: Application to occupational health''}
+% General intro text goes here
+
+% Let's start point-by-point with Reviewer 1
+\reviewersection
+
+% Point one description 
+\begin{point}
+The manuscript by Mori\~na et al. proposes a Bayesian approach to fit zero inflated Bernoulli data. Overall, the methodology seems sound, and the manuscript is well written. My main concern is associated with the performance of the methodology when no covariates are involved in the model.
+	\label{pt:C1}
+\end{point}
+
+\begin{reply}
+We thank the reviewer for their comments and suggestions, that led to an improved version of our manuscript. 
+In the following we address their concerns point by point. 
+\end{reply}
+
+\begin{point}
+Major Comment 1: One of the advantages of the proposed methodology is that it can distinguish between two different sources of zeros without any covariates, but the results for the estimation of $p$ are a bit curious. When looking at Table 5, the estimates of $\omega$ and corresponding 95\% CrIs seem fairly reasonable to the ``true'' simulation values but the estimates of $p$ for many of the simulations hover around 0.71 and have wide 95\% CrIs that span almost the entire range of the $U[0.5,1]$ prior. The 95\% CrI also seems wide for the $p$ estimate in the real data analysis. Further explanations and investigations are needed to establish what is going on and to present a better case for this advantage of the proposed methodology.
+	\label{pt:C2}
+\end{point}
+
+\begin{reply}
+We agree with the reviewer that the results provided in Table 5 are difficult to interpret. It is important to notice that the main interest in practice is the situation with covariates, but we have changed the simulation schema in the case without any covariates in order to make it more informative and more consistent with the Bayesian framework. Now, instead of providing point values for the parameters $\omega$ and $p$ we have considered the total number of observed events $m$. The proportion of observed events $\frac{m}{n}$ is also estimated by $\hat{\omega} \cdot \hat{p}$, and the simulation is based on the marginal posterior distributions defined in Eq. (6). As the chosen priors are non-informative (to cover the worst case scenario), the posterior distribution for $\hat{p}$ can be extremely wide when the number of observed events $m$ is low, as can be seen in the new Table S2, now moved to the Supplementary Material following editorial request. To be clear about this limitation of the methodology, the following sentence was added to the manuscript (Appendix A, Supplementary Material):
+
+\textcolor{blue}{``It can be seen that the methodology can properly estimate the proportion of structural zeros ($1-\omega$) in any situation but it is not possible to obtain proper estimates and narrow intervals for the proportion of sample zeros ($1-p$) when the number of occurrences of the event of interest is low, because of the shape of the posterior distribution of $p$. This is the cost of using the non-informative priors specified in Eq. (5).''}
+
+\end{reply}
+
+\begin{point}
+Major Comment 2: The manuscript considers only one scenario when the proportion of structural zeros $(1 – \omega)$ is greater than 0.5 and the proportion of sample zeros $(1 – p)$ is less than 0.5. Can this methodology be generalized to other scenarios (e.g., proportion of structural zeros is less than 0.5 and proportion of sample zeros is greater than 0.5)? If the methodology can be more generalized, it would be beneficial to include details about how the methodology should be adjusted and provide additional results demonstrating how the methodology performs under different scenarios, particularly when there are no covariates. If the methodology is proposed for only the scenario listed above, then it should be more clearly stated in the manuscript.
+	\label{pt:C3}
+\end{point}
+
+\begin{reply}
+This is a very important point, as one of the strengths of the proposed methodology is that it could be easily generalized to cover other cases than the one used to illustrate its performance. In fact, the considered situation was chosen because it represents the less informative case, although the uncertainty around the parameters can be very high. In the presence of covariates a different prior assumption makes no differences in the way the model behaves. If there are no covariates, from the theoretical point of view, the only difference is that the priors in the posterior distribution of the parameters $\omega$ and $p$ (Eq. (5) in the manuscript) would be exchanged. The marginals (as shown in Eq. (6)) would also change accordingly. From the practical point of view, the different priors for these parameters can be defined in the function \texttt{bayesZIB} using the argument \texttt{priors} (only uniforms with different parameters are implemented so far in the package). To clarify, the following sentences have been added to the manuscript (page 3 and 4):
+
+\textcolor{blue}{``Obviously, these hypotheses can be modified based on prior knowledge of the parameters that govern the phenomenon under investigation by making simple changes to the posterior distributions defined in Eq. (5) and recalculating the marginals shown in Eq. (6).''}
+
+\textcolor{blue}{``To the best of our knowledge, this is the only package available in R able to fit zero-inflated Bernoulli regression models. The use of the package is very similar to other packages that implement zero-inflated models, such as \textit{pscl} [16], to facilitate the interpretation of the results, while more advanced users could easily adapt the code to their specific requirements. If necessary, appropriate priors for the parameters $\omega$ and $p$ can be defined in the function \texttt{bayesZIB} using the argument \texttt{priors} (only uniforms with different parameters are implemented so far in the package). ''}
+
+\end{reply}
+
+\begin{point}
+Major Comment 3: The simulation studies are important for demonstrating the performance of the proposed methodology, but more discussion is needed about the overall results of these studies. What are the main points that the readers should take away from the information presented in Tables 3, 4, and 5? Also, if Tables 3, 4, and 5 are displaying information about credible intervals, should the notation of ``CrI'' be used in those tables to be consistent with the notation used throughout the manuscript?
+	\label{pt:C4}
+\end{point}
+
+\begin{reply}
+As the reviewer points out, the main goal of the simulation study is to assess the performance of the proposed methodology, by means of checking that the parameters used in the simulations can be recovered by the model. To be more clear about the interpretation of Tables 3, 4 and 5 the following sentences were added to the manuscript (page 6):
+
+\textcolor{blue}{``It can be seen that in all cases the original parameters used to generate the simulations can be properly recovered by the fitted models.''}
+
+The reviewer is right, heading in Tables 3, 4 and 5 should read ``CrI'' instead of ``CI''. It has been changed in the revised version to be consistent with the notation used throughout the manuscript.
+\end{reply}
+
+\begin{point}
+Minor Comment 1: The readers of this article would benefit from knowing where they can access the publicly available R package \texttt{bayesZIB}. A web address to the package on GitHub, CRAN, Bioconductor, or some other site should be included in the manuscript.
+	\label{pt:C5}
+\end{point}
+
+\begin{reply}
+Following this suggestion, which we think is very important in order to ease the access of the interested users to the proposed methodology, we have added the \texttt{bayesZIB}'s CRAN web address on the manuscript in the abstract, additionally to reference [6].
+\end{reply}
+
+\begin{point}
+Minor Comment 2: With this being Bayesian methodology, some details about the implementation for the analyses (number of chains, number of iterations, how many samples are being considered in estimation, etc.) would be helpful to those planning on using the \texttt{bayesZIB} package.
+	\label{pt:C6}
+\end{point}
+
+\begin{reply}
+We agree with the reviewer that this can be helpful to guide potential users of the package, although the appropriate values of these technical values might vary depending on the actual analysis. To clarify this point, the following sentence was added to the manuscript (page 5):
+
+\textcolor{blue}{``The model was fitted using 5 Markov chains, 5000 iterations in each chain (half used for warmup and half for inference), a target average acceptance probability of 0.999 and a maximum allowed treedepth of 25. Notice that these technical values might need to be changed depending on the analyzed data.''}
+\end{reply}
+
+\begin{point}
+Minor Comment 3: I was unable to locate the simulation results corresponding to Tables 3 and 4 for n = 500 in the Supplementary Material document.
+	\label{pt:C7}
+\end{point}
+
+\begin{reply}
+We thank the reviewer for pointing this out, we have included this table in the new version of the Supplementary Material (Table S1).
+\end{reply}
+
+% Let's start point-by-point with Reviewer 2
+\reviewersection
+
+% Point one description 
+\begin{point}
+The topic is relevant, but authors do not explore relevant literature on ZIP and ZINB estimations, such as:
+\begin{itemize}
+\item Lambert, D. (1992). Zero-inflated Poisson regression, with an application to defects in manufacturing. Technometrics, 34, 1-14.
+\item Desmarais, B. A. and Harden, J. J. (2013). Testing for zero inflation in count models: Bias correction for the Vuong test. The Stata Journal, 13, 810-835.
+\item Perumean-Chaney, S. E., Morgan, C., McDowall, D., and Aban, I. (2013). Zero-inflated and overdispersed: what's one to do? Journal of Statistical Computation and Simulation, 83, 1671-1683.
+\item Fávero, L. P. L., Souza, R. F., Belfiore, P., Correa, H. L., Haddad, M. F. C. (2021). Count Data Regression Analysis: Concepts, Overdispersion Detection, Zero-inflation Identification, and Applications with R. Practical Assessment, Research, and Evaluation, 26, 1-22.
+\end{itemize}
+	\label{pt:C8}
+\end{point}
+
+\begin{reply}
+We thank the reviewer for their critical reading of our work. The proposed suggestions have been accounted for and replied point-by-point above, including a more detailed discussion on the available literature on the most common zero inflated count data models as ZIP or ZINB. The following paragraph has been added to the \textit{Background} section (page 2):
+
+\textcolor{blue}{``The most commonly used zero-inflated models are those that are related to counting variables, where it is assumed that the zero value has a dichotomous source that determines whether or not the subject is at risk of suffering the event of interest and another source, only for the individuals at risk, that corresponds to the number of episodes (counts) that have been experienced by each individual at risk. In this context, the most common available models would be the well known Zero-Inflated Poisson (ZIP) and Negative Binomial (ZINB). A good introduction to the mathematical properties of these models can be found in [2], and they have been used in many fields such as quality control ([3]), epidemiology ([4]) or medicine ([5]) among many others. Some guidelines on how to proceed when dealing with count outcomes potentially overdispersed or zero-inflated have been published recently ([6, 7]), based on classical procedures like Vuong's test ([8]) to check for overdispersion ([9]) and zero-inflation ([10]), although these guides cannot be applied to the case studied here due to the dichotomous nature of the outcome. In general, zero-inflated models can be expressed as}
+
+\begin{equation}\begin{array}{ll}
+ \color{blue}P(Y=0) & \color{blue}= g + (1-g) \cdot f(0) \\
+ \color{blue}P(Y=j) & \color{blue}= (1-g) \cdot f(j), j > 0\\
+\end{array}\end{equation}
+
+\noindent \textcolor{blue}{where $g$ is the structural zero probability and $f(0)$ is the zero probability of an appropriate distribution (Poisson, negative binomial or Bernoulli as in our case).''}
+
+\end{reply}
+
+\begin{point}
+Advantages of the used R packages are not well explored.
+	\label{pt:C9}
+\end{point}
+
+\begin{reply}
+To the best of our knowledge there is no other library in R or any other standard software package able to fit zero-inflated Bernoulli regression models. To clarify this point and to state the advantages of using the \texttt{bayesZIB} package, the following paragraph was added to the new version of the manuscript (pages 3 and 4):
+
+\textcolor{blue}{``The models proposed to analyze the data described in the following section and in the simulation study have been written in the programming language \textit{Stan}, within the \textit{R} environment [14] and are freely available from the authors as a package called \textit{bayesZIB} [15]. To the best of our knowledge, this is the only package available in R able to fit zero-inflated Bernoulli regression models. The use of the package is very similar to other packages that implement zero-inflated models, such as \textit{pscl} [16], to facilitate the interpretation of the results, while more advanced users could easily adapt the code to their specific requirements. Appropriate priors for the parameters $\omega$ and $p$ can be defined in the function \texttt{bayesZIB} using the argument \texttt{priors} (only uniforms with different parameters are implemented so far in the package).''}
+
+The advantage of the Bayesian approach in front of the frequentist when facing zero-inflated Bernoulli data is claimed in page 2:
+
+\textcolor{blue}{``In practice, zero-inflated models with both dichotomous sources (a mixture of two Bernoulli random variables, one with probability of success $\omega$ and the other with probability of success $p$) have received far less attention. This is due, in large part, to the fact that the resulting distribution is once again a Bernoulli with probability of success $\omega \cdot p$, so that the proportion of structural zeros $(1 - \omega)$ and sample zeros $(1- p)$ are indistinguishable from the point of view of frequentist statistics. However, from the Bayesian perspective and using known reasonable information about these proportions, it is possible to distinguish the two sources of zeros and estimate $\omega$ and $p$.''}
+
+\end{reply}
+
+\begin{point}
+The authors could better emphasize the differences between ZIP and ZINB models, mostly related to overdispersion tests.
+	\label{pt:C10}
+\end{point}
+
+\begin{reply}
+We agree with the reviewer that overdispersion is an important issue when dealing with count outcomes, and in some cases it can be related to zero inflation. However, our outcome is a dichotomous variable, and we know that it has zero inflation (based on the problem we are working on, there are two sources of zeros). Additionally, overdispersion in a logistic regression setting could be tested by comparing the binomial and quasibinomial based logistic regression models, but we believe that this is far from the main point of this work, which is to propose an alternative approach for zero-inflated dichotomous outcomes that is not related to zero-inflated count data models like ZIP or ZINB.
+\end{reply}
+
+\begin{point}
+ZIP and ZINB models have different LL functions, and this fact is not explored in the paper.
+	\label{pt:C11}
+\end{point}
+
+\begin{reply}
+As the reviewer points out, zero-inflated Poisson and negative binomial models have different likelihood functions, but classical zero inflated count data models are not the issue this work is dealing with. However, as these are the most commonly used zero inflated models and are very familiar to most potential readers, a more detailed discussion is included in the \textit{Background} section of the paper (page 2, see our reply to comment~\ref{pt:C8}).
+\end{reply}
+
+\begin{point}
+Authors should present in the results section comparisons among distinct class of models, such as ZIP, ZINB, OLS and log-OLS. These comparisons could be done in terms of parameters estimations, fits and Log-Likelihood final values.
+	\label{pt:C12}
+\end{point}
+
+\begin{reply}
+We respectfully disagree with this referee's comment. ZIP, ZINB, and OLS models for count data are not suitable for dichotomous data. As can be seen in the real data example, our response variable is sickness presenteeism (SP), defined as attending work while sick and it is a dichotomous variable (no SP = 0 ; yes SP = 1). Anyway, by experimenting with the data, we can see what happens with the estimates and log-likelihoods in the table below:
+
+\begin{table}[h!]
+\small\sf\centering
+\caption{ZIP and ZINB regression models estimates and log-likelihood. CI stands for confidence interval\label{tab2}}
+\begin{tabular}{ccccc}
+\hline
+ Model & Source & Covariate & Coefficient. (95\% CI) & Log-likelihood \\
+\hline
+\multirow{5}{*}{ZIP} & \multirow{2}{*}{Struct.} & Intercept & -12.01 (-155.59, 131.58) & \multirow{5}{*}{-967.47}\\
+& & Bad & -3.87 (-858.50, 850.77) \\
+\cline{2-4}
+& \multirow{3}{*}{Non-struct.} & Intercept & -1.10 (-1.28, -0.92) \\
+& & Sometimes & -0.05 (-0.34, 0.23) \\
+& & Never & -0.31 (-0.53, -0.09) \\
+\hline
+\multirow{5}{*}{ZINB} & \multirow{2}{*}{Struct.} & Intercept & -14.49 (-511.54, 482.56) & \multirow{5}{*}{-967.47}\\
+& & Bad & -4.23 (-3538.65, 3530.19) \\
+\cline{2-4}
+& \multirow{3}{*}{Non-struct.} & Intercept & -1.10 (-1.28, -0.92) \\
+& & Sometimes & -0.05 (-0.34, 0.23) \\
+& & Never & -0.31 (-0.53, -0.09) \\
+\hline
+\end{tabular}
+\end{table}
+
+Taking the log-likelihood of our proposal (-886.49), it can be seen that is higher than the log-likelihood obtained by any other considered approach, as could be expected, and that the estimates provided by these models are very far away from the actual values reported in Table 2 in the paper, obtained excluding the healthy individuals which are not at risk. It can also be seen that the variability around the estimates corresponding to the zero-inflated (structural) part is huge on both ZIP and ZINB models.
+
+\end{reply}
+\end{document}
