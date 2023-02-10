@@ -1,3 +1,4 @@
+setwd("/home/dmorina/Insync/dmorina@ub.edu/OneDrive Biz/Projectes/2022/0052022. MAPFRE/Mapfre/Papers/Paper 2 (BSL)/BMC MRM/GitHub/")
 sink(file="Results/output.txt", append=TRUE)
 library(BSL)
 library(ggplot2)
@@ -15,9 +16,9 @@ library(mixtools)
 library(tseries)
 library(quantspec)
 
-source("/home/dmorina/Insync/dmorina@ub.edu/OneDrive Biz/Projectes/2022/0052022. MAPFRE/Mapfre/Seminaris/Seminari 2 (IWSM)/R/Estep.R")
-source("/home/dmorina/Insync/dmorina@ub.edu/OneDrive Biz/Projectes/2022/0052022. MAPFRE/Mapfre/Seminaris/Seminari 2 (IWSM)/R/Mstep.R")
-source("/home/dmorina/Insync/dmorina@ub.edu/OneDrive Biz/Projectes/2022/0052022. MAPFRE/Mapfre/Seminaris/Seminari 2 (IWSM)/R/EM.R")
+source("R/Estep.R")
+source("R/Mstep.R")
+source("R/EM.R")
 
 ncores <- detectCores()
 cl <- makeCluster(ncores-2)
@@ -56,7 +57,7 @@ st <- function(z){
   s4=acf(z,plot=F)$acf[3]; s5=acf(z,plot=F)$acf[4]
   c(s1,s2,s3,s4,s5)}
 
-cases <- read_xls("/home/dmorina/Insync/dmorina@ub.edu/OneDrive Biz/Projectes/2022/0052022. MAPFRE/Mapfre/Seminaris/Seminari 2 (IWSM)/Data/cases.xls")
+cases <- read_xls("Data/cases.xls")
 cases <- cases[, c(1,2,3)]
 cases$fecha <- as.Date(cases$fecha, format="%Y-%m-%d")
 colnames(cases) <- c("CCAA", "Date", "cases")
@@ -114,7 +115,7 @@ cases$cod_ine[cases$CCAA2=="VC"] <- 10
 cases$CCAA2 <- NULL
 
 cases$Date <- MMWRweek2Date(cases$Year, cases$Week)
-pob <- read_xls("/home/dmorina/Insync/dmorina@ub.edu/OneDrive Biz/Projectes/2022/0052022. MAPFRE/Mapfre/Seminaris/Seminari 2 (IWSM)/Data/poblacio.xls", encoding="latin1")
+pob <- read_xls("Data/poblacio.xls")
 cases <- merge(cases, pob, by=c("CCAA"))
 cases$incid <- cases$cases/cases$Pob*100000
 cases <- cases[cases$Week>8 | cases$Year>2020, ]
