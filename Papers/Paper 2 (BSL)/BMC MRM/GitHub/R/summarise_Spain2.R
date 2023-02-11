@@ -625,3 +625,6 @@ ggplot(data=resum, aes(x=Date, y=med, col=Value)) +
 est <- sum(resum$med[resum$Value=="Estimated"])
 reg <- sum(resum$med[resum$Value=="Registered"])
 reg/est*100
+
+### RMSE and MAPE
+
