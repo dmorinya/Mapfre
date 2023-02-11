@@ -5,6 +5,7 @@ library(lubridate)
 library(ggplot2)
 library(ggpubr)
 library(MMWRweek)
+library(WriteXLS)
 
 setwd("/home/dmorina/Insync/dmorina@ub.edu/OneDrive Biz/Projectes/2022/0052022. MAPFRE/Mapfre/Papers/Paper 2 (BSL)/BMC MRM/GitHub/")
 cases <- read.xls("Data/cases.xls")
@@ -287,6 +288,7 @@ graph_CE <- ggplot(data=resum, aes(x=Date, y=med, col=Value)) +
         axis.title=element_text(size=14,face="bold"))+  labs(col = "Value")
 error_CE <- data.frame(Week=cases$Week[cases$CCAA=="Ceuta"], Year=cases$Year[cases$CCAA=="Ceuta"],
                        reg=cases$cases[cases$CCAA=="Ceuta"], reg_est=(1-0.97088+0.97088*0.30232)*colMedians(as.matrix(CE)))
+error_CE <- error_CE[error_CE$reg!=0, ]
 rmse_CE <- sqrt(mean((error_CE$reg-error_CE$reg_est)^2))
 mape_CE <- mean(abs((error_CE$reg-error_CE$reg_est)/error_CE$reg)) * 100
 
@@ -503,6 +505,7 @@ graph_ME <- ggplot(data=resum, aes(x=Date, y=med, col=Value)) +
         axis.title=element_text(size=14,face="bold"))+  labs(col = "Value")
 error_ME <- data.frame(Week=cases$Week[cases$CCAA=="Melilla"], Year=cases$Year[cases$CCAA=="Melilla"],
                        reg=cases$cases[cases$CCAA=="Melilla"], reg_est=(1-0.9728+0.9728*0.3466)*colMedians(as.matrix(ME)))
+error_ME <- error_ME[error_ME$reg!=0, ]
 rmse_ME <- sqrt(mean((error_ME$reg-error_ME$reg_est)^2))
 mape_ME <- mean(abs((error_ME$reg-error_ME$reg_est)/error_ME$reg)) * 100
 
@@ -557,6 +560,7 @@ graph_AS <- ggplot(data=resum, aes(x=Date, y=med, col=Value)) +
         axis.title=element_text(size=14,face="bold"))+  labs(col = "Value")
 error_AS <- data.frame(Week=cases$Week[cases$CCAA=="Principado de Asturias"], Year=cases$Year[cases$CCAA=="Principado de Asturias"],
                        reg=cases$cases[cases$CCAA=="Principado de Asturias"], reg_est=(1-0.9830+0.9830*0.3454)*colMedians(as.matrix(AS)))
+error_AS <- error_AS[error_AS$reg!=0, ]
 rmse_AS <- sqrt(mean((error_AS$reg-error_AS$reg_est)^2))
 mape_AS <- mean(abs((error_AS$reg-error_AS$reg_est)/error_AS$reg)) * 100
 
@@ -627,4 +631,11 @@ reg <- sum(resum$med[resum$Value=="Registered"])
 reg/est*100
 
 ### RMSE and MAPE
-
+errors_summary <- data.frame(CCAA=names(table(cases$CCAA)), RMSE=c(rmse_AN, rmse_AR, rmse_CN, rmse_CB, rmse_CM, rmse_CL, rmse_CT,
+                                                                   rmse_CE, rmse_NC, rmse_VC, rmse_EX, rmse_GA, rmse_IB, rmse_RI,
+                                                                   rmse_MD, rmse_ME, rmse_PV, rmse_AS, rmse_MC),
+                             MAPE=c(mape_AN, mape_AR, mape_CN, mape_CB, mape_CM, mape_CL, mape_CT,
+                                     mape_CE, mape_NC, mape_VC, mape_EX, mape_GA, mape_IB, mape_RI,
+                                     mape_MD, mape_ME, mape_PV, mape_AS, mape_MC))
+### Generate Table S1
+WriteXLS(errors_summary, "Results/errors_summary.xls")
