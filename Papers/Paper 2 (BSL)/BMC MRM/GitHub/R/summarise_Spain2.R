@@ -639,3 +639,16 @@ errors_summary <- data.frame(CCAA=names(table(cases$CCAA)), RMSE=c(rmse_AN, rmse
                                      mape_MD, mape_ME, mape_PV, mape_AS, mape_MC))
 ### Generate Table S1
 WriteXLS(errors_summary, "Results/errors_summary.xls")
+
+### Overall errors
+error_AN$CCAA <- "Andalucía"
+error_AR$CCAA <- "Aragón"
+error_CN$CCAA <- "Canarias"
+error_CB$CCAA <- "Cantabria"
+error_CM$CCAA <- "Castilla - La Mancha"
+error_CL$CCAA <- "Castilla y León"
+overall_errors <- rbind(error_AN, error_AR, error_CN, error_CB, error_CM, error_CL, error_CT, error_CE, error_NC,
+                        error_VC, error_EX, error_GA, error_IB, error_RI, error_MD, error_ME, error_PV, error_AS, error_MC)
+overall_agg <- overall_errors %>% group_by(Year, Week) %>% summarise(reg=sum(reg), reg_est=sum(reg_est))
+rmse_global <- sqrt(mean((overall_agg$reg-overall_agg$reg_est)^2))
+mape_global <- mean(abs((overall_agg$reg-overall_agg$reg_est)/overall_agg$reg)) * 100

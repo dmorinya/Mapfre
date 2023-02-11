@@ -78,9 +78,9 @@ The problems and objectives don't mentioned clearly in abstract.
 \end{point}
 
 \begin{reply}
-To clarify, the following sentences have been added to the abstract:
+To clarify, the \textit{Background} paragraph of the abstract has been rewritten to:
 
-\textcolor{blue}{``XXXXXXXXXXXXXXXXX''}
+\textcolor{blue}{``\textit{\textbf{Background:}}The problem of dealing with misreported data is very common in a wide range of contexts for different reasons. The current situation caused by the Covid-19 worldwide pandemic is a clear example, where the data provided by official sources were not always reliable due to data collection issues and to the high proportion of asymptomatic cases. In this work, a flexible framework is proposed, with the objective of quantifying the severity of misreporting in a time series and reconstructing the most likely evolution of the process.''}
 
 \end{reply}
 
@@ -90,7 +90,7 @@ To clarify, the following sentences have been added to the abstract:
 \end{point}
 
 \begin{reply}
-We agree with the reviewer that ``Estimation'' is referred to parameters and ``Forecasting'' is usually used in relation to values of the series. We have carefully reviewed the manuscript and changed the wording accordingly. TODO: S'ha de fer!
+We agree with the reviewer that ``estimation'' is referred to parameters and ``prediction'' is usually used in relation to values of the series. We have carefully reviewed the manuscript and changed the wording accordingly.
 \end{reply}
 
 \begin{point}
@@ -101,7 +101,7 @@ The measurements of error should be used such as MAPE, RMSE, ans others.
 \begin{reply}
 Although the main objective of this work is not in forecasting future values but in reconstructing the most likely values of the hidden process, error measures like those proposed by the reviewer can also be computed by taking the registered values as reference. Therefore, following the reviewer's suggestion, the following paragraph has been added to the manuscript (page XXXXXX):
 
-\textcolor{blue}{``XXXXXXXXXXXXXXXXX''}
+\textcolor{blue}{``The predicted registered values can also be obtained as $\hat{Y_t} = (1-\hat{\omega}+\hat{\omega} \cdot \hat{q}) \cdot \hat{X_t}$, and compared to the actual registered values $Y_t$. That allows computing standard forecasting error measures as Root Mean Squared Error (RMSE) or Mean Absolute Percentage Error (MAPE). Overall, the RMSE was 113,145.4 and MAPE was around 8\%, ranging between 4 to 13\% across regions. The RMSE and MAPE for each region are described in Table S1 in the Supplementary Material.''}
 
 Additionally, the table with specific RMSE and MAPE for each Spanish region has been added as Table S1 in the Supplementary Material.
 
@@ -113,7 +113,10 @@ Discussions and conclusions should include more details about ARCH and its resul
 \end{point}
 
 \begin{reply}
-XXXXXXXXXXXXXXXXXXXXXX
+Following the reviewer's suggestion, the following paragraph has been added to the \textbf{Discussion} section:
+
+\textcolor{blue}{``XXXXXXXXXXXXXXXXXX''}
+
 \end{reply}
 
 % Let's start point-by-point with Reviewer 2
@@ -150,7 +153,7 @@ The simulation study carried out by the authors is not motivated enough, in my o
 \begin{reply}
 The method used to estimate the parameters of the model (Bayesian synthetic likelihood) is known and well-tested, but to the best of our knowledge it has never been used in the context of AutoRegressive Conditional Heteroskedasticity (ARCH) underreported models, and this is why its performance is assessed through the simulation study. To clarify, the following paragraph has been added to the manuscript (page XXX):
 
-\textcolor{blue}{``Although the estimation method is already known and has been tested before, to the best of our knowledge it has never been used in the context of ARCH time series, and therefore A a thorough simulation study has been conducted...''}
+\textcolor{blue}{``Although the estimation method is already known and has been tested before, to the best of our knowledge it has never been used in the context of ARCH time series, and therefore a thorough simulation study has been conducted...''}
 
 \end{reply}
 
@@ -160,9 +163,9 @@ In Figures 1 and 2 I feel that something is wrong with the plot. For instance, i
 \end{point}
 
 \begin{reply}
-As the reviewer points out, there is something curious about the values around 2022-01. The question is that in all simulations this particular value is detected as not being underreported ($Y_{2022-01} = X_{2022-01}$), maybe due to the breakout of a new variant with different characteristics around these dates. This is why the estimated and registered values and the 95\% credible interval for this value are all equal, as represented in Figure 1 and Figure 2. To clarify, the following sentences has been added to the manuscript (page XXX):
+As the reviewer points out, there is something curious about the values around 2022-01. The question is that in all simulations these particular values are detected as not being underreported ($Y_t = X_t$), maybe due to the breakout of a new variant with different characteristics around these dates. This is why the estimated and registered values and the 95\% credible interval for this value are all equal, as represented in Figure 1 and Figure 2. To clarify, the following sentences has been added to the manuscript (page XXX):
 
-\textcolor{blue}{``''}
+\textcolor{blue}{``As can be seen in Figure 1 and Figure 2, there are 4 weeks (2021-12-26, 2022-01-02, 2022-01-09 and 2022-01-16) for which the predicted values coincide with those registered in all simulations, so no underreporting is detected these weeks. This behavior might be due to the breakout of a new variant with different characteristics (for instance producing more symptomatic cases and therefore reducing the underreporting) around these dates.''}
 
 \end{reply}
 
@@ -181,6 +184,6 @@ In the Conclusions, there are some comments referred to the covariates included 
 \end{point}
 
 \begin{reply}
-Following the reviewer's suggestion, the estimates corresponding to the impact of the considered covariates have been included in the main text (Table 2) and removed from the Supplementary Material. TODO: S'ha de fer!!
+Following the reviewer's suggestion, the estimates corresponding to the impact of the considered covariates have been included in the main text (Table 2) and removed from the Supplementary Material.
 \end{reply}
 \end{document}
