@@ -65,7 +65,7 @@ Title, abstract, keywords weren't fitted together. The main approach ARCH wasn't
 \end{point}
 
 \begin{reply}
-We agree with the reviewer. The \textit{Methods} paragraph in the abstract has been updated to:
+Following the reviewer's suggestion, the \textit{Methods} paragraph in the abstract has been updated to:
 
 \textcolor{blue}{``\textit{\textbf{Methods:}} In this work, we explore the performance of Bayesian Synthetic Likelihood to estimate the parameters of a model based on AutoRegressive Conditional Heteroskedastic time series capable of dealing with misreported information and to reconstruct the most likely evolution of the phenomenon. The performance of the proposed methodology is evaluated through a comprehensive simulation study and illustrated by reconstructing the weekly Covid-19 incidence in each Spanish Autonomous Community.''}
 
@@ -90,7 +90,7 @@ To clarify, the \textit{Background} paragraph of the abstract has been rewritten
 \end{point}
 
 \begin{reply}
-We agree with the reviewer that ``estimation'' is referred to parameters and ``prediction'' is usually used in relation to values of the series. We have carefully reviewed the manuscript and changed the wording accordingly.
+We agree with the reviewer that ``estimation'' is usually referred to parameters and ``prediction'' is usually used in relation to values of the series. We have carefully reviewed the manuscript and changed the wording accordingly.
 \end{reply}
 
 \begin{point}
@@ -99,9 +99,9 @@ The measurements of error should be used such as MAPE, RMSE, ans others.
 \end{point}
 
 \begin{reply}
-Although the main objective of this work is not in forecasting future values but in reconstructing the most likely values of the hidden process, error measures like those proposed by the reviewer can also be computed by taking the registered values as reference. Therefore, following the reviewer's suggestion, the following paragraph has been added to the manuscript (page XXXXXX):
+Although the main objective of this work is not in forecasting future values but in reconstructing the most likely values of the hidden process, error measures like those proposed by the reviewer can also be computed by taking the registered values as reference. Therefore, following the reviewer's suggestion, the following paragraph has been added to the manuscript (page 13):
 
-\textcolor{blue}{``The predicted registered values can also be obtained as $\hat{Y_t} = (1-\hat{\omega}+\hat{\omega} \cdot \hat{q}) \cdot \hat{X_t}$, and compared to the actual registered values $Y_t$. That allows computing standard forecasting error measures as Root Mean Squared Error (RMSE) or Mean Absolute Percentage Error (MAPE). Overall, the RMSE was 113,145.4 and MAPE was around 8\%, ranging between 4 to 13\% across regions. The RMSE and MAPE for each region are described in Table S1 in the Supplementary Material.''}
+\textcolor{blue}{``The registered values predicted by the model can also be obtained as $\hat{Y_t} = (1-\hat{\omega}+\hat{\omega} \cdot \hat{q}) \cdot \hat{X_t}$, and compared to the actual registered values $Y_t$. That allows computing standard forecasting error measures as Root Mean Squared Error (RMSE) or Mean Absolute Percentage Error (MAPE). Overall, the RMSE was 113,145.4 and MAPE was around 8\%, ranging between 4 to 13\% across regions. The RMSE and MAPE for each region are described in Table S1 in the Supplementary Material.''}
 
 Additionally, the table with specific RMSE and MAPE for each Spanish region has been added as Table S1 in the Supplementary Material.
 
@@ -115,7 +115,7 @@ Discussions and conclusions should include more details about ARCH and its resul
 \begin{reply}
 Following the reviewer's suggestion, the following paragraph has been added to the \textbf{Discussion} section:
 
-\textcolor{blue}{``XXXXXXXXXXXXXXXXXX''}
+\textcolor{blue}{``Using a flexible approach for the underlying hidden process, such as ARCH time series, are a natural extension to recent developments (see for instance [19]) proposed for fitting underreported time series but restricted to the case when the underlying process has an ARMA structure and allow us to model phenomena presenting more complex behavior like Covid-19 in the long time period considered in the present work.''}
 
 \end{reply}
 
@@ -151,7 +151,7 @@ The simulation study carried out by the authors is not motivated enough, in my o
 \end{point}
 
 \begin{reply}
-The method used to estimate the parameters of the model (Bayesian synthetic likelihood) is known and well-tested, but to the best of our knowledge it has never been used in the context of AutoRegressive Conditional Heteroskedasticity (ARCH) underreported models, and this is why its performance is assessed through the simulation study. To clarify, the following paragraph has been added to the manuscript (page XXX):
+The method used to estimate the parameters of the model (Bayesian synthetic likelihood) is known and well-tested, but to the best of our knowledge it has never been used in the context of AutoRegressive Conditional Heteroskedasticity (ARCH) underreported models, and this is why its performance is assessed through the simulation study. To clarify, the following paragraph has been added to the manuscript (page 5):
 
 \textcolor{blue}{``Although the estimation method is already known and has been tested before, to the best of our knowledge it has never been used in the context of ARCH time series, and therefore a thorough simulation study has been conducted...''}
 
@@ -163,7 +163,7 @@ In Figures 1 and 2 I feel that something is wrong with the plot. For instance, i
 \end{point}
 
 \begin{reply}
-As the reviewer points out, there is something curious about the values around 2022-01. The question is that in all simulations these particular values are detected as not being underreported ($Y_t = X_t$), maybe due to the breakout of a new variant with different characteristics around these dates. This is why the estimated and registered values and the 95\% credible interval for this value are all equal, as represented in Figure 1 and Figure 2. To clarify, the following sentences has been added to the manuscript (page XXX):
+As the reviewer points out, there is something curious about the values around 2022-01. The question is that in all simulations these particular values are detected as not being underreported ($Y_t = X_t$), maybe due to the breakout of a new variant with different characteristics around these dates. This is why the estimated and registered values and the 95\% credible interval for this value are all equal, as represented in Figure 1 and Figure 2. To clarify, the following sentences has been added to the manuscript (page 13):
 
 \textcolor{blue}{``As can be seen in Figure 1 and Figure 2, there are 4 weeks (2021-12-26, 2022-01-02, 2022-01-09 and 2022-01-16) for which the predicted values coincide with those registered in all simulations, so no underreporting is detected these weeks. This behavior might be due to the breakout of a new variant with different characteristics (for instance producing more symptomatic cases and therefore reducing the underreporting) around these dates.''}
 
