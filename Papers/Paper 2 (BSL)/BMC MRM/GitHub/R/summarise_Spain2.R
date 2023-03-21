@@ -1,5 +1,5 @@
 library(matrixStats)
-library(gdata)
+library(readxl)
 library(tidyverse)
 library(lubridate)
 library(ggplot2)
@@ -8,7 +8,7 @@ library(MMWRweek)
 library(WriteXLS)
 
 setwd("/home/dmorina/Insync/dmorina@ub.edu/OneDrive Biz/Projectes/2022/0052022. MAPFRE/Mapfre/Papers/Paper 2 (BSL)/BMC MRM/GitHub/")
-cases <- read.xls("Data/cases.xls")
+cases <- read_xls("Data/cases.xls")
 cases <- cases[, c(1,2,3)]
 cases$fecha <- as.Date(cases$fecha, format="%Y-%m-%d")
 colnames(cases) <- c("CCAA", "Date", "cases")
@@ -67,7 +67,7 @@ cases$CCAA2 <- NULL
 
 #cases <- cases[cases$Year < 2022, ]
 
-pob <- read.xls("Data/poblacio.xls", encoding="latin1")
+pob <- read_xls("Data/poblacio.xls")
 cases <- merge(cases, pob, by=c("CCAA"))
 cases$incid <- cases$cases/cases$Pob*100000
 cases <- cases[cases$Week>8 | cases$Year>2020, ]

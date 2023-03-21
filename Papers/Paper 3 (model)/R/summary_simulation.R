@@ -2,6 +2,7 @@
 
 ### Case 1: w=0.7 and moderate underreporting (phi1=0.2; phi2=0.3) 
 set.seed(1234)
+setwd("/home/dmorina/Insync/dmorina@ub.edu/OneDrive Biz/Projectes/2022/0052022. MAPFRE/Mapfre/Papers/Paper 3 (model)")
 load("Results/Sim/case1.RData")
 
 estimates <- data.frame(alpha=rep(NA, 600), lambda=rep(NA, 600), 
@@ -75,7 +76,7 @@ colSums(coverage)/500*100
 
 ### Case 2: w=0.3 and moderate underreporting (phi1=0.2; phi2=0.3) 
 set.seed(1234)
-setwd("C:/Users/dmorina/Documents/Mapfre")
+setwd("/home/dmorina/Insync/dmorina@ub.edu/OneDrive Biz/Projectes/2022/0052022. MAPFRE/Mapfre/Papers/Paper 3 (model)")
 load("Results/Sim/case2.RData")
 
 estimates <- data.frame(alpha=rep(NA, 600), lambda=rep(NA, 600), 
@@ -149,7 +150,7 @@ colSums(coverage)/500*100
 
 ### Case 3: w=0.7 and severe underreporting (phi1=0.1; phi2=0.1) 
 set.seed(1234)
-setwd("C:/Users/dmorina/Documents/Mapfre")
+setwd("/home/dmorina/Insync/dmorina@ub.edu/OneDrive Biz/Projectes/2022/0052022. MAPFRE/Mapfre/Papers/Paper 3 (model)")
 load("Results/Sim/case3.RData")
 
 estimates <- data.frame(alpha=rep(NA, 600), lambda=rep(NA, 600), 
@@ -223,7 +224,7 @@ colSums(coverage)/500*100
 
 ### Case 4: w=0.3 and severe underreporting (phi1=0.1; phi2=0.1) 
 set.seed(1234)
-setwd("/home/dmorina/Insync/dmorina@ub.edu/OneDrive Biz/Projectes/2022/0052022. MAPFRE/Mapfre")
+setwd("/home/dmorina/Insync/dmorina@ub.edu/OneDrive Biz/Projectes/2022/0052022. MAPFRE/Mapfre/Papers/Paper 3 (model)")
 load("Results/Sim/case4.RData")
 
 estimates <- data.frame(alpha=rep(NA, 600), lambda=rep(NA, 600), 
@@ -298,7 +299,7 @@ colSums(coverage)/500*100
 ### OVERREPORTING
 ### Case 1: w=0.7 and moderate overreporting (phi1=0.2; phi2=0.7) 
 set.seed(1234)
-setwd("/home/dmorina/Insync/dmorina@ub.edu/OneDrive Biz/Projectes/2022/0052022. MAPFRE/Mapfre")
+setwd("/home/dmorina/Insync/dmorina@ub.edu/OneDrive Biz/Projectes/2022/0052022. MAPFRE/Mapfre/Papers/Paper 3 (model)")
 load("Results/Sim/case1_OVER.RData")
 
 estimates <- data.frame(alpha=rep(NA, 520), lambda=rep(NA, 520), 
@@ -372,11 +373,11 @@ colSums(coverage)/500*100
 
 ### Case 2: w=0.3 and moderate overreporting (phi1=0.2; phi2=0.7) 
 set.seed(1234)
-setwd("/home/dmorina/Insync/dmorina@ub.edu/OneDrive Biz/Projectes/2022/0052022. MAPFRE/Mapfre")
+setwd("/home/dmorina/Insync/dmorina@ub.edu/OneDrive Biz/Projectes/2022/0052022. MAPFRE/Mapfre/Papers/Paper 3 (model)")
 load("Results/Sim/case2_OVER.RData")
 
-estimates <- data.frame(alpha=rep(NA, 520), lambda=rep(NA, 520), 
-                        omega=rep(NA, 520), phi1=rep(NA, 520), phi2=rep(NA, 520))
+estimates <- data.frame(alpha=rep(NA, 600), lambda=rep(NA, 600), 
+                        omega=rep(NA, 600), phi1=rep(NA, 600), phi2=rep(NA, 600))
 for (i in 1801:2400)
 {
   if (length(result[[i]])==6)
@@ -446,11 +447,11 @@ colSums(coverage)/500*100
 
 ### Case 3: w=0.7 and severe overreporting (phi1=0.3; phi2=0.5) 
 set.seed(1234)
-setwd("/home/dmorina/Insync/dmorina@ub.edu/OneDrive Biz/Projectes/2022/0052022. MAPFRE/Mapfre")
+setwd("/home/dmorina/Insync/dmorina@ub.edu/OneDrive Biz/Projectes/2022/0052022. MAPFRE/Mapfre/Papers/Paper 3 (model)")
 load("Results/Sim/case3_OVER.RData")
 
-estimates <- data.frame(alpha=rep(NA, 520), lambda=rep(NA, 520), 
-                        omega=rep(NA, 520), phi1=rep(NA, 520), phi2=rep(NA, 520))
+estimates <- data.frame(alpha=rep(NA, 600), lambda=rep(NA, 600), 
+                        omega=rep(NA, 600), phi1=rep(NA, 600), phi2=rep(NA, 600))
 for (i in 1801:2400)
 {
   if (length(result[[i]])==6)
@@ -520,11 +521,11 @@ colSums(coverage)/500*100
 
 ### Case 4: w=0.3 and severe overreporting (phi1=0.3; phi2=0.5) 
 set.seed(1234)
-setwd("/home/dmorina/Insync/dmorina@ub.edu/OneDrive Biz/Projectes/2022/0052022. MAPFRE/Mapfre")
-load("Results/Sim/case3_OVER.RData")
+setwd("/home/dmorina/Insync/dmorina@ub.edu/OneDrive Biz/Projectes/2022/0052022. MAPFRE/Mapfre/Papers/Paper 3 (model)")
+load("Results/Sim/case4_OVER.RData")
 
-estimates <- data.frame(alpha=rep(NA, 520), lambda=rep(NA, 520), 
-                        omega=rep(NA, 520), phi1=rep(NA, 520), phi2=rep(NA, 520))
+estimates <- data.frame(alpha=rep(NA, 600), lambda=rep(NA, 600), 
+                        omega=rep(NA, 600), phi1=rep(NA, 600), phi2=rep(NA, 600))
 for (i in 1801:2400)
 {
   if (length(result[[i]])==6)

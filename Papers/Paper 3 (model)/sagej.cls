@@ -367,7 +367,7 @@ centering]{geometry}
 \def\volumeyear{0000}
 \def\volumenumber{XX}
 \def\issuenumber{X}
-\def\journalname{Journal Title}
+\def\journalname{Statistical Methods in Medical Research}
 
 \def\runninghead#1{\markboth{{#1}}{}}
 

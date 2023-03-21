@@ -5,7 +5,7 @@ import time
 start_time = time.time()
 
 ### 2019 FIRST QUARTER
-df1 = dt.fread("/home/dmorina/Insync/dmorina@ub.edu/OneDrive Biz/Projectes/2022/0052022. MAPFRE/Mapfre/Data/Siniestros2019Literales1T.csv")
+df1 = dt.fread("/home/dmorina/Insync/dmorina@ub.edu/OneDrive Biz/Projectes/2022/0052022. MAPFRE/Original MAPFRE Data/Siniestros2019Literales1T.csv")
 df1.sort('fecha Siniestro Acto')
 df1_pandas = df1.to_pandas()
 df1_pandas = df1_pandas[df1_pandas['Identificador CIS'] != 0]

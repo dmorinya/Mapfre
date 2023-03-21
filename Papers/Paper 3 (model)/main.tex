@@ -1,0 +1,262 @@
+% sage_latex_guidelines.tex V1.20, 14 January 2017
+
+\documentclass[Afour,sageh,times]{sagej}
+
+\usepackage{moreverb,url}
+\usepackage{multirow}
+\usepackage[colorlinks,bookmarksopen,bookmarksnumbered,citecolor=red,urlcolor=red]{hyperref}
+
+\newcommand\BibTeX{{\rmfamily B\kern-.05em \textsc{i\kern-.025em b}\kern-.08em
+T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+
+\def\volumeyear{2016}
+
+\begin{document}
+
+\runninghead{Fern\'andez-Fontelo et al.}
+
+\title{Modelling the impact of Covid-19 pandemics on health insurance associated services demand}
+
+\author{Amanda Fern\'andez-Fontelo\affilnum{1}, Pedro Puig\affilnum{1}, Montserrat Guill\'en\affilnum{2}, David Mori\~na\affilnum{2}}
+
+\affiliation{\affilnum{1} Departament de Matem\`atiques, Universitat Aut\`onoma de Barcelona\\
+\affilnum{2} Department of Econometrics, Statistics and Applied Economics, Riskcenter-IREA, Universitat de Barcelona}
+
+\corrauth{Amanda Fern\'andez-Fontelo}
+
+\email{amanda@mat.uab.cat}
+
+\begin{abstract}
+Health insurance is one of the branches of insurance with the greatest penetration in the Spanish market; the same happens in many developed countries. Its accident rate has suffered the impact of the Covid-19 pandemic in 2020 and 2021, especially regarding consultations and medical events that could be postponed. Mobility restrictions led to a decline in the use of insurance by policyholders and a transformation of the interaction between patients and health workers with greater use of telephone consultation. This work aims to study how to determine if (i) due to the effect of postponing visits or (ii) due to the consequences of having suffered the virus (persistent Covid or side effects), there will be an excess of accidents and, where appropriate when it will occur. This work describes the methodological proposal that is aimed to respond to the research questions that will be addressed in this work.
+\end{abstract}
+
+\keywords{}
+
+\maketitle
+
+\section{Introduction}
+
+In the last months, there has been a big global concern around the 2019 novel coronavirus (SARS-CoV-2) infection, prompting the World Health Organization (WHO) to declare a public health emergency in early 2020. The pandemic induced by this virus has significantly impacted many aspects of human activity. In addition to the direct consequences concerning deaths caused by the Covid-19 infection and the saturation of health systems in many countries (including Spain and neighbouring countries), a decrease in the use of health services has been detected in both the public health system and services associated with private health insurances in 2020. 
+
+With more than 12 million insured, health insurance is one of the insurance branches with the highest penetration in the Spanish market. More than 25\% of the population has this type of coverage, exceeding 35\% in some areas (\cite{unespa_informe_2020}). In 2020 and 2021, the Covid-19 pandemic impacted the companies' claim rates, especially regarding medical consultations and actions that were apparently of low priority and thus were postponed. The mobility restrictions led to a decline in the use of insurance services, as well as a transformation of the interaction between patients and health workers, with a larger use of telephone consultations. The concern is whether there will be an excess of claims in 2022 and later years, either due to postponing visits or the pandemic consequences (e.g., because of persistent Covid symptoms or secondary effects). In the public health system, there is already evidence of an increased frequency of use of health services. However, it is not straightforward to determine if the highest frequency of claims that will be observed will be equal to or greater than the infra-loss rate that was observed during the pandemic period. For this purpose, we present here a new method for misreporting (i.e., under-reporting or over-reporting) estimation, which builds on \cite{fernandez-fontelo_a_cabana_a_puig_p_and_morina_d_under-reported_2016, fernandezfontelo_a_cabana_a_joe_h_puig_p_and_morina_d_untangling_2019}. We use this method to determine: (i) whether the rebound effect occurs uniformly for all health insurance coverages or only for certain health insurance coverages, (ii) whether the rebound effect occurs homogeneously or varies depending on the insured characteristics, and (iii) to estimate the time point at which the initial benefit level is recovered. Many analyzes will be conducted on the effects of health spending at the public system level, but the implications for private health insurance will also be of interest. Above all, it is expected that to monitor the effects of the pandemic in the coming years, these forms of analysis --such as the one presented in the current work-- will be used as population groups with different sociodemographic characteristics or impacts on the use of health services cannot be directly compared. 
+
+This work aims to estimate and evaluate the pandemic's impact on health insurance, estimating the degree of under-reporting of health insurance usage, mainly in 2020, as well as the degree of over-reporting of health insurance usage nowadays as a result of the pandemic consequences. In addition, we want to develop a system that monitors claims to detect changes in the dynamics of medical insurance use in particular and any other branch in general. Although the main focus of the current research is on the development of a new method for misreporting estimation, which has also been empirically tested using simulated data, this method can also be applied to aggregated (anonymized) data from the health portfolio. We believe that the results and conclusions derived in the current research can be extended to other branches, as well as used to assess potential inequalities between countries or regions. In 2020, it was estimated that the total benefits provided by health insurance had totalled 6,300 million euros, of which 6,200 million correspond to the provision of medical services. In 2019, it was estimated that the total benefits provided by this type of insurance had totalled 6,600 million euros, of which 6,500 million correspond to the provision of medical services.
+
+The current work is organized as follows. Section 2 presents the model, its properties, and a method for estimating the model's parameters. Section 3 shows the main results of a comprehensive simulation study to evaluate how the model behaves in practice in both the under-reporting and over-reporting scenarios. 
+
+\section{The model}
+
+\noindent Let $X_n$ be the following stationary INAR(1) process: $X_n=\alpha\circ X_{n-1}+Z_n$, where $\alpha \circ X_n$ is the so-called binomial thinning operator and $Z_n \sim \textrm{Poisson}(\lambda)$. Then, $X_n$ follows a Poisson distribution with $\mathbb{E}(X_n)=\mu_X=\lambda/(1-\alpha)=\sigma_X^2=\mathbb{V}(X_n)$. Suppose that the processes $X_{n-1}$ and $Z_n$ are independent for all $n$. In addition, the auto-covariance and auto-correlation functions of this process are respectively $\gamma(k)=\textrm{Cov}(X_n,X_{n+k})=\alpha^k \sigma_X^2$ and $\rho(k)=\textrm{Cor}(X_n,X_{n+k})=\alpha^k$. 
+
+Let $Y_n$ be an observed and potentially misreported (i.e., under-reported or over-reported) process such that:
+\begin{align}\label{eq0:modelfatthin}
+Y_n=\begin{cases} 
+X_n &  1-\omega \\
+\vartheta \Diamond X_n & \omega, \\
+\end{cases}
+\end{align}
+
+\noindent where $\vartheta \Diamond X_n$ is the so-called fattering-thinning operator defined as:
+\begin{align}\label{eq1:fatteringthinning}
+\left[\vartheta \Diamond X_n|X_n=x_n\right]=\sum_{j=1}^{x_n}W_j,
+\end{align}
+
+\noindent and $W_j$ are independent and identically distributed (i.i.d) random variables distributed following the probability mass function (pmf) below:
+
+\begin{align}\label{eq2:pmfW}
+\mathbb{P}(W_j=k|\phi_1,\phi_2)=\begin{cases} 
+1-\phi_1-\phi_2  & \textrm{if} \quad k=0 \\
+\phi_1 & \textrm{if} \quad k=1 \\
+\phi_2 & \textrm{if} \quad k=2  \\
+0 & \textrm{otherwise} , \\
+\end{cases}
+\end{align}
+
+\noindent with $\vartheta=(\phi_1,\phi_2)$. Therefore, the observed process $Y_n$ coincides with the true process $X_n$ with probability $1-\omega$; otherwise, the observed process $Y_n$ is either less (under-reported) or more (over-reported) than the true process $X_n$ with probability $\omega$. The parameter $0<\omega<1$ is the frequency of the misreporting phenomenon, and parameters $\phi_1$ and $\phi_2$ indicate whether our process is under-reported or over-reported (i.e., if $\phi_1+2\phi_2>1$ the process is over-reported; if $\phi_1+2\phi_2<1$ the process is under-reported). Note that if $\phi_1=1$, the process is not misreported. In addition, a less flexible version of the operator defined in expression (\ref{eq1:fatteringthinning}) can be derived if $W_j \sim \textrm{Binomial}(2,\phi)$. Although the distribution in expression (\ref{eq2:pmfW}) is the easiest way to model over-reporting in count time series, other probability distributions with no compact support (e.g., the Poisson or Geometric distributions) can be taken into account here as well. 
+
+The operator defined in expression (\ref{eq1:fatteringthinning}) follows a 2nd-order Hermite distribution with parameters $\mu_X\phi_1$ and $\mu_X\phi_2$, where $\mu_X=\lambda/(1-\alpha)$ is the expectation of $X_n$ and $\phi_j=\mathbb{P}(W=j)$ for $j=1,2$. We can see the above using the idea of probability generating functions (pgf) as follows: First, the marginal distribution of the observed process $X_n \sim \textrm{Poisson}(\mu_X)$ with pgf $G_X(s)=\textrm{e}^{\mu_X(s-1)}$. Second, the pgf of the random variable $W$ in expression (\ref{eq2:pmfW}) is given by $G_W(s)=(1-\phi_1-\phi_2)+\phi_1s+\phi_2s^2$. Finally, the pgf of the operation defined in expression (\ref{eq1:fatteringthinning}) is given by $G_{\vartheta \Diamond X_n}(s)=G_X\left(G_W(s)\right)=\exp\left(\mu_X\phi_1(s-1)+\mu_X\phi_2(s^2-1)\right)$, which is the pgf of a 2nd-order Hermite distribution with parameters $\mu_X\phi_1$ and $\mu_X\phi_2$. Hence, the expectation and variance of the random variable $\vartheta \Diamond X_n$ are $\mathbb{E}\left(\vartheta \Diamond X_n\right)=\mu_X\left(\phi_1+2\phi_2\right)$ and $\mathbb{V}\left(\vartheta \Diamond X_n\right)=\mu_X\left(\phi_1+4\phi_2\right)$, respectively. 
+
+We already know that the latent process is distributed as $X_n \sim \textrm{Poisson}(\lambda/(1-\alpha))$ and the fattening-thinning operator follows $\vartheta \Diamond X_n \sim \textrm{Hermite}(\phi_1\mu_X,\phi_2\mu_X)$, where $\mu_X=\lambda/(1-\alpha)$. In addition, we can see that the distribution of the observed process $Y_n$ is the following mixture of a Poisson distribution and a 2nd-order Hermite distribution:
+\begin{align}\label{eq:mix}
+Y_n=\begin{cases} 
+\textrm{Poisson}(\mu_X) &  1-\omega, \\
+\textrm{Hermite}\left(\mu_X\phi_1,\mu_X\phi_2\right) &  \omega, \\
+\end{cases}
+\end{align}
+with expectation and variance defined as $\mathbb{E}(Y_n)=\mu_X(1-\omega(1-\phi_1-2\phi_2))$ and $\mathbb{V}(Y_n)=\mu_X(1-\omega (1-\phi_1-4\phi_2))+\mu_X^2\omega(1-\omega)(1-\phi_1-2\phi_2)^2$.
+
+Finally, the auto-correlation function of the observed process $Y_n$ is defined as:  
+\begin{align}
+\gamma(k)&=\textrm{Cov}\left(Y_n,Y_{n+k}\right)=\mu_X\alpha^k\left(1-\omega\left(1-\phi_1-2\phi_2\right)\right)^2,
+\end{align}
+
+which can be derived computing $\mathbb{E}(Y_n,Y_{n+k})$, $\mathbb{E}(Y_n)$ and $\mathbb{E}(Y_{n+k})$. In fact, we already know $\mathbb{E}(Y_n)=\mu_X(1-\omega(1-\phi_1-2\phi_2))$ (and similarly for $\mathbb{E}(Y_{n+k})$ given that $Y_n$ is a stationary process). In addition, $\mathbb{E}(Y_n,Y_{n+k})$ can be computed as a function of $\mathbb{E}(X_n,X_{n+k})=\textrm{Cov}(X_n,X_{n+k})+\mathbb{E}(X_n)\mathbb{E}(X_{n+k})=\alpha^k\sigma_X^2+\mu_X^2$. The auto-correlation function can be thus computed as:
+\begin{align}
+\rho(k)&=\textrm{Cor}\left(Y_n,Y_{n+k}\right)=\frac{\textrm{Cov}(Y_n,Y_{n+k})}{\sqrt{\mathbb{V}(Y_n)}\sqrt{\mathbb{V}(Y_{n+k})}}=\\&=\frac{\alpha^k\left(1-\omega\left(1-\phi_1-2\phi_2\right)\right)^2}{(1-\omega (1-\phi_1-4\phi_2))+\mu_X\omega(1-\omega)(1-\phi_1-2\phi_2)^2} = \nonumber \\ &= \alpha^k c(\alpha,\lambda,\omega,\phi_1,\phi_2). \nonumber 
+\end{align}
+
+Note that $c(\alpha,\lambda,\omega,\phi_1,\phi_2)$ is constant with respect to $k$, and hence the ACF of the observed process $Y_n$ is proportional (up to a multiplicative constant) to that of the latent process $X_n$ (i.e., the ACF is geometrically decreasing at rate $k$ given that $0<\alpha<1$). Note also that we always take by definition that $\rho(0)=1$.
+
+\subsection{Model inferences}
+
+Parameters of the model (i.e., $\alpha, \lambda, \omega, \phi_1$ and $\phi_2$) are estimated using the likelihood function, but this is not directly tractable as described in \cite{fernandez-fontelo_a_cabana_a_puig_p_and_morina_d_under-reported_2016, fernandezfontelo_a_cabana_a_joe_h_puig_p_and_morina_d_untangling_2019}. According to these authors, we can compute the likelihood function here using the forward algorithm, which is based on the so-called transition and emission probabilities. In particular, the transition probabilities are given by the conditional pmf of the stationary INAR(1) process defined as: 
+\begin{align}\label{transition}
+&\mathbb{P}(X_n=x_n|X_{n-1}=x_{n-1}) = \nonumber \\ & =\sum_{j=0}^{\min(x_n,x_{n-1})} \binom{x_{n-1}}{j} \alpha^j (1-\alpha)^{x_{n-1}-j} \mathbb{P}(Z_n=x_n-j), 
+\end{align}
+where $\mathbb{P}(Z_n=x_n-j)$ is computed in the following with the pmf of a Poisson($\lambda$) distribution. In  addition, the emission probabilities here are defined as given:
+\begin{align}\label{emission}
+& \mathbb{P}(Y_n=y_n|X_n=x_n) \nonumber = \\ & = \begin{cases}
+0 & \quad \textrm{if} \quad x_n < y_n/2\\
+(1-\omega)+\omega p_n & \quad \textrm{if} \quad x_n=y_n \\
+\omega p_n & \quad \textrm{if}  \quad x_n > y_n\\
+ \omega p_n & \quad \textrm{if}  \quad x_n < y_n, \, x_n \geq y_n/2,\\	
+\end{cases}
+\end{align}
+
+and probabilities $p_n$ are computed using the following recursive relation:
+\begin{align}\label{recursion}
+p_n&=\frac{1}{n(1-\phi_1-\phi_2)} \bigl[ \phi_1 (x_n-(n-1))p_{n-1}+ \nonumber \\ & +\phi_2(2x_n-(n-2))p_{n-2} \bigr],
+\end{align}
+
+which was computed following \cite{baena-mirabete_computing_2020}. Note that we consider under-reporting when $x_n>y_n$ and over-reporting when $x_n < y_n$, but $x_n \geq y_n/2$. Therefore, if there is over-reporting, our model assumes that what we see (i.e., $y_n$) is at most twice what happens (i.e., $x_n$).
+
+Finally, with the transition and emission probabilities in expressions (\ref{transition}) and (\ref{emission}), the likelihood function of the observed process, $Y_n$, is recursively computed using the forward algorithm, which is essentially based on the forward probabilities. That is, the likelihood function is thus calculated as:
+\begin{align}
+\mathbb{P}\left(Y_{1:N}=y_{1:n}\right)=\sum_{x_N=\frac{y_N}{2}}^{\infty}\gamma_N\left(y_{1:N},x_N\right),
+\end{align}
+
+where the forward probabilities $\gamma_n\left(y_{1:N},x_N\right)$ are defined as:
+
+\begin{align}\label{forward}
+& \gamma_n(y_{1:n},x_n) = \mathbb{P}(Y_n=y_n|X_n=x_n) \times \nonumber \\ & \sum_{x_{n-1}=\frac{y_{n-1}}{2}}^{\infty}\mathbb{P}(X_n=x_n|X_{n-1}=x_{n-1}) \gamma_{n-1}(y_{1:n-1},x_{n-1}), 
+\end{align}
+
+considering $\mathbb{P}(X_1=x_1) \sim \textrm{Poisson}(\lambda/(1-\alpha))$. Note that expression (\ref{forward}) is based on the transition probabilities and emission probabilities, that in our model here are defined as given in expressions (\ref{transition}) and (\ref{emission}), respectively. In practice, we use numerical optimization procedures, e.g., using the \texttt{nlm} function in \texttt{R}. 
+
+\section{Results}
+\subsection{Simulation study}
+\subsubsection{Under-reporting scenarios}
+
+\begin{table}[ht]\caption{Performance of the proposed model on the under-reporting scenarios.}
+  \centering
+  \small
+  \begin{tabular}{ ccccccc }
+      \hline
+   \textbf{Scenario} & \textbf{Measure} & \textbf{$\alpha$} & \textbf{$\lambda$} & \textbf{$\omega$} & \textbf{$\phi_1$} & \textbf{$\phi_2$}\\
+   \hline
+   \multirow{4}{*}{1} & True value & 0.5 & 3 & 0.7 & 0.2 & 0.3 \\
+   & Mean est. value & 0.49 & 2.95 & 0.61 & 0.20 & 0.29 \\
+   & Bias & -0.009 & -0.05 & -0.09 & 0.002 & -0.006 \\
+   & Coverage & 99.6 & 99.6 & 92.4 & 88.8 & 94.0 \\
+   \hline
+   \multirow{4}{*}{2} & True value & 0.5 & 3 & 0.3 & 0.2 & 0.3 \\
+   & Mean est. value & 0.50 & 2.96 & 0.28 & 0.20 & 0.28 \\
+   & Bias & 0.0008 & -0.04 & -0.02 & 0.001 & -0.02 \\
+   & Coverage & 99.6 & 99.8 & 88.8 & 85.6 & 92.0 \\
+   \hline
+   \multirow{4}{*}{3} & True value & 0.5 & 3 & 0.7 & 0.1 & 0.1 \\
+   & Mean est. value & 0.43 & 3.41 & 0.68 & 0.10 & 0.09 \\
+   & Bias & -0.07 & 0.41 & -0.01 & 0.0006 & -0.006 \\
+   & Coverage & 96.2 & 96.8 & 90.8 & 93.0 & 97.2 \\
+   \hline
+   \multirow{4}{*}{4} & True value & 0.5 & 3 & 0.3 & 0.1 & 0.1 \\
+   & Mean est. value & 0.49 & 3.03 & 0.31 & 0.10 & 0.09 \\
+   & Bias & -0.008 & 0.03 & 0.005 & 0.002 & -0.006 \\
+   & Coverage & 97.0 & 97.0 & 95.6 & 93.2 & 95.4 \\
+   \hline
+  \end{tabular}
+\end{table}
+
+\subsubsection{Over-reporting scenarios}
+\begin{table}[ht]\caption{Performance of the proposed model on the over-reporting scenarios.}
+  \centering
+    \small
+     \begin{tabular}{ ccccccc }
+      \hline
+   \textbf{Scenario} & \textbf{Measure} & \textbf{$\alpha$} & \textbf{$\lambda$} & \textbf{$\omega$} & \textbf{$\phi_1$} & \textbf{$\phi_2$}\\
+   \hline
+   \multirow{4}{*}{1} & True value & 0.5 & 3 & 0.7 & 0.2 & 0.7 \\
+   & Mean est. value & 0.51 & 2.99 & 0.68 & 0.19 & 0.70 \\
+   & Bias & 0.011 & -0.015 & -0.019 & -0.013 & 0.003 \\
+   & Coverage & 99.2 & 98.8 & 95.6 & 80.6 & 91.8 \\
+   \hline
+   \multirow{4}{*}{2} & True value & 0.5 & 3 & 0.3 & 0.2 & 0.7 \\
+   & Mean est. value & 0.51 & 2.92 & 0.34 & 0.18 & 0.70 \\
+   & Bias & 0.010 & -0.076 & 0.042 & -0.023 & 0.003 \\
+   & Coverage & 98.8 & 98.0 & 94.4 & 70.4 & 91.4 \\
+   \hline
+   \multirow{4}{*}{3} & True value & 0.5 & 3 & 0.7 & 0.3 & 0.5 \\
+   & Mean est. value & 0.511 & 2.99 & 0.66 & 0.27 & 0.52 \\
+   & Bias & 0.011 & -0.013 & -0.041 & -0.030 & 0.018 \\
+   & Coverage & 100.0 & 99.6 & 96.6 & 78.0 & 92.8 \\
+   \hline
+   \multirow{4}{*}{4} & True value & 0.5 & 3 & 0.3 & 0.3 & 0.5 \\
+   & Mean est. value & 0.52 & 2.90 & 0.37 & 0.289 & 0.486 \\
+   & Bias & 0.021 & -0.097 & 0.073 & -0.011 & -0.014 \\
+   & Coverage & 99.8 & 99.0 & 96.2 & 69.8 & 89.4 \\
+   \hline
+  \end{tabular}
+\end{table}
+\subsection{Application: Number of visits to obstetrics service in Tarragona province}
+\begin{table}[ht]\caption{Estimates corresponding to the full lockdown period.}
+  \centering
+  \begin{tabular}{ cc }
+      \hline
+   \textbf{Parameter} & \textbf{Estimate (95\% CI)} \\ 
+   \hline
+   $\alpha$ & 0.85 (0.56; 1.14) \\
+   $\lambda$ & 2.81 (-2.33; 7.95) \\
+   $\omega$ & 0.80 (0.55; 1.06) \\
+   $\phi_1$ & 0.025 (-0.015; 0.065) \\
+   $\phi_2$ & 0.25 (0.13; 0.36) \\
+   \hline
+  \end{tabular}
+\end{table}
+
+\begin{table}[ht]\caption{Estimates corresponding to the post-pandemic period.}
+  \centering
+  \begin{tabular}{ cc }
+      \hline
+   \textbf{Parameter} & \textbf{Estimate (95\% CI)} \\ 
+   \hline
+   $\alpha$ &  0 (-0.31; 0.31) \\
+   $\lambda$ & 19.99 (13.92; 26.06) \\
+   $\omega$ & 0.90 (0.74; 1.07) \\
+   $\phi_1$ & 0.19 (-0.21; 0.58) \\
+   $\phi_2$ & 0.61 (0.23; 0.99) \\
+   \hline
+  \end{tabular}
+\end{table}
+
+\section{Discussion}
+
+
+\subsection{References}
+%Please note that the files \textsf{SageH.bst} and \textsf{SageV.bst} are included with the class file
+%for those authors using \BibTeX.
+%The files work in a completely standard way, and you just need to uncomment one of the lines in the below example %depending on what style you require:
+%\begin{verbatim}
+%%Harvard (name/date)
+%\bibliographystyle{SageH}
+%%Vancouver (numbered)
+%\bibliographystyle{SageV}
+%\bibliography{<YourBibfile.bib>}
+%\end{verbatim}
+%and remember to add the relevant option to the \verb+\documentclass[]{sagej}+ line as listed in Table~\ref{T1}. 
+
+%\section{Support for \textsf{\journalclass}}
+%We offer on-line support to participating authors. Please contact
+%us via e-mail at \dots
+%
+%We would welcome any feedback, positive or otherwise, on your
+%experiences of using \textsf{\journalclass}.
+
+\begin{acks}
+This research was funded by Fundaci\'on MAPFRE (Becas Ignacio H. de Larramendi 2021). A.F-F acknowledges Agencia Estatal de Investigaci\'on for the financial support IJC2020-045188I/AEI/10.13039/501100011033 and Mar\'ia Zambrano scholarship.
+\end{acks}
+
+\bibliographystyle{sageH}
+
+\bibliography{article}
+
+\end{document}

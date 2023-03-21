@@ -1,0 +1,63 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{mathtools}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+
+\title{Appendix}
+%\author{amanda }
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section
+{Proof expression probabilities $p_n$}
+
+Following Baena-Mirabete and Puig (2020), consider an integer-valued random variable $X$ with the following probability mass function (pdf) $p_n:=\mathbb{P}(X=k)$ for $k \in \mathbb{Z}$, and its probability generating function (pgf), i.e., $\Phi_X(z)=\mathbb{E}(z^X)$, for $z\in \mathbb{C}$, satisfying:
+\begin{align}\label{app:ex1}
+\frac{\partial \ln(\Phi_X(z))}{\partial z}=\frac{G(z)}{T(z)},
+\end{align}
+
+where both $G(z)$ and $T(z)$ are respectively polynomials of degree $r$ and $s$, such that $G(z)=\sum_{j=0}^r \psi_j z^j$ and $T(z)=\sum_{j=0}^s \eta_j z^j$. For any integer-valued random variable whose pgf satisfies expression (\ref{app:ex1}), its pmf can be expressed using the recurrence relation given below:
+\begin{align}\label{app:ex2}
+\sum_{j=0}^s(n-j)\eta_jp_{n-j}=\sum_{j=0}^r \psi_j p_{n-j-1}.
+\end{align}
+
+In our case, we have an integer-valued random variable $S=[\vartheta\Diamond X|X=x]=\sum_{j=1}^xW_j$, where $\vartheta \Diamond X$ is the so-called fattering-thinning operator, $X \sim \textrm{Poisson}(\mu_X)$, $W_j$ are independent and identically distributed (i.i.d) random variables with the following pmf:
+\begin{align}\label{app:ex3}
+\mathbb{P}(W_j=k|\phi_1,\phi_2)=\begin{cases} 
+1-\phi_1-\phi_2  & \textrm{if} \quad k=0 \\
+\phi_1 & \textrm{if} \quad k=1 \\
+\phi_2 & \textrm{if} \quad k=2  \\
+0 & \textrm{otherwise} , \\
+\end{cases}
+\end{align}
+
+and $\vartheta=(\phi_1,\phi_2)$. The pgf of $S$ is thus defined as:
+\begin{align}\label{app:ex4}
+\Phi_S(z)=\left(1-\phi_1-\phi_2+\phi_1z+\phi_2z^2\right)^{x}.
+\end{align}
+
+Therefore, we can easily see that:
+\begin{align}\label{app:ex5}
+\frac{\partial \ln(\Phi_S(z))}{\partial z}=x\frac{\phi_1+2\phi_2z}{1-\phi_1-\phi_2+\phi_1z+\phi_2z^2},    
+\end{align}
+where $G(z)=x\phi_1+2x\phi_2z$ and $T(z)=1-\phi_1-\phi_2+\phi_1z+\phi_2z^2$. Note that $\psi_0=x\phi_1$, $\psi_1=2x\phi_2$, $\eta_0=1-\phi_1-\phi_2$, $\eta_1=\phi_1$ and $\eta_2=\phi_2$ (i.e., $r=1$ and $s=2$). 
+
+Finally, following expression (\ref{app:ex2}):
+\begin{align}
+& n\eta_0p_n+(n-1)\eta_1p_{n-1}+(n-2)\eta_2p_{n-2}=\psi_0p_{n-1}+\psi_1p_{n-2}, \nonumber \\ 
+& p_n=\frac{1}{n\eta_0}\left(\psi_0-(n-1)\eta_1\right)p_{n-1}+(\psi_1-(n-2)\eta_2)p_{n-2}, \nonumber \\ 
+& p_n = \frac{1}{n(1-\phi_1-\phi_2)}\left(\phi_1(x-(n-1))p_{n-1}+\phi_2(2x-(n-2))p_{n-2}\right),
+\end{align}
+
+and for $p_0=\Phi_S(0)=(1-\phi_1-\phi_2)^{x}$ and $p_1=\frac{\partial \Phi_S(z)}{\partial z} \Bigg|_{z=0}=x\phi_1(1-\phi_1-\phi_2)^{x-1}$. 
+
+\bigskip
+
+Baena-Mirabete, S., and Puig, P. (2020). Computing probabilities of integer-valued random variables by recurrence relations. Statistics and Probability Letters: 161, 108719. 
+
+
+\end{document}
